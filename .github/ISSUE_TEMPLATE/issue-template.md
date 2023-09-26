@@ -1,7 +1,7 @@
 ---
 name: seom issue template
 about: 기본 issue 작성 template
-title: "[PREFIX] 변경 내용 (다른 사람이 주제를 알 수 있게)"
+title: "페이지-기능-기능내용"
 labels: ''
 assignees: ''
 ---
