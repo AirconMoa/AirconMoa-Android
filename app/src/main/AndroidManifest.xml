@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Airconmoaandroid"
+        tools:targetApi="31">
+
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.FinishJoinActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.EnterPasswordAgainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.EnterNicknameActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.EnterPhoneActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.EnterPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.EmailAuthenticationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.EnterEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.AgreementActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.CreateUserActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.NewMemberActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.join_user.JoinActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.user_or_company.SelectActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.login_company.LoginCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.login_user.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.airconmoa.ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Airconmoaandroid.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.airconmoa.ui.main_user.MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Airconmoaandroid" />
+    </application>
+
+</manifest>
