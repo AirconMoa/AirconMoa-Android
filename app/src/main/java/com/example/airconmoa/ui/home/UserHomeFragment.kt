@@ -7,6 +7,7 @@ import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.FragmentUserHomeBinding
 
 class UserHomeFragment : BaseFragmentVB<FragmentUserHomeBinding>(FragmentUserHomeBinding::bind, R.layout.fragment_user_home) {
+    private val tabTitle= arrayListOf("first","second","subThird")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

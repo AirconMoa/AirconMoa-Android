@@ -1,13 +1,106 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.airconmoa.ui.home.UserHomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.airconmoa.ui.home.UserHomeFragment"
+    >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="홈" />
 
-</FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_main"
+        android:contentDescription="tablayout"
+        app:tabIndicator="@drawable/shape_indicator_tab"
+        app:tabIndicatorHeight="5dp"
+
+        >
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설치"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수리"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="점검"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <TextView
+        android:id="@+id/tv_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_main"
+        android:text="한눈에 모아!\n견적 요청하고 비교해보세요!\n"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginVertical="49dp"
+        android:layout_marginStart="20dp"
+        />
+    <!--<Button
+        android:id="@+id/btn_main"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@color/airconmoa_main"
+        android:textColor="@color/white"
+
+        />
+        -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_main"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main"
+        android:layout_marginHorizontal="20dp"
+        app:cardBackgroundColor="@color/airconmoa_main"
+        app:cardCornerRadius="16dp"
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            >
+            <TextView
+                android:id="@+id/tv_card1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="견적 요청서 작성하기"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+
+     <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_marginTop="49dp"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/btn_main"
+         android:background="@drawable/background_layout_main"
+         android:elevation="15dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+    >
+
+     </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

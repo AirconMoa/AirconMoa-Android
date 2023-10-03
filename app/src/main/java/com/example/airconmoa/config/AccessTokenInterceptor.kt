@@ -1,30 +1,12 @@
 package com.example.airconmoa.config
 
 import android.content.Context
-import android.os.Handler
-import android.os.Looper
-import android.widget.Toast
-import com.example.airconmoa.config.App.Companion.sharedPreferences
-import com.example.airconmoa.until.Constants.X_ACCESS_EXPIRE
-import com.example.airconmoa.until.Constants.X_ACCESS_TOKEN
-import com.example.airconmoa.until.Constants.X_REFRESH_EXPIRE
-import com.example.airconmoa.until.Constants.X_REFRESH_TOKEN
-import com.example.airconmoa.until.Constants.xapikey
-import com.example.airconmoa.ui.splash.model.RefreshJwtPostData
-import com.example.airconmoa.ui.splash.RefreshTokenService
-import com.example.airconmoa.ui.splash.RefreshTokenInterface
-import com.example.airconmoa.ui.login_user.model.LoginResponseData
-
 import okhttp3.Interceptor
-import okhttp3.Request
 import okhttp3.Response
-import java.io.IOException
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
-class AccessTokenInterceptor(private val context: Context) : Interceptor, RefreshTokenInterface {
+class AccessTokenInterceptor(private val context: Context) : Interceptor{
 
-
+    /*
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val jwt = sharedPreferences.getString(X_ACCESS_TOKEN,"")?:""
@@ -93,5 +75,8 @@ class AccessTokenInterceptor(private val context: Context) : Interceptor, Refres
             .putString(X_REFRESH_EXPIRE, result.refreshTokenExpiredDate)
             .apply()
     }
-
+*/
+    override fun intercept(chain: Interceptor.Chain): Response {
+        TODO("Not yet implemented")
+    }
 }
