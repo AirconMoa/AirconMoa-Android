@@ -90,4 +90,7 @@ dependencies {
 
     //뷰페이저
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
+
+    //카드뷰
+    implementation("androidx.cardview:cardview:1.0.0")
 }
