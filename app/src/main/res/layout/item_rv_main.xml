@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ractangleIvFrame"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="16dp"
+        >
+        <ImageView
+            android:id="@+id/ractangleIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType = "centerCrop"
+            android:background="@drawable/duck_png"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/companyNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수원제일공업사"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/ractangleIvFrame"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
+
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view_line"
+        android:layout_width="164dp"
+        android:layout_height="2dp"
+
+        app:cardBackgroundColor="@color/airconmoa_main"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/companyNameTv"
+        app:layout_constraintStart_toStartOf="@+id/companyNameTv"
+        android:layout_marginTop="6dp"
+        />
+
+
+    <TextView
+        android:id="@+id/contentTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="후기 12 · 시공만족도 95%"
+        android:textSize="13dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/companyNameTv"
+        app:layout_constraintTop_toBottomOf="@id/view_line"
+        android:layout_marginTop="10dp"
+        />
+    <!--app:layout_constraintEnd_toEndOf="@id/tv_and_star"-->
+    <TextView
+        android:id="@+id/contentTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500m"
+        android:textSize="13dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/companyNameTv"
+        app:layout_constraintTop_toBottomOf="@id/contentTv1"
+        android:layout_marginTop="5dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
