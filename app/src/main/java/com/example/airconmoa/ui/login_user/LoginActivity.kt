@@ -11,25 +11,28 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 
     private var social = ""
     private lateinit var neededPermissionList : ArrayList<String>
-    private val requiredPermissionList = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-        arrayOf(  // 안드로이드 13 이상 필요한 권한들
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_MEDIA_IMAGES,
-            Manifest.permission.POST_NOTIFICATIONS,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.CAMERA
-        )
-    }else{
-        arrayOf(  // 안드로이드 13 미만 필요한 권한들
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.CAMERA
-        )
-    }
+    private val requiredPermissionList =
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+        // Android 13 이상에서 필요한 권한 목록과 Android 13 미만에서 필요한 권한 목록이 서로 다르기 때문에 분기처리한다.
+            arrayOf(  // 안드로이드 13 이상 필요한 권한들
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.POST_NOTIFICATIONS,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.CAMERA
+            )
+        }
+        else {
+            arrayOf(  // 안드로이드 13 미만 필요한 권한들
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.CAMERA
+            )
+        }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

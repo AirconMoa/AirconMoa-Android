@@ -25,7 +25,11 @@
         android:id="@+id/mypageFragment"
         android:name="com.example.airconmoa.ui.mypage_user.UserMypageFragment"
         android:label="fragment_mypage"
-        tools:layout="@layout/fragment_user_mypage"/>
+        tools:layout="@layout/fragment_user_mypage">
+        <action
+            android:id="@+id/action_mypageFragment_to_mypageeditFragment"
+            app:destination="@id/mypageeditFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/communityFragment"
@@ -33,5 +37,11 @@
         android:label="fragment_community"
         tools:layout="@layout/fragment_user_community"/>
 
+
+    <fragment
+        android:id="@+id/mypageeditFragment"
+        android:name="com.example.airconmoa.ui.mypage_user.UserMypageEditFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_user_mypage"/>
 
 </navigation>

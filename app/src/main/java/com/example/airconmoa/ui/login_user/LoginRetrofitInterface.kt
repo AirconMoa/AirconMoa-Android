@@ -9,7 +9,6 @@ import retrofit2.http.POST
 
 interface LoginRetrofitInterface {
 
-
     @POST("/api/auth/login")
     fun postLogin(@Body params : LoginPostData) : Call<LoginResponse>
 }

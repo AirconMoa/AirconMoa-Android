@@ -88,7 +88,13 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 
-    //뷰페이저
+    // 네이버 소셜로그인
+    implementation("com.navercorp.nid:oauth:5.7.0")
+
+    // 카드 뷰
+    implementation ("androidx.cardview:cardview:1.0.0")
+
+    // 뷰 페이저
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
     //카드뷰
