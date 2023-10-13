@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="설치 정보를\n선택해 주세요."
+            android:text="에어컨을 설치할\n장소의 유형을 선택해 주세요."
             android:textSize="25sp"
             android:textColor="@color/airconmoa_gray"
             android:textStyle="bold"/>
@@ -46,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:textColor="@color/airconmoa_gray"
-                    android:text="에어컨 신규설치ㆍ신규건물"
+                    android:text="아파트"
                     android:textStyle="bold"
                     android:gravity="left|center"
                     android:padding="20dp"
@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:textColor="@color/airconmoa_gray"
-                    android:text="에어컨 신규설치ㆍ기존건물"
+                    android:text="주택"
                     android:textStyle="bold"
                     android:gravity="left|center"
                     android:padding="20dp"
@@ -100,7 +100,59 @@
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:textColor="@color/airconmoa_gray"
-                    android:text="에어컨 교체"
+                    android:text="빌라"
+                    android:textStyle="bold"
+                    android:gravity="left|center"
+                    android:padding="20dp"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/estimate_btn_check"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="30dp"/>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="3dp">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:text="빌딩"
+                    android:textStyle="bold"
+                    android:gravity="left|center"
+                    android:padding="20dp"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/estimate_btn_check"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="30dp"/>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="3dp">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:text="기타"
                     android:textStyle="bold"
                     android:gravity="left|center"
                     android:padding="20dp"
@@ -129,7 +181,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/linear_check_install"
         app:layout_constraintStart_toStartOf="@id/linear_check_install"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <androidx.cardview.widget.CardView

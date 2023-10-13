@@ -72,6 +72,12 @@
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.Airconmoaandroid" />
+        <!--Join-->
+        <activity
+            android:name="com.example.airconmoa.ui.join_company.CompanyJoinActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>
