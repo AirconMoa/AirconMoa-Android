@@ -79,7 +79,8 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent"
-        app:counterGravity="top">
+        android:gravity="top">
+        <!--        app:counterGravity="top"-->
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enter_nickname_et"
@@ -108,7 +109,8 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent"
-        app:counterGravity="top">
+        android:gravity="top">
+        <!--        app:counterGravity="top"-->
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enter_nickname_selected_et"
