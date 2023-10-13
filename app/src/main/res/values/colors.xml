@@ -13,4 +13,8 @@
     <color name="airconmoa_gray2">#868E96</color>
     <color name="airconmoa_gray3">#CDD3D9</color>
     <color name="airconmoa_gray4">#E9ECEF</color>
+    <color name="airconmoa_skyBlue">#00D1FF</color>
+    <color name="airconmoa_skyBlue_bright">#3300D1FF</color>
+    <color name="airconmoa_red">#FF4F4F</color>
+
 </resources>
