@@ -1,36 +1,14 @@
 package com.example.airconmoa.config
 
 import android.content.Context
-import android.os.Build
-import android.os.Handler
-import android.os.Looper
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import com.example.airconmoa.config.App.Companion.sharedPreferences
-import com.example.airconmoa.until.Constants.X_ACCESS_EXPIRE
-import com.example.airconmoa.until.Constants.X_ACCESS_TOKEN
-import com.example.airconmoa.until.Constants.X_REFRESH_EXPIRE
-import com.example.airconmoa.until.Constants.X_REFRESH_TOKEN
-import com.example.airconmoa.until.Constants.xapikey
-import com.example.airconmoa.ui.splash.model.RefreshJwtPostData
-import com.example.airconmoa.ui.splash.RefreshTokenService
-import com.example.airconmoa.ui.splash.RefreshTokenInterface
-import com.example.airconmoa.ui.login_user.model.LoginResponseData
-
 import okhttp3.Interceptor
-import okhttp3.Request
 import okhttp3.Response
-import java.io.IOException
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
-class AccessTokenInterceptor(private val context: Context) : Interceptor, RefreshTokenInterface {
-// Intercepter를 구현한 클래스는 HTTP 요청을 가로채고 처리한다. 주로, 사용자 인증 및 토큰 관리와 관련된 작업을 수행한다.
-// AccessTokenInterceptor는 Intercepter의 구체 클래스이자, RefreshTokenInterface 인터페이스를 상속받는다.
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    @Throws(IOException::class) // IOException이 발생할 수 있음
-    // intercept 메서드는 HTTP 요청을 가로채고 처리하는 로직을 포함한다.
+class AccessTokenInterceptor(private val context: Context) : Interceptor{
+
+    /*
+    @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         // jwt에 X_ACCESS_TOKEN이라는 이름으로 저장된 문자열 값을 넣는다.
         val jwt = sharedPreferences.getString(X_ACCESS_TOKEN,"")?:""
@@ -111,4 +89,9 @@ class AccessTokenInterceptor(private val context: Context) : Interceptor, Refres
             .putString(X_REFRESH_EXPIRE, result.refreshTokenExpiredDate)
             .apply() // SharedPreferences에 대한 변경 내용을 적용하고 저장한다.
     }
+*/
+    override fun intercept(chain: Interceptor.Chain): Response {
+        TODO("Not yet implemented")
+    }
+
 }
