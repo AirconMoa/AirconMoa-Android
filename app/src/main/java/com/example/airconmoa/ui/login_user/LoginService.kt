@@ -11,8 +11,7 @@ import retrofit2.Response
 
 class LoginService(val view : LoginActivityInterface) {
 
-
-    fun postLogin(body : LoginPostData){
+    fun postLogin(body : LoginPostData, accessToken : String){
         val loginRetro = App.getRetro().create(LoginRetrofitInterface::class.java)
         loginRetro.postLogin(body).enqueue(object : Callback<LoginResponse>{
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {

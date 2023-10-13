@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    tools:context="com.example.airconmoa.ui.join_user.EnterPhoneActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/enter_phone_back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/prev_button" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="회원가입"
+            android:textColor="@color/airconmoa_gray"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/enter_phone_finish_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/finish_button" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:text="전화번호를 입력해주세요."
+        android:textColor="@color/airconmoa_gray"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:weightSum="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_phone_base_til"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_phone_base_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="010"
+                    android:visibility="visible"
+                    android:background="@drawable/edit_text_custom_gray"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_phone_base_selected_til"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_phone_base_selected_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="010"
+                    android:visibility="invisible"
+                    android:background="@drawable/edit_text_custom_selected"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:layout_weight="0.5"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/airconmoa_gray"
+            android:textStyle="bold"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_phone_fisrt_til"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_phone_fisrt_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="0000"
+                    android:visibility="visible"
+                    android:background="@drawable/edit_text_custom_gray"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_phone_first_selected_til"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/airconmoa_gray3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_phone_first_selected_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="0000"
+                    android:visibility="invisible"
+                    android:background="@drawable/edit_text_custom_selected"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:layout_weight="0.5"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/airconmoa_gray"
+            android:textStyle="bold"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_phone_last_til"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_phone_last_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="0000"
+                    android:visibility="visible"
+                    android:background="@drawable/edit_text_custom_gray"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_phone_last_selected_til"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/airconmoa_gray3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enter_phone_last_selected_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="0000"
+                    android:visibility="invisible"
+                    android:background="@drawable/edit_text_custom_selected"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/email_authentication_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_selected_btn_radius8"
+        android:text="다음"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textSytle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
