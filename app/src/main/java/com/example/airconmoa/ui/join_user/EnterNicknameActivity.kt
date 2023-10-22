@@ -18,6 +18,7 @@ class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(Activ
 
         binding.enterNicknameFinishIv.setOnClickListener {
             val intent = Intent(this, NewMemberActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
     }

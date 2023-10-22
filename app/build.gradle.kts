@@ -39,6 +39,7 @@ android {
     buildFeatures {
         compose = true
         viewBinding=true
+        dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -87,6 +88,9 @@ dependencies {
     // Glide
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
+
+    // 카카오 소셜로그인
+    implementation("com.kakao.sdk:v2-user:2.10.0")
 
     // 네이버 소셜로그인
     implementation("com.navercorp.nid:oauth:5.7.0")

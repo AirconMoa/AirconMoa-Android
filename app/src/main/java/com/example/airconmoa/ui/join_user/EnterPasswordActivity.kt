@@ -18,6 +18,7 @@ class EnterPasswordActivity : BaseActivityVB<ActivityEnterPasswordBinding>(Activ
 
         binding.enterPasswordFinishIv.setOnClickListener {
             val intent = Intent(this, NewMemberActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
     }

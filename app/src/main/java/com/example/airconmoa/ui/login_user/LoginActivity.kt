@@ -37,10 +37,10 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setFullScreen()
-        //onCheckPermissions()
+        setFullScreen()
+        onCheckPermissions()
 
-       /* binding.btnKakaoLogin.setOnClickListener {
+       binding.btnKakaoLogin.setOnClickListener {
             social = "KAKAO"
             showLoading()
             kakaoLogin()
@@ -50,9 +50,8 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
             social = "NAVER"
             showLoading()
             naverLogin()
-        }*/
+        }
     }
-/*
     private fun onCheckPermissions(){
         neededPermissionList = arrayListOf<String>()
 
@@ -216,7 +215,4 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
     }
-
-
- */
 }
