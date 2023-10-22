@@ -13,7 +13,9 @@
         <item name="android:dropDownListViewStyle">@style/SpinnerDivideStyle</item>
     </style>
 
-
+    <style name="customTextSemiBold" parent="@android:style/Widget.DeviceDefault.TextView">
+        <item name="android:fontFamily">@font/semi_bold</item>
+    </style>
 
 
 </resources>
