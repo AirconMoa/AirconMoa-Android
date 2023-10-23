@@ -5,14 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
     tools:context="com.example.airconmoa.ui.join_user.AgreementActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="12dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,11 +43,55 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/agreement_underline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CDD3D9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="11dp"
+        android:padding="10dp"
+        android:weightSum="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <ProgressBar
+            android:id="@+id/agreement_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginVertical="15dp"
+            android:layout_weight="7"
+            android:max="7"
+            android:progress="1"
+            android:progressDrawable="@drawable/estimate_progressbar" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1/7"
+            android:textColor="@color/airconmoa_progress"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginHorizontal="20dp"
         android:text="약관에 동의하시고\n에아컨 견적 요청하세요!"
         android:textColor="@color/airconmoa_gray"
         android:textSize="25sp"
@@ -55,9 +100,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/agreement_all_agreee_btn"
+        android:id="@+id/agreement_all_agree_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/shape_btn_gray4_radius16"
         android:gravity="left|center"
         android:layout_marginTop="40dp"
@@ -72,20 +118,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
+        android:id="@+id/agreement_all_agree_iv"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="35dp"
         android:elevation="2dp"
         android:visibility="visible"
         android:src="@drawable/all_check_uncheck"
-        app:layout_constraintBottom_toBottomOf="@+id/agreement_all_agreee_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/agreement_all_agree_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/agreement_all_agreee_btn" />
+        app:layout_constraintTop_toTopOf="@+id/agreement_all_agree_btn" />
 
     <Button
-        android:id="@+id/agreement_all_agreee_select_btn"
+        android:id="@+id/agreement_all_agree_select_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/shape_btn_selected_radius16"
         android:gravity="left|center"
         android:layout_marginTop="40dp"
@@ -100,89 +148,478 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
+        android:id="@+id/agreement_all_agree_select_iv"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="35dp"
         android:elevation="2dp"
         android:visibility="invisible"
         android:src="@drawable/all_check_check"
-        app:layout_constraintBottom_toBottomOf="@+id/agreement_all_agreee_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/agreement_all_agree_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/agreement_all_agreee_btn" />
+        app:layout_constraintTop_toTopOf="@+id/agreement_all_agree_btn" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/agreement_agree_complete_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/agreement_all_agreee_btn">
+        app:layout_constraintTop_toBottomOf="@+id/agreement_all_agree_btn"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/agreement_all_agreee_btn">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/agreement_user_agreement"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/agreement_uncheck_iv1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:layout_marginTop="2dp"
                     android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
                     android:src="@drawable/agreement_uncheck"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
+                    android:id="@+id/agreement_check_iv1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_gravity="left"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:gravity="center"
                     android:src="@drawable/agreement_check"
-                    android:visibility="gone" />
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/textView6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="left|center"
+                    android:paddingLeft="10dp"
+                    android:text="개인정보 수집 및 이용 동의 (필수)"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/textView7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="보기"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout1">
+
+                <ImageView
+                    android:id="@+id/agreement_uncheck_iv2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/agreement_uncheck"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/agreement_check_iv2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:src="@drawable/agreement_check"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:text="사용자 이용약관 (필수)"
                     android:textColor="@color/airconmoa_gray"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView9"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
                     android:text="보기"
                     android:textColor="@color/airconmoa_gray2"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/agreement_location_service"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/agreement_user_agreement">
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout2">
 
                 <ImageView
+                    android:id="@+id/agreement_uncheck_iv3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/agreement_uncheck"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/agreement_check_iv3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:src="@drawable/agreement_check"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="위치정보 서비스 이용약관 (필수)"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView11"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="보기"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout3">
+
+                <ImageView
+                    android:id="@+id/agreement_uncheck_iv4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/agreement_uncheck"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/agreement_check_iv4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:src="@drawable/agreement_check"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="제3자 정보제공 동의 (필수)"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView13"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="보기"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout4">
+
+                <ImageView
+                    android:id="@+id/agreement_uncheck_iv5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/agreement_uncheck"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/agreement_check_iv5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:src="@drawable/agreement_check"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="맞춤 혜택 개인정보 이용 동의 (선택)"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView15"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="보기"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout5">
+
+                <ImageView
+                    android:id="@+id/agreement_uncheck_iv6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/agreement_uncheck"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/agreement_check_iv6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:src="@drawable/agreement_check"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="에어컨 맞춤 혜택 정보 수신 동의 (선택)"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView17"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:text="보기"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout6">
+
+                <ImageView
+                    android:id="@+id/agreement_uncheck_iv7"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/agreement_uncheck"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/agreement_check_iv7"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:src="@drawable/agreement_check"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="만 14세 이상입니다 (필수)"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_uncheck_iv7"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--LinearLayout
+
+                android:id="@+id/agreement_location_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout">
+
+                <ImageView
+                    android:id="@+id/agreement_uncheck_iv2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -190,6 +627,7 @@
                     android:visibility="visible" />
 
                 <ImageView
+                    android:id="@+id/agreement_check_iv2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -222,13 +660,14 @@
                 android:id="@+id/agreement_third_party"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agreement_location_service">
 
                 <ImageView
+                    android:id="@+id/agreement_uncheck_iv3"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -236,6 +675,7 @@
                     android:visibility="visible" />
 
                 <ImageView
+                    android:id="@+id/agreement_check_iv3"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -268,13 +708,14 @@
                 android:id="@+id/agreement_customized_benefit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agreement_third_party">
 
                 <ImageView
+                    android:id="@+id/agreement_uncheck_iv4"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -282,6 +723,7 @@
                     android:visibility="visible" />
 
                 <ImageView
+                    android:id="@+id/agreement_check_iv4"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -314,13 +756,14 @@
                 android:id="@+id/agreement_receive_inforamtion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agreement_customized_benefit">
 
                 <ImageView
+                    android:id="@+id/agreement_uncheck_iv5"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -328,6 +771,7 @@
                     android:visibility="visible" />
 
                 <ImageView
+                    android:id="@+id/agreement_check_iv5"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -360,13 +804,14 @@
                 android:id="@+id/agreement_user_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agreement_receive_inforamtion">
 
                 <ImageView
+                    android:id="@+id/agreement_uncheck_iv6"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -374,6 +819,7 @@
                     android:visibility="visible" />
 
                 <ImageView
+                    android:id="@+id/agreement_check_iv6"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="left"
@@ -391,20 +837,37 @@
                     android:textColor="@color/airconmoa_gray"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout-->
 
     </ScrollView>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/agreement_agree_uncomplete_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/shape_btn_gray4"
+        android:text="동의하고 가입하기"
+        android:textColor="@color/airconmoa_gray"
+        android:visibility="visible"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/agreement_agree_complete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/shape_selected_btn_radius8"
         android:text="동의하고 가입하기"
         android:textColor="@color/white"
+        android:visibility="invisible"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

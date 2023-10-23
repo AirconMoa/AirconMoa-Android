@@ -213,5 +213,4 @@ class CreateUserActivity : BaseActivityVB<ActivityCreateUserBinding>(ActivityCre
 //    private suspend fun saveUidAndToken(accessToken: String, postKakaoUserReq: PostKakaoUserReq): BaseResponse<String> {
 //        return RetrofitInstance.kakaoApi.saveUidAndToken(accessToken, postKakaoUserReq)
 //    }
-
 }

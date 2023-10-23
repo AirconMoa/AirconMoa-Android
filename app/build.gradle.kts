@@ -103,4 +103,7 @@ dependencies {
 
     //카드뷰
     implementation("androidx.cardview:cardview:1.0.0")
+
+    // 안드로이드 머티리얼 디자인 라이브러리
+    implementation ("com.google.android.material:material:1.5.0")
 }

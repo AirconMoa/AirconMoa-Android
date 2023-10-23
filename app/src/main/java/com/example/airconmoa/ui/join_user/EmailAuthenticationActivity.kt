@@ -29,7 +29,6 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setEditTextFocusChangeListener()
 
         editText1 = binding.emailAuthenticationEt1
         editText2 = binding.emailAuthenticationEt2

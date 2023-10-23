@@ -5,14 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
     tools:context="com.example.airconmoa.ui.join_user.EmailAuthenticationActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="12dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,10 +43,54 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/email_authentication_underline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CDD3D9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="11dp"
+        android:padding="10dp"
+        android:weightSum="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <ProgressBar
+            android:id="@+id/email_authentication_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginVertical="15dp"
+            android:layout_weight="7"
+            android:max="7"
+            android:progress="3"
+            android:progressDrawable="@drawable/estimate_progressbar" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="3/7"
+            android:textColor="@color/airconmoa_progress"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
+        android:layout_marginHorizontal="20dp"
         android:text="이메일로 전송된\n인증 번호를 입력해주세요."
         android:textColor="@color/airconmoa_gray"
         android:textSize="25sp"
@@ -60,6 +105,7 @@
         android:layout_marginTop="300dp"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="20dp"
         android:weightSum="6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -210,12 +256,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_authentication_ok_btn" />
 
+    <TextView
+        android:id="@+id/email_authentication_auth_uncomplete_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인증 번호가 잘못되었습니다."
+        android:textColor="@color/airconmoa_red"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_authentication_ok_btn" />
+
 
     <Button
         android:id="@+id/email_authentication_next_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/shape_selected_btn_radius8"
         android:text="다음"
         android:textColor="@color/white"

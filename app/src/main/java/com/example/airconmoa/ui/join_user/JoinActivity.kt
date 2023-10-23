@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.example.airconmoa.config.BaseActivityVB
+import com.example.airconmoa.ui.join_company.CompanyJoinActivity
 import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.ActivityJoinBinding
 import com.example.airconmoa_android.databinding.ActivityLoginCompanyBinding
@@ -16,7 +17,7 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
         super.onCreate(savedInstanceState)
 
         binding.joinUserBtn.setOnClickListener {
-            binding.joinUserBtn.visibility = View.GONE
+            binding.joinUserBtn.visibility = View.INVISIBLE
             binding.joinUserSelectedBtn.visibility = View.VISIBLE
 
             val intent = Intent(this, NewMemberActivity::class.java)
@@ -24,11 +25,23 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
         }
 
         binding.joinCompanyBtn.setOnClickListener {
-            binding.joinCompanyBtn.visibility = View.GONE
+            binding.joinCompanyBtn.visibility = View.INVISIBLE
             binding.joinCompanySelectedBtn.visibility = View.VISIBLE
+
+            val intent = Intent(this, CompanyJoinActivity::class.java)
+            startActivity(intent)
         }
 
         val keyHash = Utility.getKeyHash(this)
         Log.d("Hash", keyHash)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        binding.joinUserBtn.visibility = View.VISIBLE
+        binding.joinUserSelectedBtn.visibility = View.INVISIBLE
+        binding.joinCompanyBtn.visibility = View.VISIBLE
+        binding.joinCompanySelectedBtn.visibility = View.INVISIBLE
     }
 }
