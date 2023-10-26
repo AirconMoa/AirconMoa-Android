@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="260dp"
         android:orientation="horizontal"
-        android:weightSum="5"
+        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -125,23 +125,25 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:layout_weight="3">
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/enter_email_textfield"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:boxStrokeColor="@color/airconmoa_skyBlue">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/login_email_et"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/edit_text_custom_selected"
+                    android:layout_height="50dp"
+                    android:theme="@style/EditTheme"
                     android:textSize="18sp"
                     android:gravity="center"
                     android:textColor="@color/airconmoa_gray"
+                    android:backgroundTint="@color/airconmoa_gray3"
                     android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -149,10 +151,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
+            android:id="@+id/enter_email_at_tv"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginHorizontal="5dp"
             android:gravity="center"
             android:text="\@"
             android:textColor="@color/airconmoa_gray3"
@@ -162,15 +165,14 @@
         <Spinner
             android:id="@+id/enter_email_address_spinner"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="30dp"
-            android:paddingTop="10dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="5dp"
             android:layout_marginBottom="4dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:textAlignment="center"
-            android:background="@drawable/edit_text_custom_selected"
-            android:layout_gravity="center"
-            android:layout_weight="2" />
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -200,18 +202,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
-    <!--Button
-        android:id="@+id/button3"
+    <Button
+        android:id="@+id/enter_email_next_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/shape_selected_btn_radius8"
+        android:background="@drawable/shape_btn_gray4"
+        android:layout_marginHorizontal="20dp"
         android:text="다음"
-        android:textColor="@color/white"
+        android:textColor="@color/airconmoa_gray"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" /-->
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

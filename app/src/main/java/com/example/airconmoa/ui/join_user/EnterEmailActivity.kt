@@ -1,18 +1,19 @@
 package com.example.airconmoa.ui.join_user
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityAgreementBinding
 import com.example.airconmoa_android.databinding.ActivityEnterEmailBinding
+
 
 class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnterEmailBinding::inflate) {
 
@@ -29,7 +30,14 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
             val intent = Intent(this, NewMemberActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
+
+        binding.enterEmailNextBtn.setOnClickListener {
+            Toast.makeText(this, "이메일 인증을 진행해주세요", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.loginEmailEt.requestFocus()
 
         val spinner = binding.enterEmailAddressSpinner
 
@@ -61,10 +69,14 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
                 if(position != 0) {
                     binding.enterEmailAuthenticateBtn.visibility = View.INVISIBLE
                     binding.enterEmailAuthenticateSelectBtn.visibility = View.VISIBLE
+                    //binding.enterEmailAddressSpinner.setBackgroundResource(R.drawable.edit_text_custom_selected)
+                    binding.enterEmailAtTv.setTextColor(ContextCompat.getColor(this@EnterEmailActivity, R.color.airconmoa_gray))
                 }
                 else {
                     binding.enterEmailAuthenticateBtn.visibility = View.VISIBLE
                     binding.enterEmailAuthenticateSelectBtn.visibility = View.INVISIBLE
+                    //binding.enterEmailAddressSpinner.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                    binding.enterEmailAtTv.setTextColor(ContextCompat.getColor(this@EnterEmailActivity, R.color.airconmoa_gray3))
                 }
             }
 

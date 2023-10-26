@@ -113,6 +113,7 @@
 
         <EditText
             android:id="@+id/email_authentication_et1"
+            android:theme="@style/EditTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -128,6 +129,7 @@
 
         <EditText
             android:id="@+id/email_authentication_et2"
+            android:theme="@style/EditTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -143,6 +145,7 @@
 
         <EditText
             android:id="@+id/email_authentication_et3"
+            android:theme="@style/EditTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -158,6 +161,7 @@
 
         <EditText
             android:id="@+id/email_authentication_et4"
+            android:theme="@style/EditTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -173,6 +177,7 @@
 
         <EditText
             android:id="@+id/email_authentication_et5"
+            android:theme="@style/EditTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -188,6 +193,7 @@
 
         <EditText
             android:id="@+id/email_authentication_et6"
+            android:theme="@style/EditTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"

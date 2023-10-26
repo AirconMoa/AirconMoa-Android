@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
     tools:context="com.example.airconmoa.ui.join_user.EnterNicknameActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,11 +42,45 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="11dp"
+        android:padding="10dp"
+        android:weightSum="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <ProgressBar
+            android:id="@+id/enter_password_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginVertical="15dp"
+            android:layout_weight="7"
+            android:max="7"
+            android:progress="6"
+            android:progressDrawable="@drawable/estimate_progressbar" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="6/7"
+            android:textColor="@color/airconmoa_progress"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
+        android:layout_marginHorizontal="20dp"
         android:text="이제 거의 다 왔어요.\n뭐라고 불러드릴까요?"
         android:textColor="@color/airconmoa_gray"
         android:textSize="25sp"
@@ -57,6 +91,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:text="실명이 아니어도 괜찮아요"
         android:textColor="@color/airconmoa_gray3"
         android:textSize="15sp"
@@ -72,57 +107,41 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:layout_marginTop="280dp"
-        android:visibility="visible"
         app:counterMaxLength="10"
         app:counterEnabled="true"
         android:textColorHint="@color/airconmoa_gray3"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/EditTheme"
         android:gravity="top">
-        <!--        app:counterGravity="top"-->
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enter_nickname_et"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_custom_gray"
+            android:layout_height="50dp"
             android:padding="10dp"
             android:textSize="20sp"
             android:textColor="@color/airconmoa_gray"
+            android:backgroundTint="@color/airconmoa_gray3"
             android:textStyle="bold"
             android:inputType="text"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/enter_nickname_selected_til"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:layout_marginTop="280dp"
-        android:visibility="invisible"
-        app:counterMaxLength="10"
-        app:counterEnabled="true"
-        android:textColorHint="@color/airconmoa_gray3"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="top">
-        <!--        app:counterGravity="top"-->
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enter_nickname_selected_et"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_custom_selected"
-            android:padding="10dp"
-            android:textSize="20sp"
-            android:textColor="@color/airconmoa_gray"
-            android:textStyle="bold"
-            android:inputType="text"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/enter_nickname_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/shape_selected_btn_radius8"
+        android:text="다음"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

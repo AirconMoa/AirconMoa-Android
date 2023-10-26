@@ -31,6 +31,7 @@ class CreateUserActivity : BaseActivityVB<ActivityCreateUserBinding>(ActivityCre
             val intent = Intent(this, NewMemberActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         binding.createUserWithEmailIv.setOnClickListener {

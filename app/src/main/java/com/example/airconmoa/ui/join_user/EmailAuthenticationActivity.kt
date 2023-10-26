@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.ActivityCreateUserBinding
@@ -44,7 +45,9 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
         binding.emailAuthenticationFinishIv.setOnClickListener {
             val intent = Intent(this, NewMemberActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         timerTextView = binding.emailAuthenticationTimerTv
@@ -62,11 +65,23 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
             override fun onFinish() {
                 // 타이머 종료 시 원하는 동작 수행
                 timerTextView.text = "00:00"
+                val textView = binding.emailAuthenticationAuthUncompleteTv
+                textView.text = "뒤로 가기 버튼을 눌러 재인증을 시도하세요."
+                textView.visibility = View.VISIBLE
             }
         }
 
         // 타이머 시작
         countDownTimer.start()
+
+        binding.emailAuthenticationOkBtn.setOnClickListener {
+            Toast.makeText(this, "인증번호를 올바로 입력해주세요.", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.emailAuthenticationNextBtn.setOnClickListener {
+            val intent = Intent(this, EnterPasswordActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setEditTextFocusChangeListener() {
@@ -75,8 +90,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s?.length == 1) {
+                    editText1.setBackgroundResource(R.drawable.edit_text_custom_selected)
                     editText2.requestFocus()
                 }
+                else {
+                    editText1.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                }
+                checkComplete()
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -87,8 +107,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s?.length == 1) {
+                    editText2.setBackgroundResource(R.drawable.edit_text_custom_selected)
                     editText3.requestFocus()
                 }
+                else {
+                    editText2.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                }
+                checkComplete()
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -99,8 +124,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s?.length == 1) {
+                    editText3.setBackgroundResource(R.drawable.edit_text_custom_selected)
                     editText4.requestFocus()
                 }
+                else {
+                    editText3.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                }
+                checkComplete()
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -111,8 +141,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s?.length == 1) {
+                    editText4.setBackgroundResource(R.drawable.edit_text_custom_selected)
                     editText5.requestFocus()
                 }
+                else {
+                    editText4.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                }
+                checkComplete()
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -123,8 +158,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s?.length == 1) {
+                    editText5.setBackgroundResource(R.drawable.edit_text_custom_selected)
                     editText6.requestFocus()
                 }
+                else {
+                    editText5.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                }
+                checkComplete()
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -135,12 +175,31 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s?.length == 1) {
-                    binding.emailAuthenticationOkBtn.visibility = View.INVISIBLE
-                    binding.emailAuthenticationOkCompleteBtn.visibility = View.VISIBLE
+                    editText6.setBackgroundResource(R.drawable.edit_text_custom_selected)
                 }
+                else {
+                    editText6.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                }
+                checkComplete()
             }
 
             override fun afterTextChanged(s: Editable?) {}
         })
+
+    }
+
+    private fun checkComplete() {
+        if(editText1.text!!.length == 1
+            && editText2.text!!.length == 1
+            && editText3.text!!.length == 1
+            && editText4.text!!.length == 1
+            && editText5.text!!.length == 1
+            && editText6.text!!.length == 1) {
+            binding.emailAuthenticationOkBtn.visibility = View.INVISIBLE
+            binding.emailAuthenticationOkCompleteBtn.visibility = View.VISIBLE
+        } else {
+            binding.emailAuthenticationOkBtn.visibility = View.VISIBLE
+            binding.emailAuthenticationOkCompleteBtn.visibility = View.INVISIBLE
+        }
     }
 }

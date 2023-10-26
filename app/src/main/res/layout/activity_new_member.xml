@@ -21,18 +21,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="안녕하세요! "
+            android:text="안녕하세요! 🙌"
             android:textColor="@color/airconmoa_gray"
             android:textSize="25sp"
             android:textStyle="bold" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="8dp"
-            android:src="@drawable/new_member_hand"/>
-
     </LinearLayout>
 
     <TextView
