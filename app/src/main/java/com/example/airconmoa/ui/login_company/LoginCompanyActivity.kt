@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.ui.theme.AirconmoaandroidTheme
+import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.ActivityLoginCompanyBinding
 
 class LoginCompanyActivity : BaseActivityVB<ActivityLoginCompanyBinding>(ActivityLoginCompanyBinding::inflate){
@@ -17,6 +18,5 @@ class LoginCompanyActivity : BaseActivityVB<ActivityLoginCompanyBinding>(Activit
 
 
     }
-
 
 }

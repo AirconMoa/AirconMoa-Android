@@ -3,6 +3,7 @@ package com.example.airconmoa.ui.join_user
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.ui.main_user.MainActivity
@@ -37,37 +38,38 @@ class CreateUserActivity : BaseActivityVB<ActivityCreateUserBinding>(ActivityCre
         binding.createUserWithEmailIv.setOnClickListener {
             val intent = Intent(this, AgreementActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
 
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
             if (error != null) {
                 when {
                     error.toString() == AuthErrorCause.AccessDenied.toString() -> {
-                        Toast.makeText(this, "접근이 거부 됨(동의 취소)", Toast.LENGTH_SHORT).show()
+                        showCustomToast("접근이 거부 됨(동의 취소)")
                     }
                     error.toString() == AuthErrorCause.InvalidClient.toString() -> {
-                        Toast.makeText(this, "유효하지 않은 앱", Toast.LENGTH_SHORT).show()
+                        showCustomToast("유효하지 않은 앱")
                     }
                     error.toString() == AuthErrorCause.InvalidGrant.toString() -> {
-                        Toast.makeText(this, "인증 수단이 유효하지 않아 인증할 수 없는 상태", Toast.LENGTH_SHORT).show()
+                        showCustomToast("인증 수단이 유효하지 않아 인증할 수 없는 상태")
                     }
                     error.toString() == AuthErrorCause.InvalidRequest.toString() -> {
-                        Toast.makeText(this, "요청 파라미터 오류", Toast.LENGTH_SHORT).show()
+                        showCustomToast("요청 파라미터 오류")
                     }
                     error.toString() == AuthErrorCause.InvalidScope.toString() -> {
-                        Toast.makeText(this, "유효하지 않은 scope ID", Toast.LENGTH_SHORT).show()
+                        showCustomToast("유효하지 않은 scope ID")
                     }
                     error.toString() == AuthErrorCause.Misconfigured.toString() -> {
-                        Toast.makeText(this, "설정이 올바르지 않음(android key hash)", Toast.LENGTH_SHORT).show()
+                        showCustomToast("설정이 올바르지 않음(android key hash)")
                     }
                     error.toString() == AuthErrorCause.ServerError.toString() -> {
-                        Toast.makeText(this, "서버 내부 에러", Toast.LENGTH_SHORT).show()
+                        showCustomToast("서버 내부 에러")
                     }
                     error.toString() == AuthErrorCause.Unauthorized.toString() -> {
-                        Toast.makeText(this, "앱이 요청 권한이 없음", Toast.LENGTH_SHORT).show()
+                        showCustomToast("앱이 요청 권한이 없음")
                     }
                     else -> { // Unknown
-                        Toast.makeText(this, "기타 에러", Toast.LENGTH_SHORT).show()
+                        showCustomToast("기타 에러")
                     }
                 }
             }
@@ -205,6 +207,8 @@ class CreateUserActivity : BaseActivityVB<ActivityCreateUserBinding>(ActivityCre
         binding.createUserWithNaverIv.setOnClickListener {
             binding.createUserWithNaverOAuth.performClick()
         }
+
+        setFullScreen()
     }
 
 //    private suspend fun kakaoCallback(accessToken: String): BaseResponse<PostKakaoLoginRes> {

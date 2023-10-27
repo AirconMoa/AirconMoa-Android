@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="44dp"
         android:paddingBottom="12dp"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +71,7 @@
             android:layout_marginVertical="15dp"
             android:layout_weight="7"
             android:max="7"
-            android:progress="4"
+            android:progress="5"
             android:progressDrawable="@drawable/estimate_progressbar" />
 
         <TextView
@@ -100,11 +100,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="280dp"
         android:weightSum="6"
-        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -128,11 +129,11 @@
                     android:id="@+id/enter_phone_base_et"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="010"
+                    android:backgroundTint="@color/airconmoa_gray3"
                     android:gravity="center"
                     android:inputType="text"
                     android:paddingBottom="15dp"
-                    android:backgroundTint="@color/airconmoa_gray3"
+                    android:text="010"
                     android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -144,13 +145,13 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:text="-"
-            android:layout_weight="0.5"
-            android:textSize="20sp"
-            android:gravity="center"
             android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="-"
             android:textColor="@color/airconmoa_gray"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -165,16 +166,16 @@
                 android:id="@+id/enter_phone_fisrt_til"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:theme="@style/EditTheme"
-                android:textColorHint="@color/airconmoa_gray3">
+                android:textColorHint="@color/airconmoa_gray3"
+                android:theme="@style/EditTheme">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/enter_phone_fisrt_et"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="OOOO"
-                    android:gravity="center"
                     android:backgroundTint="@color/airconmoa_gray3"
+                    android:gravity="center"
+                    android:hint="OOOO"
                     android:inputType="text"
                     android:paddingBottom="15dp"
                     android:textColor="@color/airconmoa_gray"
@@ -188,13 +189,13 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:text="-"
-            android:layout_weight="0.5"
-            android:textSize="20sp"
-            android:gravity="center"
             android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="-"
             android:textColor="@color/airconmoa_gray"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -209,27 +210,41 @@
                 android:id="@+id/enter_phone_last_til"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:theme="@style/EditTheme"
-                android:textColorHint="@color/airconmoa_gray3">
+                android:textColorHint="@color/airconmoa_gray3"
+                android:theme="@style/EditTheme">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/enter_phone_last_et"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="OOOO"
                     android:backgroundTint="@color/airconmoa_gray3"
                     android:gravity="center"
+                    android:hint="OOOO"
                     android:inputType="text"
                     android:paddingBottom="15dp"
                     android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/enter_phone_error_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="5dp"
+        android:text="전화번호를 올바르게 입력해주세요"
+        android:textColor="@color/airconmoa_red"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+
 
     <Button
         android:id="@+id/enter_phone_next_btn"

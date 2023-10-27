@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
+import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.ActivityAgreementBinding
 import com.example.airconmoa_android.databinding.ActivityCreateUserBinding
 
@@ -14,6 +15,7 @@ class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgree
 
         binding.agreementBackIv.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
 
         binding.agreementFinishIv.setOnClickListener {
@@ -23,135 +25,52 @@ class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgree
             finish()
         }
 
-        binding.agreementAllAgreeBtn.setOnClickListener {
-            setAllCheck()
+        val toggleImageViews = listOf(
+            binding.agreementUncheckIv1 to binding.agreementCheckIv1,
+            binding.agreementUncheckIv2 to binding.agreementCheckIv2,
+            binding.agreementUncheckIv3 to binding.agreementCheckIv3,
+            binding.agreementUncheckIv4 to binding.agreementCheckIv4,
+            binding.agreementUncheckIv5 to binding.agreementCheckIv5,
+            binding.agreementUncheckIv6 to binding.agreementCheckIv6,
+            binding.agreementUncheckIv7 to binding.agreementCheckIv7
+        )
+
+        toggleImageViews.forEach { (uncheckIv, checkIv) ->
+            uncheckIv.setOnClickListener {
+                checkIv.visibility = View.VISIBLE
+                uncheckIv.visibility = View.INVISIBLE
+                isComplete()
+            }
+
+            checkIv.setOnClickListener {
+                checkIv.visibility = View.INVISIBLE
+                uncheckIv.visibility = View.VISIBLE
+                isComplete()
+            }
         }
 
-        binding.agreementAllAgreeSelectBtn.setOnClickListener {
-            setAllUncheck()
-        }
+        val toggleAllButtons = listOf(
+            binding.agreementAllAgreeBtn to { setAllCheck() },
+            binding.agreementAllAgreeSelectBtn to { setAllUncheck() },
+            binding.agreementAllAgreeIv to { setAllCheck() },
+            binding.agreementAllAgreeSelectIv to { setAllUncheck() }
+        )
 
-        binding.agreementAllAgreeIv.setOnClickListener {
-            setAllCheck()
-        }
-
-        binding.agreementAllAgreeSelectIv.setOnClickListener {
-            setAllUncheck()
-        }
-
-        // 1번 약관 토글
-        binding.agreementUncheckIv1.setOnClickListener {
-            binding.agreementCheckIv1.visibility = View.VISIBLE
-            binding.agreementUncheckIv1.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv1.setOnClickListener {
-            binding.agreementCheckIv1.visibility = View.INVISIBLE
-            binding.agreementUncheckIv1.visibility = View.VISIBLE
-
-            isComplete()
-        }
-
-        // 2번 약관 토글
-        binding.agreementUncheckIv2.setOnClickListener {
-            binding.agreementCheckIv2.visibility = View.VISIBLE
-            binding.agreementUncheckIv2.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv2.setOnClickListener {
-            binding.agreementCheckIv2.visibility = View.INVISIBLE
-            binding.agreementUncheckIv2.visibility = View.VISIBLE
-
-            isComplete()
-        }
-
-        // 3번 약관 토글
-        binding.agreementUncheckIv3.setOnClickListener {
-            binding.agreementCheckIv3.visibility = View.VISIBLE
-            binding.agreementUncheckIv3.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv3.setOnClickListener {
-            binding.agreementCheckIv3.visibility = View.INVISIBLE
-            binding.agreementUncheckIv3.visibility = View.VISIBLE
-
-            isComplete()
-        }
-
-        // 4번 약관 토글
-        binding.agreementUncheckIv4.setOnClickListener {
-            binding.agreementCheckIv4.visibility = View.VISIBLE
-            binding.agreementUncheckIv4.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv4.setOnClickListener {
-            binding.agreementCheckIv4.visibility = View.INVISIBLE
-            binding.agreementUncheckIv4.visibility = View.VISIBLE
-
-            isComplete()
-        }
-
-        // 5번 약관 토글
-        binding.agreementUncheckIv5.setOnClickListener {
-            binding.agreementCheckIv5.visibility = View.VISIBLE
-            binding.agreementUncheckIv5.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv5.setOnClickListener {
-            binding.agreementCheckIv5.visibility = View.INVISIBLE
-            binding.agreementUncheckIv5.visibility = View.VISIBLE
-
-            isComplete()
-        }
-
-        // 6번 약관 토글
-        binding.agreementUncheckIv6.setOnClickListener {
-            binding.agreementCheckIv6.visibility = View.VISIBLE
-            binding.agreementUncheckIv6.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv6.setOnClickListener {
-            binding.agreementCheckIv6.visibility = View.INVISIBLE
-            binding.agreementUncheckIv6.visibility = View.VISIBLE
-
-            isComplete()
-        }
-
-        // 7번 약관 토글
-        binding.agreementUncheckIv7.setOnClickListener {
-            binding.agreementCheckIv7.visibility = View.VISIBLE
-            binding.agreementUncheckIv7.visibility = View.INVISIBLE
-
-            isComplete()
-        }
-
-        binding.agreementCheckIv7.setOnClickListener {
-            binding.agreementCheckIv7.visibility = View.INVISIBLE
-            binding.agreementUncheckIv7.visibility = View.VISIBLE
-
-            isComplete()
+        toggleAllButtons.forEach { (button, action) ->
+            button.setOnClickListener { action() }
         }
 
         binding.agreementAgreeUncompleteBtn.setOnClickListener {
-            Toast.makeText(this, "약관 동의를 먼저 진행해주세요.", Toast.LENGTH_SHORT).show()
+            showCustomToast("약관 동의를 먼저 진행해주세요.")
         }
 
         binding.agreementAgreeCompleteBtn.setOnClickListener {
             val intent = Intent(this, EnterEmailActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
+
+        setFullScreen()
     }
 
     private fun setAllCheck() {

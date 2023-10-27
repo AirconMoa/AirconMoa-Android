@@ -15,8 +15,6 @@ import com.example.airconmoa_android.databinding.ActivityNewMemberBinding
 
 class NewMemberActivity : BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMemberBinding::inflate){
 
-    lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,6 +24,7 @@ class NewMemberActivity : BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMe
 
             val intent = Intent(this, CreateUserActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
 
         binding.alreadyJoinBtn.setOnClickListener {
@@ -34,7 +33,10 @@ class NewMemberActivity : BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMe
 
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
+
+        setFullScreen()
     }
 
     override fun onResume() {

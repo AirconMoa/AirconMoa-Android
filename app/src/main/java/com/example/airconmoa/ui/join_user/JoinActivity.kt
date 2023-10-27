@@ -22,6 +22,7 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
 
             val intent = Intent(this, NewMemberActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
 
         binding.joinCompanyBtn.setOnClickListener {
@@ -30,10 +31,13 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
 
             val intent = Intent(this, CompanyJoinActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
 
         val keyHash = Utility.getKeyHash(this)
         Log.d("Hash", keyHash)
+
+        setFullScreen()
     }
 
     override fun onResume() {

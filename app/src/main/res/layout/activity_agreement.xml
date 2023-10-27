@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="44dp"
         android:paddingBottom="12dp"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +54,7 @@
         android:orientation="horizontal" />
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="11dp"
@@ -77,12 +78,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="1/7"
-            android:textColor="@color/airconmoa_progress"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="right"
-            android:layout_gravity="center"
-            android:textSize="18sp"/>
+            android:text="1/7"
+            android:textColor="@color/airconmoa_progress"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -90,14 +91,13 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
         android:layout_marginHorizontal="20dp"
         android:text="약관에 동의하시고\n에아컨 견적 요청하세요!"
         android:textColor="@color/airconmoa_gray"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <Button
         android:id="@+id/agreement_all_agree_btn"

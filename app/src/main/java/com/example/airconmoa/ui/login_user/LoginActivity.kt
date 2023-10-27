@@ -1,12 +1,15 @@
 package com.example.airconmoa.ui.login_user
 
 import android.Manifest
+import android.R
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.compose.ui.graphics.Color
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -28,6 +31,9 @@ import com.navercorp.nid.profile.data.NidProfileResponse
 
 
 class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding::inflate){
+
+    private var userEmail : String? = null
+    private var itemNum = 0
 
     private var social = ""
     private lateinit var neededPermissionList : ArrayList<String>
@@ -71,6 +77,68 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 //            showLoading()
 //            naverLogin()
 //        }
+
+        val spinner = binding.loginEmailAddressSpinner
+
+        // Spinner에 사용될 항목들
+        val items = listOf("선택", "naver.com", "hanmail.net", "gmail.com", "daum.net", "yahoo.com")
+
+        // 어댑터 생성 및 설정
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, items)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
+        // 스피너 선택 이벤트 리스너 설정
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                itemNum = position
+                userEmail = if(position == 0) {
+                    binding.loginEmailEt.text.toString() + ""
+                } else if (position == 1) {
+                    binding.loginEmailEt.text.toString() + "@naver.com"
+                } else if (position == 2) {
+                    binding.loginEmailEt.text.toString() + "@hanmail.net"
+                } else if (position == 3) {
+                    binding.loginEmailEt.text.toString() + "@gmail.com"
+                } else if (position == 4) {
+                    binding.loginEmailEt.text.toString() + "@daum.net"
+                } else {
+                    binding.loginEmailEt.text.toString() + "@yahoo.com"
+                }
+
+                if(position != 0) {
+                    binding.loginAtTv.setTextColor(ContextCompat.getColor(this@LoginActivity, com.example.airconmoa_android.R.color.airconmoa_gray))
+                }
+                else {
+                    binding.loginAtTv.setTextColor(ContextCompat.getColor(this@LoginActivity, com.example.airconmoa_android.R.color.airconmoa_gray3))
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
+        binding.loginNextBtn.setOnClickListener {
+            Log.d("userEmail", userEmail.toString())
+            val password = binding.loginSelectedEt.text.toString()
+            if(userEmail == null || userEmail == "" || binding.loginEmailEt.text.toString() == "" || itemNum == 0) {
+                binding.loginEmailErrorTv.visibility = View.VISIBLE
+                showCustomToast("이메일을 올바르게 입력해주세요")
+            }
+            else if(password.length < 6 || password.length > 12) {
+                binding.loginPasswordErrorTv.visibility = View.VISIBLE
+                showCustomToast("비밀번호는 6~12자 이내로 입력해주세요")
+            }
+            else {
+                val intent = Intent(this, MainActivity::class.java)
+                binding.loginEmailErrorTv.visibility = View.INVISIBLE
+                binding.loginPasswordErrorTv.visibility = View.INVISIBLE
+                startActivity(intent)
+                overridePendingTransition(com.example.airconmoa_android.R.anim.slide_right_enter, com.example.airconmoa_android.R.anim.slide_right_exit)
+            }
+        }
+
     }
     private fun onCheckPermissions(){
         neededPermissionList = arrayListOf<String>()
@@ -226,13 +294,4 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 //            startActivity(intent)
 //        }
 //    }
-
-    // 풀스크린 적용
-    private fun setFullScreen(){
-        window.apply {
-            statusBarColor = android.graphics.Color.TRANSPARENT
-            decorView.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        }
-    }
 }

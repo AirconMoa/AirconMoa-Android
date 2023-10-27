@@ -28,6 +28,8 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
     private lateinit var editText5: EditText
     private lateinit var editText6: EditText
 
+    private lateinit var editTextList: List<EditText>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,10 +39,12 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
         editText4 = binding.emailAuthenticationEt4
         editText5 = binding.emailAuthenticationEt5
         editText6 = binding.emailAuthenticationEt6
+        editTextList = listOf(editText1, editText2, editText3, editText4, editText5, editText6)
         setEditTextFocusChangeListener()
 
         binding.emailAuthenticationBackIv.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
 
         binding.emailAuthenticationFinishIv.setOnClickListener {
@@ -68,6 +72,8 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
                 val textView = binding.emailAuthenticationAuthUncompleteTv
                 textView.text = "뒤로 가기 버튼을 눌러 재인증을 시도하세요."
                 textView.visibility = View.VISIBLE
+                binding.emailAuthenticationOkBtn.visibility = View.VISIBLE
+                binding.emailAuthenticationOkCompleteBtn.visibility = View.INVISIBLE
             }
         }
 
@@ -75,117 +81,47 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
         countDownTimer.start()
 
         binding.emailAuthenticationOkBtn.setOnClickListener {
-            Toast.makeText(this, "인증번호를 올바로 입력해주세요.", Toast.LENGTH_SHORT).show()
+            showCustomToast("인증번호를 올바르게 입력해주세요.")
         }
 
+        // 인증 API를 만들면 수정
         binding.emailAuthenticationNextBtn.setOnClickListener {
+            //Toast.makeText(this, "인증 확인 버튼을 눌러주세요.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, EnterPasswordActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
+
+        binding.emailAuthenticationSelectNextBtn.setOnClickListener {
+            val intent = Intent(this, EnterPasswordActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
+        }
+
+        setFullScreen()
     }
 
     private fun setEditTextFocusChangeListener() {
-        editText1.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        for (i in editTextList.indices) {
+            val currentEditText = editTextList[i]
+            val nextEditText = if (i < editTextList.size - 1) editTextList[i + 1] else null
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s?.length == 1) {
-                    editText1.setBackgroundResource(R.drawable.edit_text_custom_selected)
-                    editText2.requestFocus()
+            currentEditText.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if (s?.length == 1) {
+                        currentEditText.setBackgroundResource(R.drawable.edit_text_custom_selected)
+                        nextEditText?.requestFocus()
+                    } else {
+                        currentEditText.setBackgroundResource(R.drawable.edit_text_custom_gray)
+                    }
+                    checkComplete()
                 }
-                else {
-                    editText1.setBackgroundResource(R.drawable.edit_text_custom_gray)
-                }
-                checkComplete()
-            }
 
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        editText2.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s?.length == 1) {
-                    editText2.setBackgroundResource(R.drawable.edit_text_custom_selected)
-                    editText3.requestFocus()
-                }
-                else {
-                    editText2.setBackgroundResource(R.drawable.edit_text_custom_gray)
-                }
-                checkComplete()
-            }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        editText3.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s?.length == 1) {
-                    editText3.setBackgroundResource(R.drawable.edit_text_custom_selected)
-                    editText4.requestFocus()
-                }
-                else {
-                    editText3.setBackgroundResource(R.drawable.edit_text_custom_gray)
-                }
-                checkComplete()
-            }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        editText4.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s?.length == 1) {
-                    editText4.setBackgroundResource(R.drawable.edit_text_custom_selected)
-                    editText5.requestFocus()
-                }
-                else {
-                    editText4.setBackgroundResource(R.drawable.edit_text_custom_gray)
-                }
-                checkComplete()
-            }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        editText5.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s?.length == 1) {
-                    editText5.setBackgroundResource(R.drawable.edit_text_custom_selected)
-                    editText6.requestFocus()
-                }
-                else {
-                    editText5.setBackgroundResource(R.drawable.edit_text_custom_gray)
-                }
-                checkComplete()
-            }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        editText6.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s?.length == 1) {
-                    editText6.setBackgroundResource(R.drawable.edit_text_custom_selected)
-                }
-                else {
-                    editText6.setBackgroundResource(R.drawable.edit_text_custom_gray)
-                }
-                checkComplete()
-            }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
+                override fun afterTextChanged(s: Editable?) {}
+            })
+        }
     }
 
     private fun checkComplete() {
