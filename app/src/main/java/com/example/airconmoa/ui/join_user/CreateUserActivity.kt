@@ -3,12 +3,16 @@ package com.example.airconmoa.ui.join_user
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityCreateUserBinding
 import com.example.airconmoa.ui.main_user.MainActivity
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityCreateUserBinding
+import com.example.airconmoa.util.FirebaseAuthUtils
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
@@ -16,8 +20,13 @@ import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.OAuthLoginCallback
 
 class CreateUserActivity : BaseActivityVB<ActivityCreateUserBinding>(ActivityCreateUserBinding::inflate) {
+
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        auth = Firebase.auth
 
         /** Naver Login Module Initialize */
         val naverClientId = getString(R.string.social_login_info_naver_client_id)
@@ -73,61 +82,38 @@ class CreateUserActivity : BaseActivityVB<ActivityCreateUserBinding>(ActivityCre
                     }
                 }
             }
-//            else if (token != null) {
-//                Log.d("accessToken", token.accessToken)
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    val response = kakaoCallback(token.accessToken)
-//                    Log.d("IntroActivity", response.toString())
-//                    if (response.isSuccess) {
-//                        Log.d("email", response.result!!.email)
-//                        if(FirebaseAuthUtils.getUid() == null) {
-//                            auth.createUserWithEmailAndPassword(response.result!!.email, "abc123")
-//                        }
-//                        FirebaseMessaging.getInstance().token.addOnCompleteListener(
-//                            OnCompleteListener { task ->
-//                                if (!task.isSuccessful) {
-//                                    Log.w("MyToken", "Fetching FCM registration token failed", task.exception)
-//                                    return@OnCompleteListener
-//                                }
-//                                val uid = FirebaseAuthUtils.getUid()
-//                                val deviceToken = task.result
-//                                val userInfo = UserInfo(uid, response.result?.userId,
-//                                    deviceToken, response.result?.accessToken, response.result?.refreshToken)
-//                                Log.d("userInfo", userInfo.toString())
-//                                FirebaseRef.userInfo.child(uid).setValue(userInfo)
-//
-//                                CoroutineScope(Dispatchers.IO).launch {
-//                                    val postKakaoUserReq = PostKakaoUserReq(uid, deviceToken)
-//                                    val saveRes = saveUidAndToken(response.result?.accessToken!!, postKakaoUserReq)
-//                                    Log.d("UidToken", saveRes.toString())
-//                                    if (saveRes.isSuccess) {
-//                                        Log.d("UidToken", "UID와 디바이스 토큰 저장 완료")
-//                                    } else {
-//                                        Log.d("UidToken", "UID와 디바이스 토큰 저장 실패")
-//                                    }
-//                                }
-//                                val intent = Intent(this@CreateUserActivity, MainActivity::class.java)
-//                                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                finish()
-//                            })
-//                        Log.d("IntroActivity", "로그인 완료")
-//                    } else {
-//                        // 로그인 실패 처리
-//                        Log.d("IntroActivity", "로그인 실패")
-//                        val message = response.message
-//                        Log.d("IntroActivity", message)
-//                        withContext(Dispatchers.Main) {
-//                            Toast.makeText(this@CreateUserActivity, message, Toast.LENGTH_SHORT).show()
-//                        }
-//                    }
-//                }
-//            }
+            else if (token != null) {
+                Log.d("accessToken", token.accessToken)
+
+                if (FirebaseAuthUtils.getUid() == null) {
+                    //auth.createUserWithEmailAndPassword(userEmail!!, "abc123")
+                }
+                FirebaseMessaging.getInstance().token.addOnCompleteListener(
+                    OnCompleteListener { task ->
+                        if (!task.isSuccessful) {
+                            Log.w("MyToken", "Fetching FCM registration token failed", task.exception)
+                            return@OnCompleteListener
+                        }
+                        val uid = FirebaseAuthUtils.getUid()
+                        val deviceToken = task.result
+                        // val userInfo = UserInfo(uid, response.result?.userId,
+                        // deviceToken, response.result?.accessToken, response.result?.refreshToken)
+                        // Log.d("userInfo", userInfo.toString())
+                        // FirebaseRef.userInfo.child(uid).setValue(userInfo)
+                        Log.d("deviceToken", deviceToken)
+                        val intent = Intent(this@CreateUserActivity, MainActivity::class.java)
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
+                        finish()
+                    })
+                Log.d("CreateUserActivity", "로그인 완료")
+            }
         }
 
         binding.createUserWithKakaoIv.setOnClickListener {
             if(UserApiClient.instance.isKakaoTalkLoginAvailable(this)){
                 UserApiClient.instance.loginWithKakaoTalk(this, callback = callback)
-            }else{
+            } else {
                 UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
             }
         }

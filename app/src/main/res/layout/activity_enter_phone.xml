@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.example.airconmoa.ui.join_user.EnterPhoneActivity">
 
     <LinearLayout
@@ -180,7 +181,8 @@
                     android:paddingBottom="15dp"
                     android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:maxLength="4"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -224,7 +226,8 @@
                     android:paddingBottom="15dp"
                     android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:maxLength="4"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

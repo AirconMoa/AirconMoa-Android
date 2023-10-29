@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.example.airconmoa_android.R
+import com.example.airconmoa.R
 
 
 abstract class BaseActivityVB<B : ViewBinding>(private val inflate: (LayoutInflater) -> B) :

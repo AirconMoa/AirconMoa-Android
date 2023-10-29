@@ -9,8 +9,8 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentUserEditMypageBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.FragmentUserEditMypageBinding
 
 
 class UserMypageEditFragment : BaseFragmentVB<FragmentUserEditMypageBinding>(FragmentUserEditMypageBinding::bind, R.layout.fragment_user_edit_mypage) {

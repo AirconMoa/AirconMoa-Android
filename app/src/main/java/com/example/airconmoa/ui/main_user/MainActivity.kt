@@ -1,16 +1,14 @@
 package com.example.airconmoa.ui.main_user
 
 import android.os.Bundle
-import android.os.Handler
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityMainBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : BaseActivityVB<ActivityMainBinding>(ActivityMainBinding::inflate) {

@@ -1,15 +1,12 @@
 package com.example.airconmoa.ui.join_user
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityEnterPasswordAgainBinding
-import com.example.airconmoa_android.databinding.ActivityEnterPasswordBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityEnterPasswordAgainBinding
 
 class EnterPasswordAgainActivity : BaseActivityVB<ActivityEnterPasswordAgainBinding>(
     ActivityEnterPasswordAgainBinding::inflate) {

@@ -3,11 +3,9 @@ package com.example.airconmoa.ui.join_user
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityAgreementBinding
-import com.example.airconmoa_android.databinding.ActivityCreateUserBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityAgreementBinding
 
 class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgreementBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {

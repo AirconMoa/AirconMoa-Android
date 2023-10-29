@@ -1,7 +1,6 @@
 package com.example.airconmoa.ui.join_user
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
@@ -9,11 +8,9 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityCreateUserBinding
-import com.example.airconmoa_android.databinding.ActivityEmailAuthenticationBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityEmailAuthenticationBinding
 
 class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBinding>(ActivityEmailAuthenticationBinding::inflate) {
 

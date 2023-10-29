@@ -1,14 +1,15 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.airconmoa_android"
+    namespace = "com.example.airconmoa"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.airconmoa_android"
+        applicationId = "com.example.airconmoa"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -106,4 +107,11 @@ dependencies {
 
     // 안드로이드 머티리얼 디자인 라이브러리
     implementation ("com.google.android.material:material:1.5.0")
+
+    // 파이어베이스 관련 설정
+    implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx")
 }

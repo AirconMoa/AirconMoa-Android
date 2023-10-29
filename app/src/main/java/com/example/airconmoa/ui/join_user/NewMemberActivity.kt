@@ -1,17 +1,12 @@
 package com.example.airconmoa.ui.join_user
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.ui.login_user.LoginActivity
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityJoinBinding
-import com.example.airconmoa_android.databinding.ActivityNewMemberBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityNewMemberBinding
 
 class NewMemberActivity : BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMemberBinding::inflate){
 

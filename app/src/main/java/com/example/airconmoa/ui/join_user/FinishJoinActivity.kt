@@ -1,14 +1,11 @@
 package com.example.airconmoa.ui.join_user
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.ui.main_user.MainActivity
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityEnterPhoneBinding
-import com.example.airconmoa_android.databinding.ActivityFinishJoinBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ActivityFinishJoinBinding
 
 class FinishJoinActivity : BaseActivityVB<ActivityFinishJoinBinding>(ActivityFinishJoinBinding::inflate) {
 

@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.ui.join_user.NewMemberActivity
 import com.example.airconmoa.ui.main_user.MainActivity
-import com.example.airconmoa_android.databinding.ActivitySelectBinding
+import com.example.airconmoa.databinding.ActivitySelectBinding
 
 class SelectActivity : BaseActivityVB<ActivitySelectBinding>(ActivitySelectBinding::inflate){
     override fun onCreate(savedInstanceState: Bundle?) {
