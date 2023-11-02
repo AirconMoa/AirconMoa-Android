@@ -32,7 +32,9 @@ class RequestForEstimateItemDataAdapter(
                 nextBtn.setOnClickListener {
                     findNavController(fragment2).navigate(R.id.action_estimateFragment2_to_estimatelistFragment)
                 }
-
+                layout.setOnClickListener {
+                    findNavController(fragment2).navigate(R.id.action_estimateFragment2_to_estimatelistFragment)
+                }
 
             }
         }

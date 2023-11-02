@@ -29,8 +29,9 @@ class EstimateListItemDataAdapter(
                 nextBtn.setOnClickListener {
                     findNavController(fragment).navigate(R.id.action_estimatelistFragment_to_destimatedetailsFragment)
                 }
-
-
+                layout.setOnClickListener {
+                    findNavController(fragment).navigate(R.id.action_estimatelistFragment_to_destimatedetailsFragment)
+                }
             }
         }
     }

@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_estimatedetailsFragment_to_detailedcompanyreviewFragment"
             app:destination="@id/detailedcompanyreviewFragment"/>
+        <action
+            android:id="@+id/action_estimatedetailsFragment_to_estimatelistFragment"
+            app:destination="@id/estimatelistFragment"/>
     </fragment>
     <fragment
         android:id="@+id/detailedcompanyreviewFragment"
