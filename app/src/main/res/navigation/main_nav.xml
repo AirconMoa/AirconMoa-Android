@@ -44,4 +44,37 @@
         android:label="fragment_mypage"
         tools:layout="@layout/fragment_user_mypage"/>
 
+    <fragment
+        android:id="@+id/estimateFragment2"
+        android:name="com.example.airconmoa.ui.UserEstimateFragment2"
+        android:label="fragment_estimate2"
+        tools:layout="@layout/fragment_user_estimate2">
+        <action
+            android:id="@+id/action_estimateFragment2_to_estimatelistFragment"
+            app:destination="@id/estimatelistFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/estimatelistFragment"
+        android:name="com.example.airconmoa.ui.EstimateListFragment"
+        android:label="fragment_estimate_list"
+        tools:layout="@layout/fragment_estimate_list">
+        <action
+            android:id="@+id/action_estimatelistFragment_to_destimatedetailsFragment"
+            app:destination="@id/estimatedetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimatedetailsFragment"
+        android:name="com.example.airconmoa.ui.EstimateDetailsFragment"
+        android:label="fragment_estimate_details"
+        tools:layout="@layout/fragment_estimate_details">
+        <action
+            android:id="@+id/action_estimatedetailsFragment_to_detailedcompanyreviewFragment"
+            app:destination="@id/detailedcompanyreviewFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailedcompanyreviewFragment"
+        android:name="com.example.airconmoa.ui.DetailedCompanyReviewFragment"
+        android:label="fragment_detailed_company_review"
+        tools:layout="@layout/fragment_detailed_company_review"/>
 </navigation>
