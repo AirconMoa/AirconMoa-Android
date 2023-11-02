@@ -42,7 +42,11 @@
         android:id="@+id/mypageeditFragment"
         android:name="com.example.airconmoa.ui.mypage_user.UserMypageEditFragment"
         android:label="fragment_mypage"
-        tools:layout="@layout/fragment_user_mypage"/>
+        tools:layout="@layout/fragment_user_mypage">
+        <action
+            android:id="@+id/action_mypageeditFragment_to_mypageFragment"
+            app:destination="@id/mypageFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/estimateFragment2"
@@ -61,6 +65,9 @@
         <action
             android:id="@+id/action_estimatelistFragment_to_destimatedetailsFragment"
             app:destination="@id/estimatedetailsFragment"/>
+        <action
+            android:id="@+id/action_estimatelistFragment_to_estimateFragment2"
+            app:destination="@id/estimateFragment2"/>
     </fragment>
 
     <fragment

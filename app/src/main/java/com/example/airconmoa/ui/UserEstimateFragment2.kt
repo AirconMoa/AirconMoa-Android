@@ -9,10 +9,10 @@ import com.example.airconmoa_android.databinding.FragmentUserEstimate2Binding
 
 class UserEstimateFragment2 : BaseFragmentVB<FragmentUserEstimate2Binding>(FragmentUserEstimate2Binding::bind, R.layout.fragment_user_estimate2) {
 
+    private var btnClick=false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvRequestForEstimate
         val dataList:ArrayList<RequestForEstimateItemData> = arrayListOf()
         dataList.apply{
             add(
@@ -35,9 +35,18 @@ class UserEstimateFragment2 : BaseFragmentVB<FragmentUserEstimate2Binding>(Fragm
         with(binding) {
             rvRequestForEstimate.adapter = RequestForEstimateItemDataAdapter(dataList,this@UserEstimateFragment2)
             rvRequestForEstimate.layoutManager = LinearLayoutManager(context)
+
             fstBtn.setOnClickListener {
-                secBtn.visibility=View.VISIBLE
-                trdBtn.visibility=View.VISIBLE
+                if(!btnClick) {
+                    secBtn.visibility = View.VISIBLE
+                    trdBtn.visibility = View.VISIBLE
+                    btnClick=true
+                }
+                else  {
+                    secBtn.visibility = View.GONE
+                    trdBtn.visibility = View.GONE
+                    btnClick=false
+                }
             }
 
         }
