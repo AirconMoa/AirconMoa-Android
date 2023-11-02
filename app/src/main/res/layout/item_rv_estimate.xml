@@ -36,11 +36,11 @@
             android:fontFamily="@font/semi_bold"
             android:textSize="20dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="2dp"
             app:layout_constraintStart_toEndOf="@+id/estimateNumberTv"
             app:layout_constraintTop_toTopOf="parent"
             />
         <ImageView
+            android:id="@+id/nextBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/main_color_next"
@@ -53,37 +53,64 @@
             android:id="@+id/addressTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="경기도 안양시 · "
+            android:text="경기도 안양시"
             android:textSize="14dp"
             app:layout_constraintTop_toBottomOf="@+id/estimateNumberTv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/brandTv"
-            app:layout_constraintEnd_toStartOf="@id/homeTv"
             android:layout_marginVertical="7dp"/>
         <TextView
-            android:id="@+id/homeTv"
+            android:id="@+id/dot1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" · "
+            app:layout_constraintStart_toEndOf="@id/addressTv"
+            app:layout_constraintTop_toBottomOf="@id/estimateNumberTv"
+            android:layout_marginTop="7dp"
+            />
+        <TextView
+            android:id="@+id/housingTypeTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="아파트"
             android:textSize="14dp"
             app:layout_constraintTop_toBottomOf="@+id/estimateNumber"
-            app:layout_constraintStart_toEndOf="@id/addressTv"
-            android:layout_marginVertical="8dp"/>
+            app:layout_constraintStart_toEndOf="@+id/dot1"
+            android:layout_marginVertical="7dp"/>
         <TextView
             android:id="@+id/brandTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LG ·"
+            android:text="LG"
             app:layout_constraintTop_toBottomOf="@+id/addressTv"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="7dp"/>
         <TextView
+            android:id="@+id/dot2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" 1대"
-            app:layout_constraintTop_toBottomOf="@+id/homeTv"
+            android:text=" · "
             app:layout_constraintStart_toEndOf="@id/brandTv"
-            android:layout_marginTop="6dp"/>
+            app:layout_constraintTop_toBottomOf="@id/addressTv"
+            android:layout_marginTop="7dp"
+            />
+
+        <TextView
+            android:id="@+id/airconNumTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 1"
+            app:layout_constraintTop_toBottomOf="@+id/housingTypeTv"
+            app:layout_constraintStart_toEndOf="@id/dot2"
+            android:layout_marginTop="7dp"/>
+        <TextView
+            android:id="@+id/airconTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대"
+            app:layout_constraintTop_toBottomOf="@+id/housingTypeTv"
+            app:layout_constraintStart_toEndOf="@id/airconNumTv"
+            android:layout_marginTop="7dp"/>
         <TextView
             android:id="@+id/dateTv"
             android:layout_width="wrap_content"

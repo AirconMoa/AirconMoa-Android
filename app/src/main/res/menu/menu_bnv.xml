@@ -6,7 +6,7 @@
         android:title="홈" />
 
     <item
-        android:id="@+id/estimateFragment"
+        android:id="@+id/estimateFragment2"
         android:icon="@drawable/selector_estimate"
         android:title="내 견적" />
 
