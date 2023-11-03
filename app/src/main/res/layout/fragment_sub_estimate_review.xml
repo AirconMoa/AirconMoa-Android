@@ -34,7 +34,7 @@
             android:isIndicator="true"
             android:numStars="5"
             android:progressTint="#F7CE46"
-            android:rating="0"
+            android:rating="4.5"
             android:stepSize="1"
             tools:ignore="SpeakableTextPresentCheck"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,16 +53,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-
         <org.eazegraph.lib.charts.BarChart
             android:id="@+id/barChart"
             android:layout_width="108dp"
             android:layout_height="62dp"
+            app:egBarWidth="20dp"
+            app:egFixedBarWidth="false"
+            app:egLegendHeight="20dp"
+            app:egShowDecimal="false"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/veticalLine"
             app:layout_constraintEnd_toEndOf="parent"
             />
+        <!--
+            android:id="@+id/barChart"
+            android:layout_width="108dp"
+            android:layout_height="62dp"
+            app:egBarWidth="20dp"
+            app:egFixedBarWidth="false"
+            app:egLegendHeight="20dp"
+            app:egShowDecimal="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/veticalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            -->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -143,19 +159,19 @@
         android:id="@+id/scroll_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="30dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lateReviewNumTv"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="40dp"
         >
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_request_for_estimate"
+            android:id="@+id/rv_detail_review"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/item_rv_estimate"
+            tools:listitem="@layout/item_rv_detail_review"
+            android:paddingHorizontal="20dp"
 
             />
     </ScrollView>
