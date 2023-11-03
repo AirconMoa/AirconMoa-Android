@@ -86,5 +86,9 @@
         android:id="@+id/detailedcompanyreviewFragment"
         android:name="com.example.airconmoa.ui.DetailedCompanyReviewFragment"
         android:label="fragment_detailed_company_review"
-        tools:layout="@layout/fragment_detailed_company_review"/>
+        tools:layout="@layout/fragment_detailed_company_review">
+        <action
+            android:id="@+id/action_detailedcompanyreviewFragment_to_estimatedetailsFragment"
+            app:destination="@id/estimatedetailsFragment"/>
+    </fragment>
 </navigation>

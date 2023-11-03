@@ -71,7 +71,7 @@
             app:tabIndicatorColor="@color/airconmoa_main"
             app:tabIndicatorHeight="5dp">
 
-            <com.google.android.material.tabs.TabItem
+            <!--<com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="상세정보" />
@@ -79,34 +79,17 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="리뷰" />
+                android:text="리뷰" />-->
         </com.google.android.material.tabs.TabLayout>
 
-        <ScrollView
-            android:id="@+id/scrollView"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_detailed_company"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tab_detailed_company">
+            app:layout_constraintTop_toBottomOf="@+id/tab_detailed_company"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/scrollView">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/vp_detailed_company"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

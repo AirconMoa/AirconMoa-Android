@@ -99,4 +99,8 @@ dependencies {
 
     //카드뷰
     implementation("androidx.cardview:cardview:1.0.0")
+
+    //그래프
+    implementation("com.github.blackfizz:eazegraph:1.2.5l@aar")
+    implementation("com.nineoldandroids:library:2.4.0")
 }

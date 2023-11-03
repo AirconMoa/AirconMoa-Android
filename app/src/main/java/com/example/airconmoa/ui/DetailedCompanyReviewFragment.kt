@@ -2,6 +2,7 @@ package com.example.airconmoa.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.FragmentDetailedCompanyReviewBinding
@@ -20,6 +21,10 @@ class DetailedCompanyReviewFragment : BaseFragmentVB<FragmentDetailedCompanyRevi
                 tab,position->
             tab.text=tabTitle[position]
         }.attach()
+
+        binding.backBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_detailedcompanyreviewFragment_to_estimatedetailsFragment)
+        }
     }
 
 }
