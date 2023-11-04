@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/location_dialog"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="지역선택"
+                android:textColor="@color/airconmoa_gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:gravity="right">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/close_btn" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btn_geojesi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="거제시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_geochanggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="거창군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_goseonggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="고성군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gimhaesi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="김해시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_namhaegun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="남해군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_milyangsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="밀양시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_sacheonsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="사천시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_sancheonggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="산청군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_yangsansi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="양산시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_uilyeonggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="의령군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_jinjusi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="진주시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_changnyeonggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="창녕군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_changwonsi_masanhabpogu"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="창원시 마산합포구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_changwonsi_masanhoewongu"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="창원시 마산회원구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_changwonsi_seongsangu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="창원시 성산구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_changwonsi_uichanggu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="창원시 의창구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_euljigun"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="창원시 진해구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_tongyeongsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="통영시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_hadonggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="하동군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="100dp">
+
+            <Button
+                android:id="@+id/btn_hamangun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="함안군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_hamyanggun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="함양군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_habcheongun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="합천군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

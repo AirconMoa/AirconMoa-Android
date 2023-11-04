@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/location_dialog"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="지역선택"
+                android:textColor="@color/airconmoa_gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:gravity="right">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/close_btn" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btn_gapyeong_gun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="가평군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_goyangsi_deog_yang_gu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="고양시 덕양구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gurisi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="구리시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_goyangsi_ilsan_dong_gu"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="고양시 일산동구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_goyangsi_ilsan_seo_gu"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="고양시 일산서구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_gwacheonsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="과천시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gwangmyeongsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="광명시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gwangjusi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="광주시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gunposi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="군포시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_gimposi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="김포시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_nam_yangjusi"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="남양주시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_bucheonsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="부천시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_siheungsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="시흥시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_dongducheonsi"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="동두천시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_seongnamsi_bundang_gu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="성남시 분당구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_yeojusi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="여주시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_seongnamsi_sujeong_gu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="성남시 수정구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_seongnamsi_jung_wongu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="성남시 중원구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_suwonsi_yeongtong_gu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="수원시 영통구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_suwonsi_jangan_gu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="수원시 장안구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_suwonsi_paldalgu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="수원시 팔달구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_ansansi_dan_wongu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="안산시 단원구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_ansansi_sanglokgu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="안산시 상록구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_anseongsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="안성시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_yeoncheongun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="연천군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_anyangsi_dongangu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="안양시 동안구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_osansi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="오산시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_yangpyeong_gun"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="양평군"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_anyangsi_manangu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="안양시 만안구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_yangjusi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="양주시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_uiwangsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="의왕시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_yonginsi_giheunggu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="용인시 기흥구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_pyeongtaegsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="평택시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_pocheonsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="포천시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_yonginsi_sujigu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="용인시 수지구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_yonginsi_cheoingu"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="용인시 처인구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_uijeongbusi"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="의정부시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_icheonsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="이천시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_pajusi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="파주시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_hanamsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="하남시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="100dp">
+
+            <Button
+                android:id="@+id/btn_hwaseongsi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="화성시"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
