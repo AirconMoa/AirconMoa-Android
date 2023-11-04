@@ -77,6 +77,10 @@
         <activity
             android:name="com.example.airconmoa.ui.join_company.CompanyJoinActivity"
             android:exported="false" />
+        <!--companyMain-->
+        <activity
+            android:name="com.example.airconmoa.ui.main_company.MainCompanyActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

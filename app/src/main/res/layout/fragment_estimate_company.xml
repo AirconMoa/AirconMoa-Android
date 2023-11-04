@@ -1,13 +1,154 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.airconmoa.ui.estimate_company.EstimateCompanyFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.airconmoa.ui.estimate_user.UserEstimateFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/svg_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="43dp"
+        android:text="요청된 견적서를\n한눈에 모아!"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo" />
 
-</FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_bottom_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_layout_main"
+        android:elevation="20dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_main"
+        tools:layout_editor_absoluteY="325dp">
+
+        <!--<View
+            android:id="@+id/layout_bottom_home2"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="-6dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rectangle_white"
+            app:layout_constraintBottom_toTopOf="@id/tv_layout_bottom_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_bottom_home" />-->
+
+        <TextView
+            android:id="@+id/tv_layout_bottom_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="요청된 견적서"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/fstBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="날짜순"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/shape_btn_main"
+            android:drawableStart="@drawable/option_down"
+            android:paddingHorizontal="8dp"
+            android:drawablePadding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+
+            />
+        <Button
+            android:id="@+id/secBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:text="작성 완성 견적순"
+            android:textSize="15dp"
+            android:textColor="@color/airconmoa_gray3"
+            android:background="@drawable/shape_btn_stroke_gray3"
+            android:drawableStart="@drawable/option_up"
+            android:paddingHorizontal="8dp"
+            android:drawablePadding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fstBtn"
+            android:layout_marginTop="2.5dp"
+            android:visibility="gone"
+            android:layout_marginEnd="20dp"
+
+            />
+        <Button
+            android:id="@+id/trdBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:text="작성 미완료 견적순"
+            android:textSize="15dp"
+            android:textColor="@color/airconmoa_gray3"
+            android:background="@drawable/shape_btn_stroke_gray3"
+            android:drawableStart="@drawable/option_up"
+            android:drawablePadding="4dp"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secBtn"
+            android:layout_marginTop="2.5dp"
+            android:visibility="gone"
+            android:layout_marginEnd="20dp"
+            />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="17dp"
+            app:layout_constraintBottom_toTopOf="@id/scroll_rv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_layout_bottom_main" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                tools:listitem="@layout/item_rv_main" />
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
