@@ -25,6 +25,7 @@ class EstimateDetailsFragment : BaseFragmentVB<FragmentEstimateDetailsBinding>(F
             bookBtn.setOnClickListener {
                 val intent = Intent(requireContext(), BookCompleteActivity::class.java)
                 startActivity(intent)
+                while(findNavController().popBackStack());
             }
             companyNameTv.setOnClickListener {
                 findNavController().navigate(R.id.action_estimatedetailsFragment_to_detailedcompanyreviewFragment)

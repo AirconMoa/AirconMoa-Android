@@ -17,7 +17,7 @@
             android:layout_marginBottom="40dp"
             android:text="한눈에 모아!\n견적 요청하고 비교해보세요!\n"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
