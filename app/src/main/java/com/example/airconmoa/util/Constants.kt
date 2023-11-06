@@ -1,4 +1,4 @@
-package com.example.airconmoa.until
+package com.example.airconmoa.util
 
 object Constants {
 

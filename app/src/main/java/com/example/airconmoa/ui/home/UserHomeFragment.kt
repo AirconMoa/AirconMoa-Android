@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentUserHomeBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.FragmentUserHomeBinding
 
 class UserHomeFragment : BaseFragmentVB<FragmentUserHomeBinding>(FragmentUserHomeBinding::bind, R.layout.fragment_user_home) {
 
