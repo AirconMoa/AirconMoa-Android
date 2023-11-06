@@ -3,9 +3,9 @@ package com.example.airconmoa.ui
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentSubEstimateReviewBinding
+import com.example.airconmoa.databinding.FragmentSubEstimateReviewBinding
 import org.eazegraph.lib.charts.BarChart
 import org.eazegraph.lib.models.BarModel
 

@@ -3,9 +3,9 @@ package com.example.airconmoa.ui
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentDetailedCompanyReviewBinding
+import com.example.airconmoa.databinding.FragmentDetailedCompanyReviewBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailedCompanyReviewFragment : BaseFragmentVB<FragmentDetailedCompanyReviewBinding>(FragmentDetailedCompanyReviewBinding::bind, R.layout.fragment_detailed_company_review) {

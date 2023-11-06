@@ -1,14 +1,15 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.airconmoa_android"
+    namespace = "com.example.airconmoa"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.airconmoa_android"
+        applicationId = "com.example.airconmoa"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -39,6 +40,7 @@ android {
     buildFeatures {
         compose = true
         viewBinding=true
+        dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -89,6 +91,9 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 
+    // 카카오 소셜로그인
+    implementation("com.kakao.sdk:v2-user:2.10.0")
+
     // 네이버 소셜로그인
     implementation("com.navercorp.nid:oauth:5.7.0")
 
@@ -104,4 +109,15 @@ dependencies {
     //그래프
     implementation("com.github.blackfizz:eazegraph:1.2.5l@aar")
     implementation("com.nineoldandroids:library:2.4.0")
+
+    // 안드로이드 머티리얼 디자인 라이브러리
+    implementation ("com.google.android.material:material:1.5.0")
+
+    // 파이어베이스 관련 설정
+    implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx")
+
 }

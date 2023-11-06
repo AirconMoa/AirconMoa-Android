@@ -3,9 +3,10 @@ package com.example.airconmoa.ui
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentUserEstimate2Binding
+import com.example.airconmoa.databinding.FragmentUserEstimate2Binding
+
 
 class UserEstimateFragment2 : BaseFragmentVB<FragmentUserEstimate2Binding>(FragmentUserEstimate2Binding::bind, R.layout.fragment_user_estimate2) {
 

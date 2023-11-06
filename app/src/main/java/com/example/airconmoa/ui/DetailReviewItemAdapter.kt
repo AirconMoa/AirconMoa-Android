@@ -4,9 +4,7 @@ package com.example.airconmoa.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.airconmoa_android.databinding.ItemRvDetailReviewBinding
-
-
+import com.example.airconmoa.databinding.ItemRvDetailReviewBinding
 
 
 class DetailReviewItemAdapter(

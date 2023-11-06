@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ItemRvReceivedEstimateBinding
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ItemRvReceivedEstimateBinding
 
 
 class EstimateListItemDataAdapter(

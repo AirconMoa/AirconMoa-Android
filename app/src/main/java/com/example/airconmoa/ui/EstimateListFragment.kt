@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentEstimateListBinding
+import com.example.airconmoa.databinding.FragmentEstimateListBinding
 
 
 class EstimateListFragment : BaseFragmentVB<FragmentEstimateListBinding>(FragmentEstimateListBinding::bind, R.layout.fragment_estimate_list) {

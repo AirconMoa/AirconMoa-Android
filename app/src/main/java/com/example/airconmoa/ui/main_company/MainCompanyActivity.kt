@@ -5,9 +5,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.ActivityMainCompanyBinding
+import com.example.airconmoa.databinding.ActivityMainCompanyBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainCompanyActivity : BaseActivityVB<ActivityMainCompanyBinding>(ActivityMainCompanyBinding::inflate) {

@@ -4,7 +4,7 @@ package com.example.airconmoa.ui.estimate_company
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.airconmoa_android.databinding.ItemRvMainCompanyBinding
+import com.example.airconmoa.databinding.ItemRvMainCompanyBinding
 
 
 class EstimateItemDataAdapter(private val dataList: List<EstimateItemData>?) :

@@ -16,5 +16,5 @@
     <color name="airconmoa_skyBlue">#00D1FF</color>
     <color name="airconmoa_skyBlue_bright">#3300D1FF</color>
     <color name="airconmoa_red">#FF4F4F</color>
-
+    <color name="airconmoa_progress">#D9D9D9</color>
 </resources>

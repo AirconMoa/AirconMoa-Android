@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.FragmentEstimateDetailsBinding
+import com.example.airconmoa.databinding.FragmentEstimateDetailsBinding
+
 
 class EstimateDetailsFragment : BaseFragmentVB<FragmentEstimateDetailsBinding>(FragmentEstimateDetailsBinding::bind, R.layout.fragment_estimate_details) {
 
