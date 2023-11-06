@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "337545457637",
+    "project_id": "aircon-moa-b3c20",
+    "storage_bucket": "aircon-moa-b3c20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337545457637:android:ebd81aaf8a2d4bd7e9090c",
+        "android_client_info": {
+          "package_name": "com.example.airconmoa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkJStF4YtQqbKko635YI_CCzYXp3GRrmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

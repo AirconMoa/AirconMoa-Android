@@ -3,8 +3,7 @@ package com.example.airconmoa.config
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.airconmoa.until.Constants
-import com.example.airconmoa.until.Constants.BASE_URL
+import com.example.airconmoa.util.Constants.BASE_URL
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -70,9 +69,6 @@ class App : Application() {
             .build()
     }
 /*
-    private fun getkakaoKeyhash() {
-        Log.d(TAG, "keyhash : ${Utility.getKeyHash(this)}")
-    }
 
     private fun startSocialLogin() {
         KakaoSdk.init(this, kakaoAppKey)

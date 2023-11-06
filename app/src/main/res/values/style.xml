@@ -17,5 +17,7 @@
         <item name="android:fontFamily">@font/semi_bold</item>
     </style>
 
-
+    <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/airconmoa_skyBlue</item>
+    </style>
 </resources>

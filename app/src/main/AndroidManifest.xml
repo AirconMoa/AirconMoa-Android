@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Airconmoaandroid"
         tools:targetApi="31">
-
+        <activity
+            android:name="com.example.airconmoa.ui.BookCompleteActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.airconmoa.ui.join_user.FinishJoinActivity"
             android:exported="false" />
@@ -73,18 +76,30 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.Airconmoaandroid" />
 
-        <!--Join-->
+        <!--user_estimate-->
+        <activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Airconmoaandroid" />
+        <!-- Join -->
         <activity
             android:name="com.example.airconmoa.ui.join_company.CompanyJoinActivity"
             android:exported="false" />
-
-
-
-        <!--user_estimate-->
-        <activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
-            android:exported="false"/>
-
-
+        <!--companyMain-->
+        <activity
+            android:name="com.example.airconmoa.ui.main_company.MainCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao64eccc279aa42b2d6d95605fcb8b3387" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

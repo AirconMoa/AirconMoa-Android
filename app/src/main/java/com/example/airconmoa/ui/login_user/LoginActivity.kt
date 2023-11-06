@@ -1,13 +1,49 @@
 package com.example.airconmoa.ui.login_user
 
 import android.Manifest
+import android.R
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.databinding.ActivityLoginBinding
+import com.example.airconmoa.ui.login_user.model.LoginResponseData
+import com.example.airconmoa.ui.main_user.MainActivity
+import com.example.airconmoa.util.Constants
+import com.example.airconmoa.R.*
+import com.example.airconmoa.databinding.ActivityLoginBinding
+import com.example.airconmoa.util.FirebaseAuthUtils
+import com.example.airconmoa.util.FirebaseRef
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
+import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.model.AuthErrorCause
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.user.UserApiClient
+import com.navercorp.nid.NaverIdLoginSDK
+import com.navercorp.nid.oauth.OAuthLoginCallback
+import com.navercorp.nid.profile.NidProfileCallback
+import com.navercorp.nid.profile.data.NidProfileResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding::inflate){
+
+    private var userEmail : String? = null
+    private var itemNum = 0
+    private lateinit var auth: FirebaseAuth
 
     private var social = ""
     private lateinit var neededPermissionList : ArrayList<String>
@@ -37,22 +73,291 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setFullScreen()
-        //onCheckPermissions()
+        setFullScreen()
+        onCheckPermissions()
 
-       /* binding.btnKakaoLogin.setOnClickListener {
-            social = "KAKAO"
-            showLoading()
-            kakaoLogin()
+        auth = Firebase.auth
+
+        /** Naver Login Module Initialize */
+        val naverClientId = getString(com.example.airconmoa.R.string.social_login_info_naver_client_id)
+        val naverClientSecret = getString(com.example.airconmoa.R.string.social_login_info_naver_client_secret)
+        NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
+//       binding.btnKakaoLogin.setOnClickListener {
+//            social = "KAKAO"
+//            showLoading()
+//            kakaoLogin()
+//        }
+//
+//        binding.btnNaverLogin.setOnClickListener {
+//            social = "NAVER"
+//            showLoading()
+//            naverLogin()
+//        }
+
+        val spinner = binding.loginEmailAddressSpinner
+
+        // Spinner에 사용될 항목들
+        val items = listOf("선택", "naver.com", "hanmail.net", "gmail.com", "daum.net", "yahoo.com")
+
+        // 어댑터 생성 및 설정
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, items)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
+        // 스피너 선택 이벤트 리스너 설정
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                itemNum = position
+                userEmail = if (position == 0) {
+                    binding.loginEmailEt.text.toString() + ""
+                } else if (position == 1) {
+                    binding.loginEmailEt.text.toString() + "@naver.com"
+                } else if (position == 2) {
+                    binding.loginEmailEt.text.toString() + "@hanmail.net"
+                } else if (position == 3) {
+                    binding.loginEmailEt.text.toString() + "@gmail.com"
+                } else if (position == 4) {
+                    binding.loginEmailEt.text.toString() + "@daum.net"
+                } else {
+                    binding.loginEmailEt.text.toString() + "@yahoo.com"
+                }
+
+                if (position != 0) {
+                    binding.loginAtTv.setTextColor(
+                        ContextCompat.getColor(
+                            this@LoginActivity,
+                            color.airconmoa_gray
+                        )
+                    )
+                } else {
+                    binding.loginAtTv.setTextColor(
+                        ContextCompat.getColor(
+                            this@LoginActivity,
+                            color.airconmoa_gray3
+                        )
+                    )
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
         }
 
-        binding.btnNaverLogin.setOnClickListener {
-            social = "NAVER"
-            showLoading()
-            naverLogin()
-        }*/
+        binding.loginNextBtn.setOnClickListener {
+            Log.d("userEmail", userEmail.toString())
+            val password = binding.loginSelectedEt.text.toString()
+            if (userEmail == null || userEmail == "" || binding.loginEmailEt.text.toString() == "" || itemNum == 0) {
+                binding.loginEmailErrorTv.visibility = View.VISIBLE
+                showCustomToast("이메일을 올바르게 입력해주세요")
+            } else if (password.length < 6 || password.length > 12) {
+                binding.loginPasswordErrorTv.visibility = View.VISIBLE
+                showCustomToast("비밀번호는 6~12자 이내로 입력해주세요")
+            } else {
+                auth.signInWithEmailAndPassword(userEmail.toString(), password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            FirebaseMessaging.getInstance().token.addOnCompleteListener(
+                                OnCompleteListener { task ->
+                                    if (!task.isSuccessful) {
+                                        Log.w(
+                                            "MyToken",
+                                            "Fetching FCM registration token failed",
+                                            task.exception
+                                        )
+                                        return@OnCompleteListener
+                                    }
+                                    val deviceToken = task.result
+                                    Log.d("deviceToken", deviceToken)
+                                    // val userInfo = UserInfo(uid, deviceToken)
+                                    // Log.d("userInfo", userInfo.toString())
+
+                                    // FirebaseRef.userInfo.child(uid).setValue(userInfo)
+                                    Log.d("LoginActivity", "로그인 완료")
+                                    binding.loginEmailErrorTv.visibility = View.INVISIBLE
+                                    binding.loginPasswordErrorTv.visibility = View.INVISIBLE
+                                    val intent =
+                                        Intent(this@LoginActivity, MainActivity::class.java)
+                                    startActivity(intent)
+                                    overridePendingTransition(
+                                        anim.slide_right_enter,
+                                        anim.slide_right_exit
+                                    )
+                                })
+                        } else {
+                            Log.d("LoginActivity", "로그인 실패")
+                            showCustomToast("비밀번호가 일치하지 않습니다")
+                        }
+                    }
+
+            }
+        }
+
+        val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
+            if (error != null) {
+                when {
+                    error.toString() == AuthErrorCause.AccessDenied.toString() -> {
+                        showCustomToast("접근이 거부 됨(동의 취소)")
+                    }
+
+                    error.toString() == AuthErrorCause.InvalidClient.toString() -> {
+                        showCustomToast("유효하지 않은 앱")
+                    }
+
+                    error.toString() == AuthErrorCause.InvalidGrant.toString() -> {
+                        showCustomToast("인증 수단이 유효하지 않아 인증할 수 없는 상태")
+                    }
+
+                    error.toString() == AuthErrorCause.InvalidRequest.toString() -> {
+                        showCustomToast("요청 파라미터 오류")
+                    }
+
+                    error.toString() == AuthErrorCause.InvalidScope.toString() -> {
+                        showCustomToast("유효하지 않은 scope ID")
+                    }
+
+                    error.toString() == AuthErrorCause.Misconfigured.toString() -> {
+                        showCustomToast("설정이 올바르지 않음(android key hash)")
+                    }
+
+                    error.toString() == AuthErrorCause.ServerError.toString() -> {
+                        showCustomToast("서버 내부 에러")
+                    }
+
+                    error.toString() == AuthErrorCause.Unauthorized.toString() -> {
+                        showCustomToast("앱이 요청 권한이 없음")
+                    }
+
+                    else -> { // Unknown
+                        showCustomToast("기타 에러")
+                    }
+                }
+            } else if (token != null) {
+                Log.d("accessToken", token.accessToken)
+
+                if (FirebaseAuthUtils.getUid() == null) {
+                    // auth.createUserWithEmailAndPassword(userEmail!!, "abc123")
+                }
+                FirebaseMessaging.getInstance().token.addOnCompleteListener(
+                    OnCompleteListener { task ->
+                        if (!task.isSuccessful) {
+                            Log.w(
+                                "MyToken",
+                                "Fetching FCM registration token failed",
+                                task.exception
+                            )
+                            return@OnCompleteListener
+                        }
+                        val uid = FirebaseAuthUtils.getUid()
+                        val deviceToken = task.result
+                        // val userInfo = UserInfo(uid, response.result?.userId,
+                        // deviceToken, response.result?.accessToken, response.result?.refreshToken)
+                        // Log.d("userInfo", userInfo.toString())
+                        // FirebaseRef.userInfo.child(uid).setValue(userInfo)
+                        Log.d("deviceToken", deviceToken)
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        overridePendingTransition(anim.slide_right_enter, anim.slide_right_exit)
+                        finish()
+                    })
+                Log.d("Loginctivity", "로그인 완료")
+            }
+        }
+
+        binding.loginWithKakaoIv.setOnClickListener {
+            if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) { // 카카오톡 설치 확인
+                UserApiClient.instance.loginWithKakaoTalk(this, callback = callback) // 카카오톡 로그인
+            } else {
+                UserApiClient.instance.loginWithKakaoAccount(
+                    this,
+                    callback = callback
+                ) // 카카오 이메일 로그인
+            }
+        }
+
+        val oauthLoginCallback = object : OAuthLoginCallback {
+            override fun onSuccess() {
+                // 네이버 로그인 인증이 성공했을 때 수행할 코드 추가
+                val token = NaverIdLoginSDK.getAccessToken().toString()
+                Log.d("naverToken", token)
+//                if(token != null) {
+//                    CoroutineScope(Dispatchers.IO).launch {
+//                        val response = naverCallback(token)
+//                        Log.d("IntroActivity", response.toString())
+//                        if (response.isSuccess) {
+//                            Log.d("email", response.result!!.email)
+//                            Log.d("uid", FirebaseAuthUtils.getUid())
+//                            if(FirebaseAuthUtils.getUid() == null) {
+//                                auth.createUserWithEmailAndPassword(response.result!!.email, "abc123")
+//                            }
+//                            FirebaseMessaging.getInstance().token.addOnCompleteListener(
+//                                OnCompleteListener { task ->
+//                                    if (!task.isSuccessful) {
+//                                        Log.w("MyToken", "Fetching FCM registration token failed", task.exception)
+//                                        return@OnCompleteListener
+//                                    }
+//                                    val uid = FirebaseAuthUtils.getUid()
+//                                    val deviceToken = task.result
+//                                    val userInfo = UserInfo(uid, response.result?.userId,
+//                                        deviceToken, response.result?.accessToken, response.result?.refreshToken)
+//                                    Log.d("userInfo", userInfo.toString())
+//                                    FirebaseRef.userInfo.child(uid).setValue(userInfo)
+//
+//                                    CoroutineScope(Dispatchers.IO).launch {
+//                                        val postNaverUserReq = PostNaverUserReq(uid, deviceToken)
+//                                        val saveRes = saveNaverUidAndToken(response.result?.accessToken!!, postNaverUserReq)
+//                                        Log.d("UidToken", saveRes.toString())
+//                                        if (saveRes.isSuccess) {
+//                                            Log.d("UidToken", "UID와 디바이스 토큰 저장 완료")
+//                                        } else {
+//                                            Log.d("UidToken", "UID와 디바이스 토큰 저장 실패")
+//                                        }
+//                                    }
+//                                    val intent = Intent(this@CreateUserActivity, MainActivity::class.java)
+//                                    startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    finish()
+//                                })
+//                            Log.d("IntroActivity", "로그인 완료")
+//                        } else {
+//                            // 로그인 실패 처리
+//                            Log.d("IntroActivity", "로그인 실패")
+//                            val message = response.message
+//                            Log.d("IntroActivity", message)
+//                            withContext(Dispatchers.Main) {
+//                                Toast.makeText(this@CreateUserActivity, message, Toast.LENGTH_SHORT).show()
+//                            }
+//                        }
+//                    }
+//                }
+//
+//                else {
+//                    Toast.makeText(this@CreateUserActivity, "접근이 거부 됨", Toast.LENGTH_SHORT).show()
+//                }
+            }
+            override fun onFailure(httpStatus: Int, message: String) {
+                val errorCode = NaverIdLoginSDK.getLastErrorCode().code
+                Log.d("naverToken", errorCode)
+                val errorDescription = NaverIdLoginSDK.getLastErrorDescription()
+                Log.d("naverToken", errorDescription.toString())
+            }
+
+            override fun onError(errorCode: Int, message: String) {
+                onFailure(errorCode, message)
+            }
+        }
+
+        binding.loginWithNaverOAuth.setOAuthLogin(oauthLoginCallback = oauthLoginCallback)
+
+        binding.loginWithNaverIv.setOnClickListener {
+            binding.loginWithNaverOAuth.performClick()
+        }
     }
-/*
+
     private fun onCheckPermissions(){
         neededPermissionList = arrayListOf<String>()
 
@@ -61,162 +366,41 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
         }
 
         if(neededPermissionList.isNotEmpty()){
-            ActivityCompat.requestPermissions(this, neededPermissionList.toArray(arrayOf<String>()), RC_PERMISSION)
+            ActivityCompat.requestPermissions(this, neededPermissionList.toArray(arrayOf<String>()), Constants.RC_PERMISSION)
         }
     }
 
-
-    private fun naverLogin() {
-        val oauthLoginCallback = object : OAuthLoginCallback {
-            override fun onSuccess() {
-                // 로그인 성공시, 정보 불러오기
-                naverCallInfo()
-            }
-
-            override fun onFailure(httpStatus: Int, message: String) {
-                val errorCode = NaverIdLoginSDK.getLastErrorCode().code
-                val errorDescription = NaverIdLoginSDK.getLastErrorDescription()
-                dismissLoading()
-            }
-            override fun onError(errorCode: Int, message: String) {
-                onFailure(errorCode, message)
-                dismissLoading()
-            }
-        }
-        NaverIdLoginSDK.authenticate(this, oauthLoginCallback)
-    }
-
-    private fun kakaoLogin() {
-        // 카카오톡 설치 확인
-        if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
-            // 카카오톡 로그인
-            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
-                // 로그인 실패 부분
-                if (error != null) {
-                    Log.e(TAG, "앱 로그인 실패 $error")
-                    dismissLoading()
-                    // 사용자가 취소
-                    if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
-                        return@loginWithKakaoTalk
-                    }
-                    // 다른 오류
-                    else {
-                        UserApiClient.instance.loginWithKakaoAccount(
-                            this,
-                            callback = kakaoEmailCb
-                        ) // 카카오 이메일 로그인
-                    }
-                }
-                // 로그인 성공 부분
-                else{
-                    // 로그인 성공시 정보 불러오기
-                    kakaoCallInfo()
-                }
-            }
-        } else {
-            dismissLoading()
-            UserApiClient.instance.loginWithKakaoAccount(
-                this,
-                callback = kakaoEmailCb
-            ) // 카카오 이메일 로그인
-        }
-    }
-
-
-    // 카카오톡 이메일 로그인 콜백
-    private val kakaoEmailCb: (OAuthToken?, Throwable?) -> Unit = { token, error ->
-        if (error != null) {
-            Log.e(TAG, "이메일 로그인 실패 $error")
-            dismissLoading()
-        } else if (token != null) {
-            Log.d(TAG, "이메일 로그인 성공 ${token.accessToken}")
-            // 로그인 성공시 정보 불러오기
-            kakaoCallInfo()
-        }
-    }
-
-    // 네이버 유저정보 가져오기
-    private fun naverCallInfo(){
-        NidOAuthLogin().callProfileApi(profileCallback)
-    }
-
-
-    // 네이버 유저정보 콜백
-    private val profileCallback = object : NidProfileCallback<NidProfileResponse> {
-        override fun onSuccess(result: NidProfileResponse) {
-            val id = result.profile?.id
-
-            // 식별아이디로 통신
-            LoginService(this@LoginActivity).postLogin(LoginPostData(id.toString()))
-        }
-        override fun onFailure(httpStatus: Int, message: String) {
-            dismissLoading()
-            val errorCode = NaverIdLoginSDK.getLastErrorCode().code
-            val errorDescription = NaverIdLoginSDK.getLastErrorDescription()
-        }
-        override fun onError(errorCode: Int, message: String) {
-            dismissLoading()
-            onFailure(errorCode, message)
-        }
-    }
-
-    // 카카오 유저정보 불러오기
-    private fun kakaoCallInfo(){
-        // 로그인 유저정보 불러오기
-        UserApiClient.instance.me { user, error ->
-            if (error != null) {
-                Log.e(TAG, "사용자 정보 요청 실패 $error")
-                dismissLoading()
-            } else if (user != null) {
-                Log.d(TAG, "사용자 정보 요청 성공 : $user")
-                // 식별아이디로 통신
-                LoginService(this@LoginActivity).postLogin(LoginPostData(user.id.toString()))
-            }
-        }
-    }
     private fun storeTokens(result : LoginResponseData){
-        sharedPreferences.edit()
-            .putString(X_ACCESS_TOKEN, "Bearer " + result.accessToken)
-            .putString(X_REFRESH_TOKEN, result.refreshToken)
-            .putString(X_ACCESS_EXPIRE, result.accessTokenExpiredDate)
-            .putString(X_REFRESH_EXPIRE, result.refreshTokenExpiredDate)
-            .putString(X_LOGIN_TYPE, social)
-            .apply()
+//        sharedPreferences.edit()
+//            .putString(Constants.X_ACCESS_TOKEN, "Bearer " + result.accessToken)
+//            .putString(Constants.X_REFRESH_TOKEN, result.refreshToken)
+//            .putString(Constants.X_ACCESS_EXPIRE, result.accessTokenExpiredDate)
+//            .putString(Constants.X_REFRESH_EXPIRE, result.refreshTokenExpiredDate)
+//            .putString(Constants.X_LOGIN_TYPE, social)
+//            .apply()
     }
 
-    override fun onPostLoginSuccess(result : LoginResponseData) {
-        // 존재하는 유저. 로그인
-        dismissLoading()
+//    override fun onPostLoginSuccess(result : LoginResponseData) {
+//        // 존재하는 유저. 로그인
+//        // dismissLoading()
+//
+//        // accessToken/refreshToken 저장
+//        storeTokens(result)
+//
+//        // MainActivity로 이동
+//        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+//        startActivity(intent)
+//    }
 
-        // accessToken/refreshToken 저장
-        storeTokens(result)
-
-        // MainActivity로 이동
-        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-        startActivity(intent)
-    }
-
-    override fun onPostLoginFailure(message : String, uuid : String) {
-        Log.d(TAG,"$uuid")
-        dismissLoading()
-        if(uuid.isNotBlank()){
-            // 존재하지 않는 유저. 회원가입
-            val intent = Intent(this@LoginActivity, SignupActivity::class.java)
-                .putExtra("authType",social)
-                .putExtra("authId",uuid)
-            startActivity(intent)
-        }
-    }
-
-    // 풀스크린 적용
-    private fun setFullScreen(){
-        window.apply {
-            statusBarColor = Color.TRANSPARENT
-            decorView.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        }
-    }
-
-
- */
+//    override fun onPostLoginFailure(message : String, uuid : String) {
+//        Log.d("LoginActivity","$uuid")
+//        // dismissLoading()
+//        if(uuid.isNotBlank()){
+//            // 존재하지 않는 유저. 회원가입
+//            val intent = Intent(this@LoginActivity, SignupActivity::class.java)
+//                .putExtra("authType",social)
+//                .putExtra("authId",uuid)
+//            startActivity(intent)
+//        }
+//    }
 }

@@ -3,9 +3,11 @@ package com.example.airconmoa.config
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.example.airconmoa.R
 
 
 abstract class BaseActivityVB<B : ViewBinding>(private val inflate: (LayoutInflater) -> B) :
@@ -24,5 +26,18 @@ abstract class BaseActivityVB<B : ViewBinding>(private val inflate: (LayoutInfla
     fun showCustomToast(message: String) { // 입력 파라미터를 토스트 메시지로 출력한다.
         val toast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
         toast.show()
+    }
+
+    fun setFullScreen(){
+        window.apply {
+            statusBarColor = android.graphics.Color.TRANSPARENT
+            decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
     }
 }

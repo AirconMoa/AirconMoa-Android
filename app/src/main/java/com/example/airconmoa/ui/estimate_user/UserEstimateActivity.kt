@@ -18,8 +18,8 @@ import com.example.airconmoa.ui.join_company.Fragment.CompanyJoinPhonenumFragmen
 import com.example.airconmoa.ui.join_company.Fragment.CompanyJoinTermFragment
 import com.example.airconmoa.ui.join_company.Fragment.CompanyJoinWhereFragment
 import com.example.airconmoa.ui.join_company.Fragment.CompanyjoinEmailFragment
-import com.example.airconmoa_android.databinding.ActivityJoinBinding
-import com.example.airconmoa_android.databinding.ActivityUserEstimateBinding
+
+import com.example.airconmoa.databinding.ActivityUserEstimateBinding
 
 class UserEstimateActivity: BaseActivityVB<ActivityUserEstimateBinding>(ActivityUserEstimateBinding::inflate) {
 
