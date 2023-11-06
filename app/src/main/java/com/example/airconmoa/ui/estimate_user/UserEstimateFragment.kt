@@ -2,8 +2,8 @@ package com.example.airconmoa.ui.estimate_user
 
 import android.os.Bundle
 import android.view.View
-import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEstimateBinding
 
 class UserEstimateFragment : BaseFragmentVB<FragmentUserEstimateBinding>(FragmentUserEstimateBinding::bind, R.layout.fragment_user_estimate) {

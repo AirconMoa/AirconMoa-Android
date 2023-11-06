@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.airconmoa.ui.home.UserHomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_user_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.UserEstimateFragment"
+        android:label="fragment_estimate"
+        tools:layout="@layout/fragment_user_estimate">
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/mypageFragment"
+        android:name="com.example.airconmoa.ui.mypage_user.UserMypageFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_user_mypage">
+        <action
+            android:id="@+id/action_mypageFragment_to_mypageeditFragment"
+            app:destination="@id/mypageeditFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/communityFragment"
+        android:name="com.example.airconmoa.ui.community_user.UserCommunityFragment"
+        android:label="fragment_community"
+        tools:layout="@layout/fragment_user_community"/>
+
+
+    <fragment
+        android:id="@+id/mypageeditFragment"
+        android:name="com.example.airconmoa.ui.mypage_user.UserMypageEditFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_user_mypage">
+        <action
+            android:id="@+id/action_mypageeditFragment_to_mypageFragment"
+            app:destination="@id/mypageFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateFragment2"
+        android:name="com.example.airconmoa.ui.UserEstimateFragment2"
+        android:label="fragment_estimate2"
+        tools:layout="@layout/fragment_user_estimate2">
+        <action
+            android:id="@+id/action_estimateFragment2_to_estimatelistFragment"
+            app:destination="@id/estimatelistFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/estimatelistFragment"
+        android:name="com.example.airconmoa.ui.EstimateListFragment"
+        android:label="fragment_estimate_list"
+        tools:layout="@layout/fragment_estimate_list">
+        <action
+            android:id="@+id/action_estimatelistFragment_to_destimatedetailsFragment"
+            app:destination="@id/estimatedetailsFragment"/>
+        <action
+            android:id="@+id/action_estimatelistFragment_to_estimateFragment2"
+            app:destination="@id/estimateFragment2"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimatedetailsFragment"
+        android:name="com.example.airconmoa.ui.EstimateDetailsFragment"
+        android:label="fragment_estimate_details"
+        tools:layout="@layout/fragment_estimate_details">
+        <action
+            android:id="@+id/action_estimatedetailsFragment_to_detailedcompanyreviewFragment"
+            app:destination="@id/detailedcompanyreviewFragment"/>
+        <action
+            android:id="@+id/action_estimatedetailsFragment_to_estimatelistFragment"
+            app:destination="@id/estimatelistFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailedcompanyreviewFragment"
+        android:name="com.example.airconmoa.ui.DetailedCompanyReviewFragment"
+        android:label="fragment_detailed_company_review"
+        tools:layout="@layout/fragment_detailed_company_review">
+        <action
+            android:id="@+id/action_detailedcompanyreviewFragment_to_estimatedetailsFragment"
+            app:destination="@id/estimatedetailsFragment"/>
+    </fragment>
+</navigation>

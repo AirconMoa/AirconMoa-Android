@@ -3,8 +3,8 @@ package com.example.airconmoa.ui.join_user
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityAgreementBinding
 
 class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgreementBinding::inflate) {

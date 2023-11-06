@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Airconmoaandroid"
         tools:targetApi="31">
-
+        <activity
+            android:name="com.example.airconmoa.ui.BookCompleteActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.airconmoa.ui.join_user.FinishJoinActivity"
             android:exported="false" />
@@ -75,6 +77,10 @@
             android:theme="@style/Theme.Airconmoaandroid" /> <!-- Join -->
         <activity
             android:name="com.example.airconmoa.ui.join_company.CompanyJoinActivity"
+            android:exported="false" />
+        <!--companyMain-->
+        <activity
+            android:name="com.example.airconmoa.ui.main_company.MainCompanyActivity"
             android:exported="false" />
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"

@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
-import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityEnterEmailBinding
 
 

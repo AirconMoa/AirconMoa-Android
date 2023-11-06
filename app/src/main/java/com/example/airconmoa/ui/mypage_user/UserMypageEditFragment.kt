@@ -8,8 +8,8 @@ import android.text.TextWatcher
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEditMypageBinding
 
 
