@@ -1,7 +1,17 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+}
+
+val properties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.inputStream().use { input ->
+        properties.load(input)
+    }
 }
 
 android {
@@ -19,6 +29,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        //def localProperties = new Properties()
+        //localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+        buildConfigField("String", "NAVER_CLIENT_ID", "${properties["social_login_info_naver_client_id"]}")
+        buildConfigField("String", "NAVER_CLIENT_SECRETE", "${properties["social_login_info_naver_client_secret"]}")
     }
 
     buildTypes {
@@ -41,6 +56,7 @@ android {
         compose = true
         viewBinding=true
         dataBinding = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"

@@ -19,6 +19,8 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
             binding.joinUserSelectedBtn.visibility = View.VISIBLE
 
             val intent = Intent(this, NewMemberActivity::class.java)
+            //val intent = Intent(this, MainActivity::class.java)
+
             startActivity(intent)
             overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
@@ -28,6 +30,7 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
             binding.joinCompanySelectedBtn.visibility = View.VISIBLE
 
             val intent = Intent(this, CompanyJoinActivity::class.java)
+            //val intent = Intent(this, MainCompanyActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }

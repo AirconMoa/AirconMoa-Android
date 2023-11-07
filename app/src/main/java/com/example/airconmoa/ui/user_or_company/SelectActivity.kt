@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivitySelectBinding
 import com.example.airconmoa.ui.main_company.MainCompanyActivity
-import com.example.airconmoa.ui.join_user.NewMemberActivity
+import com.example.airconmoa.ui.main_user.MainActivity
 
 class SelectActivity : BaseActivityVB<ActivitySelectBinding>(ActivitySelectBinding::inflate){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +15,8 @@ class SelectActivity : BaseActivityVB<ActivitySelectBinding>(ActivitySelectBindi
 
         }
         binding.userBtn.setOnClickListener {
-            startActivity(Intent(this, NewMemberActivity::class.java))
+            //startActivity(Intent(this, NewMemberActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
 
         }
 

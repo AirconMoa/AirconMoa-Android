@@ -12,14 +12,15 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.airconmoa.BuildConfig
+import com.example.airconmoa.R.anim
+import com.example.airconmoa.R.color
 import com.example.airconmoa.config.BaseActivityVB
+import com.example.airconmoa.databinding.ActivityLoginBinding
 import com.example.airconmoa.ui.login_user.model.LoginResponseData
 import com.example.airconmoa.ui.main_user.MainActivity
 import com.example.airconmoa.util.Constants
-import com.example.airconmoa.R.*
-import com.example.airconmoa.databinding.ActivityLoginBinding
 import com.example.airconmoa.util.FirebaseAuthUtils
-import com.example.airconmoa.util.FirebaseRef
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -27,16 +28,9 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
-import com.kakao.sdk.common.model.ClientError
-import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.OAuthLoginCallback
-import com.navercorp.nid.profile.NidProfileCallback
-import com.navercorp.nid.profile.data.NidProfileResponse
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding::inflate){
@@ -79,8 +73,8 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
         auth = Firebase.auth
 
         /** Naver Login Module Initialize */
-        val naverClientId = getString(com.example.airconmoa.R.string.social_login_info_naver_client_id)
-        val naverClientSecret = getString(com.example.airconmoa.R.string.social_login_info_naver_client_secret)
+        val naverClientId = BuildConfig.NAVER_CLIENT_ID
+        val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
         NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
 //       binding.btnKakaoLogin.setOnClickListener {
 //            social = "KAKAO"
