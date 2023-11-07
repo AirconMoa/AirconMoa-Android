@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Airconmoaandroid"
         tools:targetApi="31">
         <activity
-            android:name="com.example.airconmoa.ui.BookCompleteActivity"
+            android:name="com.example.airconmoa.ui.myestimate_user.BookCompleteActivity"
             android:exported="false" />
         <activity
             android:name="com.example.airconmoa.ui.join_user.FinishJoinActivity"

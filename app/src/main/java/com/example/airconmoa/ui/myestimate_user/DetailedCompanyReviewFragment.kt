@@ -1,4 +1,4 @@
-package com.example.airconmoa.ui
+package com.example.airconmoa.ui.myestimate_user
 
 import android.os.Bundle
 import android.view.View
@@ -14,7 +14,7 @@ class DetailedCompanyReviewFragment : BaseFragmentVB<FragmentDetailedCompanyRevi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val estimateDetialVPAdapter=EstimateDatailVPAdapter(this@DetailedCompanyReviewFragment)
+        val estimateDetialVPAdapter= EstimateDatailVPAdapter(this@DetailedCompanyReviewFragment)
         binding.vpDetailedCompany.adapter=estimateDetialVPAdapter
 
         TabLayoutMediator(binding.tabDetailedCompany,binding.vpDetailedCompany){

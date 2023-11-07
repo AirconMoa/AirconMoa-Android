@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/estimateFragment2"
-        android:name="com.example.airconmoa.ui.UserEstimateFragment2"
+        android:name="com.example.airconmoa.ui.myestimate_user.UserEstimateFragment2"
         android:label="fragment_estimate2"
         tools:layout="@layout/fragment_user_estimate2">
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/estimatelistFragment"
-        android:name="com.example.airconmoa.ui.EstimateListFragment"
+        android:name="com.example.airconmoa.ui.myestimate_user.EstimateListFragment"
         android:label="fragment_estimate_list"
         tools:layout="@layout/fragment_estimate_list">
         <action
@@ -71,7 +71,7 @@
 
     <fragment
         android:id="@+id/estimatedetailsFragment"
-        android:name="com.example.airconmoa.ui.EstimateDetailsFragment"
+        android:name="com.example.airconmoa.ui.myestimate_user.EstimateDetailsFragment"
         android:label="fragment_estimate_details"
         tools:layout="@layout/fragment_estimate_details">
         <action
@@ -83,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailedcompanyreviewFragment"
-        android:name="com.example.airconmoa.ui.DetailedCompanyReviewFragment"
+        android:name="com.example.airconmoa.ui.myestimate_user.DetailedCompanyReviewFragment"
         android:label="fragment_detailed_company_review"
         tools:layout="@layout/fragment_detailed_company_review">
         <action
