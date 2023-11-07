@@ -71,6 +71,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_card1" />
 
                 <ImageView
+                    android:id="@+id/estimateWriteBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_content_img"
