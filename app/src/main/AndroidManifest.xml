@@ -16,52 +16,55 @@
         android:theme="@style/Theme.Airconmoaandroid"
         tools:targetApi="31">
         <activity
-            android:name="com.example.airconmoa.ui.myestimate_user.BookCompleteActivity"
+            android:name=".ui.estimate_company.WriteCompleteActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.FinishJoinActivity"
+            android:name=".ui.myestimate_user.BookCompleteActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.EnterPasswordAgainActivity"
+            android:name=".ui.join_user.FinishJoinActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.EnterNicknameActivity"
+            android:name=".ui.join_user.EnterPasswordAgainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.EnterPhoneActivity"
+            android:name=".ui.join_user.EnterNicknameActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.EnterPasswordActivity"
+            android:name=".ui.join_user.EnterPhoneActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.EmailAuthenticationActivity"
+            android:name=".ui.join_user.EnterPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.EnterEmailActivity"
+            android:name=".ui.join_user.EmailAuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.AgreementActivity"
+            android:name=".ui.join_user.EnterEmailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.CreateUserActivity"
+            android:name=".ui.join_user.AgreementActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.NewMemberActivity"
+            android:name=".ui.join_user.CreateUserActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.join_user.JoinActivity"
+            android:name=".ui.join_user.NewMemberActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.user_or_company.SelectActivity"
+            android:name=".ui.join_user.JoinActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.login_company.LoginCompanyActivity"
+            android:name=".ui.user_or_company.SelectActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.login_user.LoginActivity"
+            android:name=".ui.login_company.LoginCompanyActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.airconmoa.ui.splash.SplashActivity"
+            android:name=".ui.login_user.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Airconmoaandroid.Splash">
             <intent-filter>
@@ -71,30 +74,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.airconmoa.ui.main_user.MainActivity"
+            android:name=".ui.main_user.MainActivity"
             android:exported="false"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Airconmoaandroid" />
-
-        <!--user_estimate-->
-        <activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
+            android:theme="@style/Theme.Airconmoaandroid" /> <!-- user_estimate -->
+        <activity
+            android:name=".ui.estimate_user.UserEstimateActivity"
             android:exported="false"
-            android:theme="@style/Theme.Airconmoaandroid" />
-        <!-- Join -->
+            android:theme="@style/Theme.Airconmoaandroid" /> <!-- Join -->
         <activity
-            android:name="com.example.airconmoa.ui.join_company.CompanyJoinActivity"
-            android:exported="false" />
-        <!--companyMain-->
+            android:name=".ui.join_company.CompanyJoinActivity"
+            android:exported="false" /> <!-- companyMain -->
         <activity
-            android:name="com.example.airconmoa.ui.main_company.MainCompanyActivity"
+            android:name=".ui.main_company.MainCompanyActivity"
             android:exported="false" />
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="oauth"
                     android:scheme="kakao64eccc279aa42b2d6d95605fcb8b3387" />
