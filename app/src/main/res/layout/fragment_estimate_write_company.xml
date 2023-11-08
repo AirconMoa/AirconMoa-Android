@@ -1,13 +1,382 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.airconmoa.ui.estimate_company.EstimateWriteCompanyFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/title_est"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/semi_bold"
+        android:text="견적서 작성"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/gray_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+
+    <ImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/close_btn"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/gray_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/gray_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/gray_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/airconmoa_gray3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_est" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gray_line">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gray_line">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/subLayout"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="16dp"
+                android:background="@drawable/shape_btn_stroke_gray3"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@id/gray_line2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/nickNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="닉네임"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nickNameContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="모아"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/nickNameTv"
+                    app:layout_constraintTop_toBottomOf="@id/nickNameTv" />
+
+                <TextView
+                    android:id="@+id/estimateRequestDateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="견적서 요청 날짜"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/estimateRequestDateContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="2023.09.26"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/estimateRequestDateTv"
+                    app:layout_constraintTop_toBottomOf="@id/estimateRequestDateTv" />
+
+                <TextView
+                    android:id="@+id/setInfoTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="설치 정보"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nickNameContentTv" />
+
+                <TextView
+                    android:id="@+id/setInfoContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="에어컨 신규 설치/기존 건물"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/setInfoTv"
+                    app:layout_constraintTop_toBottomOf="@id/setInfoTv" />
+
+                <TextView
+                    android:id="@+id/setAddressTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="설치 주소"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/setInfoContentTv" />
+
+                <TextView
+                    android:id="@+id/setAddressContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="인천광역시 미추홀구 모아동 1로 123-45/n모아빌라 402호"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/setAddressTv"
+                    app:layout_constraintTop_toBottomOf="@id/setAddressTv" />
+
+                <TextView
+                    android:id="@+id/setSiteTypeTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="설치 장소 유형"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toStartOf="@id/setNumTv"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/setAddressContentTv" />
+
+                <TextView
+                    android:id="@+id/setSiteTypeContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="빌라"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/setSiteTypeTv"
+                    app:layout_constraintTop_toBottomOf="@id/setSiteTypeTv" />
+
+                <TextView
+                    android:id="@+id/setNumTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="설치 수량"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/setDateTv"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/setSiteTypeTv"
+                    app:layout_constraintTop_toBottomOf="@id/setAddressContentTv" />
+
+                <TextView
+                    android:id="@+id/setNumContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="1대"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/setNumTv"
+                    app:layout_constraintTop_toBottomOf="@id/setNumTv" />
+
+                <TextView
+                    android:id="@+id/setDateTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="설치 날짜"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toStartOf="@id/brandTv"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/setNumTv"
+                    app:layout_constraintTop_toBottomOf="@id/setAddressContentTv" />
+
+                <TextView
+                    android:id="@+id/setDateContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="10월 5일"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/setDateTv"
+                    app:layout_constraintTop_toBottomOf="@id/setDateTv" />
+
+                <TextView
+                    android:id="@+id/brandTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="브랜드"
+                    android:textColor="@color/airconmoa_gray3"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/setDateTv"
+                    app:layout_constraintTop_toBottomOf="@id/setAddressContentTv" />
+
+                <TextView
+                    android:id="@+id/brandContentTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semi_bold"
+                    android:text="삼성"
+                    android:textColor="@color/airconmoa_gray2"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/brandTv"
+                    app:layout_constraintTop_toBottomOf="@id/brandTv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/gray_line2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/airconmoa_gray3"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subLayout"
+                />
+            <TextView
+                android:id="@+id/priceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="시공 가격"
+                android:textColor="@color/airconmoa_gray2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gray_line2" />
+
+            <EditText
+                android:id="@+id/priceContentTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="250,000원"
+                android:textSize="25dp"
+                android:backgroundTint="@color/airconmoa_main"
+                android:fontFamily="@font/semi_bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="9dp"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceTv"
+                />
+
+
+            <TextView
+                android:id="@+id/editSomeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="수정/변동 사항"
+                android:textColor="@color/airconmoa_gray2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/priceContentTv" />
+
+            <EditText
+                android:id="@+id/editSomeContentTv"
+                android:layout_width="wrap_contentt"
+                android:layout_height="wrap_content"
+                android:text="10월 5일에 설치가 어려워 10월 11일에 설치 해야 할 것 같습니다"
+                android:textSize="15dp"
+                android:background="@drawable/shape_btn_stroke_main_color"
+                android:fontFamily="@font/semi_bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="9dp"
+                app:layout_constraintStart_toStartOf="@id/editSomeTv"
+                app:layout_constraintTop_toBottomOf="@+id/editSomeTv"
+                app:layout_constraintEnd_toEndOf="@id/view1"
+                android:padding="10dp"
+                />
+            <TextView
+                android:id="@+id/additionalSomeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="추가 전달 사항"
+                android:textColor="@color/airconmoa_gray2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editSomeContentTv" />
+
+            <EditText
+                android:id="@+id/additionalSomeContentTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="없음"
+                android:textSize="15dp"
+                android:fontFamily="@font/semi_bold"
+                android:textColor="@color/black"
+                android:background="@drawable/shape_btn_stroke_main_color"
+                android:layout_marginTop="9dp"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintStart_toStartOf="@id/editSomeContentTv"
+                app:layout_constraintTop_toBottomOf="@+id/additionalSomeTv"
+                app:layout_constraintEnd_toEndOf="@id/editSomeContentTv"
+                android:padding="10dp"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="견적서 작성 완료"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_btn_main"
+                android:textSize="20dp"
+                android:fontFamily="@font/semi_bold"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/additionalSomeContentTv"
+                android:layout_marginTop="24dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
