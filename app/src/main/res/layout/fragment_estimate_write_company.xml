@@ -71,7 +71,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/subLayout"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="220dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="16dp"
                 android:background="@drawable/shape_btn_stroke_gray3"
@@ -188,10 +188,12 @@
 
                 <TextView
                     android:id="@+id/setSiteTypeContentTv"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/semi_bold"
                     android:text="빌라"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@id/setNumContentTv"
                     android:textColor="@color/airconmoa_gray2"
                     android:textSize="15dp"
                     app:layout_constraintStart_toStartOf="@id/setSiteTypeTv"
@@ -204,6 +206,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/semi_bold"
                     android:text="설치 수량"
+                    android:gravity="center"
                     android:textColor="@color/airconmoa_gray3"
                     android:textSize="12dp"
                     app:layout_constraintEnd_toStartOf="@+id/setDateTv"
@@ -213,17 +216,21 @@
 
                 <TextView
                     android:id="@+id/setNumContentTv"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/semi_bold"
                     android:text="1대"
                     android:textColor="@color/airconmoa_gray2"
                     android:textSize="15dp"
+                    android:gravity="center"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@id/setDateContentTv"
                     app:layout_constraintStart_toStartOf="@id/setNumTv"
                     app:layout_constraintTop_toBottomOf="@id/setNumTv" />
 
                 <TextView
                     android:id="@+id/setDateTv"
+                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -238,17 +245,22 @@
 
                 <TextView
                     android:id="@+id/setDateContentTv"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/semi_bold"
                     android:text="10월 5일"
                     android:textColor="@color/airconmoa_gray2"
                     android:textSize="15dp"
+                    android:gravity="center"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@id/brandContentTv"
                     app:layout_constraintStart_toStartOf="@id/setDateTv"
                     app:layout_constraintTop_toBottomOf="@id/setDateTv" />
 
                 <TextView
                     android:id="@+id/brandTv"
+                    android:gravity="center"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -263,12 +275,15 @@
 
                 <TextView
                     android:id="@+id/brandContentTv"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/semi_bold"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    android:gravity="center"
                     android:text="삼성"
                     android:textColor="@color/airconmoa_gray2"
                     android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/brandTv"
                     app:layout_constraintTop_toBottomOf="@id/brandTv" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -304,6 +319,7 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="9dp"
                 android:layout_marginHorizontal="20dp"
+                app:layout_constraintStart_toStartOf="@id/priceTv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/priceTv"
                 />
@@ -322,7 +338,7 @@
 
             <EditText
                 android:id="@+id/editSomeContentTv"
-                android:layout_width="wrap_contentt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="10월 5일에 설치가 어려워 10월 11일에 설치 해야 할 것 같습니다"
                 android:textSize="15dp"
@@ -330,10 +346,10 @@
                 android:fontFamily="@font/semi_bold"
                 android:textColor="@color/black"
                 android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/editSomeTv"
+                app:layout_constraintStart_toStartOf="@id/priceTv"
                 app:layout_constraintTop_toBottomOf="@+id/editSomeTv"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="20dp"
+                android:layout_marginHorizontal="20dp"
                 android:padding="10dp"
                 />
             <TextView
@@ -358,12 +374,13 @@
                 android:background="@drawable/shape_btn_stroke_main_color"
                 android:layout_marginTop="9dp"
                 android:layout_marginHorizontal="20dp"
-                app:layout_constraintStart_toStartOf="@id/editSomeContentTv"
+                app:layout_constraintStart_toStartOf="@id/additionalSomeTv"
                 app:layout_constraintTop_toBottomOf="@+id/additionalSomeTv"
                 app:layout_constraintEnd_toEndOf="@id/editSomeContentTv"
                 android:padding="10dp"
                 />
             <Button
+                android:id="@+id/finishBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="견적서 작성 완료"
@@ -376,7 +393,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/additionalSomeContentTv"
-                android:layout_marginTop="24dp"/>
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="20dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

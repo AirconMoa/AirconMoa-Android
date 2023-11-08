@@ -74,6 +74,7 @@
             android:layout_height="30dp"
             android:text="날짜순"
             android:textSize="15dp"
+            android:layout_marginTop="3dp"
             android:textColor="@color/white"
             android:background="@drawable/shape_btn_main"
             android:drawableStart="@drawable/option_down"

@@ -87,7 +87,7 @@
         android:text="날짜"
         android:textColor="@color/airconmoa_gray2"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@id/homeBtn"
+        app:layout_constraintBottom_toTopOf="@id/backBtn"
         app:layout_constraintStart_toStartOf="parent" />
     <TextView
         android:id="@+id/dateContentTv"

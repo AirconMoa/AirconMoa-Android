@@ -11,7 +11,7 @@ import com.example.airconmoa.databinding.ItemRvReceivedEstimateBinding
 
 class EstimateListItemDataAdapter(
     private val dataList: List<EstimateListItemData>?,
-    private val fragment: EstimateListFragment
+    private val fragment: EstimateListFragment,
 ) :
     RecyclerView.Adapter<EstimateListItemDataAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemRvReceivedEstimateBinding) :

@@ -345,6 +345,7 @@
                 android:padding="10dp"/>
             
             <Button
+                android:id="@+id/writeBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="견적서 작성하기"
