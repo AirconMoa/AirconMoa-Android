@@ -39,12 +39,17 @@ class EstimateSubReviewFragment : BaseFragmentVB<FragmentSubEstimateReviewBindin
 
             var barChart: BarChart = barChart // barChart 생성
 
-            val entries = ArrayList<BarModel>()
-            barChart.addBar(BarModel(1f, R.color.airconmoa_main))
-            barChart.addBar(BarModel(2f, R.color.airconmoa_main))
-            barChart.addBar(BarModel(3f, R.color.airconmoa_main))
-            barChart.addBar(BarModel(4f, R.color.airconmoa_main))
-            barChart.addBar(BarModel(5f, R.color.airconmoa_main))
+            var bm1=BarModel("5점",1f, 0xFF00D1FF.toInt())
+            bm1.setLegendLabel("5점")
+            barChart.addBar(bm1)
+            barChart.addBar(BarModel("4점",2f, 0xFF00D1FF.toInt()))
+            var bm2=BarModel("3점",3f, 0xFF00D1FF.toInt())
+            bm2.setLegendLabel("3점")
+            barChart.addBar(bm2)
+            barChart.addBar(BarModel("2점",4f, 0xFF00D1FF.toInt()))
+            var bm3=BarModel("1점",5f, 0xFF00D1FF.toInt())
+            bm3.setLegendLabel("1점")
+            barChart.addBar(bm3)
 
             barChart.startAnimation();
         }
