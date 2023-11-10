@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEditMypageBinding
@@ -80,6 +81,9 @@ class UserMypageEditFragment : BaseFragmentVB<FragmentUserEditMypageBinding>(Fra
            editCloseBtn1.setOnClickListener { nameeditTv.text=null }
            editCloseBtn2.setOnClickListener {  phoneeditTv.text=null }
             editCloseBtn3.setOnClickListener {  nicknameeditTv.text=null }
+            backBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_mypageeditFragment_to_mypageFragment)
+            }
         }
 
     }
