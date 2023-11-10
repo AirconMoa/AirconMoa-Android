@@ -87,6 +87,7 @@
         tools:layout="@layout/fragment_my_page_edit_company">
         <action
             android:id="@+id/action_mypageEditCompanyFragment_to_mypageCompanyFragment"
-            app:destination="@id/mypageCompanyFragment"/>
+            app:destination="@id/mypageCompanyFragment"
+            app:popUpTo="@id/estimateCompanyFragment"/>
     </fragment>
 </navigation>

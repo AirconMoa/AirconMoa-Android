@@ -44,7 +44,8 @@
         tools:layout="@layout/fragment_user_mypage">
         <action
             android:id="@+id/action_mypageeditFragment_to_mypageFragment"
-            app:destination="@id/mypageFragment"/>
+            app:destination="@id/mypageFragment"
+            app:popUpTo="@id/homeFragment"/>
     </fragment>
 
     <fragment

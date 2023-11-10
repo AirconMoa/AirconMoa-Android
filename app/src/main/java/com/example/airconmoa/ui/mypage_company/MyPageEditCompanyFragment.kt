@@ -75,7 +75,6 @@ class MyPageEditCompanyFragment : BaseFragmentVB<FragmentMyPageEditCompanyBindin
 
             backBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_mypageEditCompanyFragment_to_mypageCompanyFragment)
-
             }
         }
 
