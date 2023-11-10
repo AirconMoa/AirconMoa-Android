@@ -55,7 +55,9 @@
         tools:layout="@layout/fragment_user_estimate2">
         <action
             android:id="@+id/action_estimateFragment2_to_estimatelistFragment"
-            app:destination="@id/estimatelistFragment"/>
+            app:destination="@id/estimatelistFragment"
+            app:popUpTo="@id/homeFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/estimatelistFragment"
@@ -64,10 +66,12 @@
         tools:layout="@layout/fragment_estimate_list">
         <action
             android:id="@+id/action_estimatelistFragment_to_destimatedetailsFragment"
-            app:destination="@id/estimatedetailsFragment"/>
+            app:destination="@id/estimatedetailsFragment"
+            />
         <action
             android:id="@+id/action_estimatelistFragment_to_estimateFragment2"
-            app:destination="@id/estimateFragment2"/>
+            app:destination="@id/estimateFragment2"
+            app:popUpTo="@id/homeFragment"/>
     </fragment>
 
     <fragment
@@ -80,7 +84,8 @@
             app:destination="@id/detailedcompanyreviewFragment"/>
         <action
             android:id="@+id/action_estimatedetailsFragment_to_estimatelistFragment"
-            app:destination="@id/estimatelistFragment"/>
+            app:destination="@id/estimatelistFragment"
+            app:popUpTo="@id/estimateFragment2"/>
     </fragment>
     <fragment
         android:id="@+id/detailedcompanyreviewFragment"
@@ -89,6 +94,7 @@
         tools:layout="@layout/fragment_detailed_company_review">
         <action
             android:id="@+id/action_detailedcompanyreviewFragment_to_estimatedetailsFragment"
-            app:destination="@id/estimatedetailsFragment"/>
+            app:destination="@id/estimatedetailsFragment"
+            app:popUpTo="@id/estimatelistFragment"/>
     </fragment>
 </navigation>
