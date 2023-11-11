@@ -17,18 +17,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="아이디를 입력해 주세요."
+            android:text="업체명을 입력해 주세요"
             android:textSize="25sp"
             android:textColor="@color/airconmoa_gray"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="아이디 입력 후 중복확인을 해주세요."
-            android:textSize="15sp"
-            android:textColor="@color/airconmoa_gray3"
             android:textStyle="bold"/>
 
     </LinearLayout>

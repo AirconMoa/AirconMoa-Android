@@ -80,6 +80,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.example.airconmoa.ui.join_company.CompanyJoinSuccessActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.airconmoa.ui.join_company.CompanyJoinFirstActivity"
+            android:exported="false" />
+
+
+
 
 
         <!--user_estimate-->

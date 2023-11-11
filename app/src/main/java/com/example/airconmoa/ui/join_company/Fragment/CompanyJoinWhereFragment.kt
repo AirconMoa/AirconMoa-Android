@@ -17,8 +17,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.airconmoa.config.BaseFragmentVB
+import com.example.airconmoa.ui.join_company.Dialog.LocationDoRecycleDialog
 import com.example.airconmoa.ui.join_company.Dialog.LocationRecycleDialog
 import com.example.airconmoa.ui.join_company.data.SiData
+import com.example.airconmoa.until.getSi
 import com.example.airconmoa_android.R
 import com.example.airconmoa_android.databinding.FragmentCompanyJoinWhereBinding
 
@@ -34,35 +36,42 @@ class CompanyJoinWhereFragment:
 
             btnLocationSi.setOnClickListener{
 
-                val dlg = LocationRecycleDialog(requireContext() as AppCompatActivity)
-                dlg.showDlg()
 
-                dlg.setOnClickedListener(object : LocationRecycleDialog.ButtonClickListener{
-                    override fun onClicked(index: Int?) {
-                        if(index != null){
-                            showCustomToast(index.toString())
+                val mydial = LocationRecycleDialog(context!!,this)
+                mydial.show()
 
-                            txtSi.setText(locationlist[index])
 
-                        }
-                    }
-                })
             }
+
+            btnLocationDo.setOnClickListener {
+                if(txtSi.text == "선택"){
+                    showCustomToast("지역을 먼저 선택해 주세요.")
+                }else{
+                showCustomToast(txtSi.text.toString())
+                    val mydial = LocationDoRecycleDialog(context!!,this, txtSi.text.toString())
+                    mydial.show()
+                }
+
+
+            }
+
+
+
+
+
+//                dlg.setOnClickedListener(object : LocationRecycleDialog.ButtonClickListener{
+//                    override fun onClicked(index: Int?) {
+//                        if(index != null){
+//                            showCustomToast(index.toString())
+//
+//                            txtSi.setText(locationlist[index])
+//
+//                        }
+//                    }
+//                })
         }
     }
 
-    val locationlist : List<String> = listOf(
-        "Seoul",
-        "Incheon",
-        "Busan",
-        "few",
-        "ads",
-        "reqgqer",
-        "qrv",
-        "erqbr",
-        "vqererv",
-        "zxcvzx"
-    )
 
 
 }
