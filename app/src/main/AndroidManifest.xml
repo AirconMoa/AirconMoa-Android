@@ -59,9 +59,13 @@
             android:exported="false" />
         <activity
             android:name="com.example.airconmoa.ui.splash.SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Airconmoaandroid.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.airconmoa.ui.main_user.MainActivity"
@@ -72,13 +76,7 @@
         <!--Join-->
         <activity
             android:name="com.example.airconmoa.ui.join_company.CompanyJoinActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
         <activity
             android:name="com.example.airconmoa.ui.join_company.CompanyJoinSuccessActivity"
@@ -87,10 +85,6 @@
         <activity
             android:name="com.example.airconmoa.ui.join_company.CompanyJoinFirstActivity"
             android:exported="false" />
-
-
-
-
 
         <!--user_estimate-->
         <activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
