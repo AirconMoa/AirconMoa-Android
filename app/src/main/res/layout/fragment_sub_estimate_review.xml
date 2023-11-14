@@ -55,12 +55,13 @@
 
         <org.eazegraph.lib.charts.BarChart
             android:id="@+id/barChart"
-            android:layout_width="108dp"
-            android:layout_height="62dp"
-            app:egBarWidth="20dp"
-            app:egFixedBarWidth="false"
-            app:egLegendHeight="20dp"
+            android:layout_width="180dp"
+            android:layout_height="110dp"
+            app:egBarWidth="10dp"
+            app:egLegendHeight="23dp"
             app:egShowDecimal="false"
+            app:egShowValues="true"
+            app:egFixedBarWidth="true"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/veticalLine"

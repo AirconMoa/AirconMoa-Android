@@ -210,17 +210,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/reviewTv" />
 
-            <EditText
+            <TextView
                 android:id="@+id/setInformationEditTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="신규설치/신규건물"
-                android:paddingHorizontal="-1dp"
-                android:textColorHint="@color/black"
+                android:text="신규설치/신규건물"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setInformationTv" />
-
+            <View
+                android:id="@+id/setInfoView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/setInformationEditTv"/>
             <TextView
                 android:id="@+id/setNumTv"
                 android:layout_width="0dp"
@@ -234,19 +243,30 @@
                 app:layout_constraintEnd_toStartOf="@+id/siteTypeTv"
                 app:layout_constraintTop_toBottomOf="@id/setSiteEditTv" />
 
-            <EditText
+            <TextView
                 android:id="@+id/setNumEditTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="1대"
-                android:paddingHorizontal="-1dp"
-                android:layout_marginEnd="1dp"
-                android:textColorHint="@color/black"
-                app:layout_constraintEnd_toStartOf="@+id/siteTypeEditTv"
+                android:text="1대"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@+id/setDateEditTv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setNumTv" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="@id/setNumTv"
+                app:layout_constraintEnd_toEndOf="@id/setNumEditTv"
+                app:layout_constraintTop_toBottomOf="@id/setNumEditTv"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="2dp"
+                />
             <TextView
                 android:id="@+id/setDateTv"
                 android:layout_width="0dp"
@@ -259,19 +279,30 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/siteTypeEditTv" />
 
-            <EditText
+            <TextView
                 android:id="@+id/setDateEditTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="11월 23일"
-                android:textColorHint="@color/black"
+                android:text="11월 23일"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                android:paddingHorizontal="-1dp"
-                android:layout_marginStart="1dp"
+
                 app:layout_constraintStart_toEndOf="@+id/setNumEditTv"
                 app:layout_constraintTop_toBottomOf="@+id/setDateTv" />
-
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="@id/setDateEditTv"
+                app:layout_constraintEnd_toEndOf="@id/setDateEditTv"
+                app:layout_constraintTop_toBottomOf="@id/setDateEditTv"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="2dp"
+                />
             <TextView
                 android:id="@+id/setSiteTv"
                 android:layout_width="0dp"
@@ -285,19 +316,29 @@
                 app:layout_constraintEnd_toStartOf="@+id/siteTypeTv"
                 app:layout_constraintTop_toBottomOf="@id/setInformationEditTv" />
 
-            <EditText
+            <TextView
                 android:id="@+id/setSiteEditTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="천장"
-                android:paddingHorizontal="-1dp"
-                android:layout_marginEnd="1dp"
-                android:textColorHint="@color/black"
+                android:text="천장"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
                 app:layout_constraintEnd_toStartOf="@+id/siteTypeEditTv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setSiteTv" />
-
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintStart_toStartOf="@id/setNumTv"
+                app:layout_constraintEnd_toEndOf="@id/setSiteEditTv"
+                app:layout_constraintTop_toBottomOf="@id/setSiteEditTv"
+                android:layout_marginTop="3dp"
+                />
             <TextView
                 android:id="@+id/siteTypeTv"
                 android:layout_width="0dp"
@@ -310,19 +351,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/setInformationEditTv" />
 
-            <EditText
+            <TextView
                 android:id="@+id/siteTypeEditTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="아파트"
-                android:textColorHint="@color/black"
+                android:text="아파트"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                android:paddingHorizontal="-1dp"
-                android:layout_marginStart="1dp"
                 app:layout_constraintStart_toEndOf="@+id/setSiteEditTv"
                 app:layout_constraintTop_toBottomOf="@+id/setSiteTv" />
-
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="@id/siteTypeEditTv"
+                app:layout_constraintEnd_toEndOf="@id/siteTypeEditTv"
+                app:layout_constraintTop_toBottomOf="@id/siteTypeEditTv"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="2dp"
+                />
             <TextView
                 android:id="@+id/airconBrandTv"
                 android:layout_width="0dp"
@@ -334,19 +385,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/setNumEditTv" />
 
-            <EditText
+            <TextView
                 android:id="@+id/airconBrandEditTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="LG"
-                android:paddingHorizontal="-1dp"
-                android:layout_marginEnd="1dp"
-                android:textColorHint="@color/black"
+                android:text="LG"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:layout_marginEnd="2dp"
                 app:layout_constraintEnd_toStartOf="@+id/siteTypeEditTv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/airconBrandTv" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="@id/airconBrandEditTv"
+                app:layout_constraintEnd_toEndOf="@id/airconBrandEditTv"
+                app:layout_constraintTop_toBottomOf="@id/airconBrandEditTv"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="2dp"
+                android:paddingHorizontal="-1dp"
 
+                />
             <TextView
                 android:id="@+id/extraSubmitTv"
                 android:layout_width="0dp"
@@ -357,18 +420,18 @@
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/airconBrandEditTv" />
-            <EditText
+            <TextView
                 android:id="@+id/extraSubmitEditTv"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="11월 23일"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
+                android:layout_height="wrap_content"
+                android:text="11월 23일"
+                android:padding="10dp"
                 android:background="@drawable/shape_btn_stroke_black"
                 android:paddingHorizontal="-1dp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginTop="8dp"
-                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/extraSubmitTv" />
 
