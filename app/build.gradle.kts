@@ -89,6 +89,7 @@ dependencies {
     // Glide
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
     // 카카오 소셜로그인
     implementation("com.kakao.sdk:v2-user:2.10.0")
