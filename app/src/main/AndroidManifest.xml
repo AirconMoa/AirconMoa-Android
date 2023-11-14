@@ -107,6 +107,17 @@
                     android:scheme="kakao64eccc279aa42b2d6d95605fcb8b3387" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.airconmoa.ui.join_company.CompanyJoinSuccessActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.airconmoa.ui.join_company.CompanyJoinFirstActivity"
+            android:exported="false" />
+
+        <!--user_estimate-->
+        <activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

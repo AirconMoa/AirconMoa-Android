@@ -25,7 +25,7 @@
 
     <LinearLayout
         android:id="@+id/estimate_terms_check_box"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="40dp"
@@ -36,7 +36,7 @@
             android:id="@+id/card"
             android:layout_width="350dp"
             android:layout_height="60dp"
-            android:backgroundTint="#CCF6FF"
+            app:cardBackgroundColor="@color/airconmoa_gray3"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp">
 
@@ -46,9 +46,10 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/checkall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_false"
                     android:layout_marginLeft="12dp"
                     android:layout_gravity="center"/>
 
@@ -81,6 +82,7 @@
         android:layout_marginTop="19dp">
 
         <LinearLayout
+            android:id="@+id/essential_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -90,7 +92,7 @@
                 android:id="@+id/check1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small"/>
+                android:src="@drawable/estimate_btn_check_small_false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,6 +123,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/essential_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -131,7 +134,7 @@
                 android:id="@+id/check2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small"/>
+                android:src="@drawable/estimate_btn_check_small_false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -161,6 +164,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/essential_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -171,7 +175,7 @@
                 android:id="@+id/check3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small"/>
+                android:src="@drawable/estimate_btn_check_small_false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -201,6 +205,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/essential_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -211,7 +216,7 @@
                 android:id="@+id/check4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small"/>
+                android:src="@drawable/estimate_btn_check_small_false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -241,6 +246,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/select_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
@@ -251,7 +257,7 @@
                 android:id="@+id/check5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small" />
+                android:src="@drawable/estimate_btn_check_small_false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -281,6 +287,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/select_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -291,7 +298,7 @@
                 android:id="@+id/check6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small"/>
+                android:src="@drawable/estimate_btn_check_small_false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -321,6 +328,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/essential_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -331,7 +339,7 @@
                 android:id="@+id/check7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/estimate_btn_check_small"/>
+                android:src="@drawable/estimate_btn_check_small_false"/>
 
             <TextView
                 android:layout_width="wrap_content"

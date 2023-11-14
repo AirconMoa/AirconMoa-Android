@@ -61,12 +61,12 @@
                     android:layout_marginRight="20dp"
                     android:gravity="bottom">
 
-                    <Button
+                    <TextView
+                        android:id="@+id/txt_si"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="선택"
                         android:gravity="center|left"
-                        android:clickable="false"
                         android:paddingLeft="10dp"
                         android:background="@android:color/transparent"
                         android:textColor="@color/airconmoa_gray2"
@@ -106,7 +106,8 @@
                     android:layout_marginRight="20dp"
                     android:gravity="bottom">
 
-                    <Button
+                    <TextView
+                        android:id="@+id/txt_do"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="선택"

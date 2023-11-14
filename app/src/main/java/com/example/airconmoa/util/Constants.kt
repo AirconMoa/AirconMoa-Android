@@ -16,4 +16,9 @@ object Constants {
     const val RC_PERMISSION = 1000
     const val xapikey = "D9DA98860E53E6E9DBC5245556FFF61D7B1FAF02572E29785DCB3CB56F6BBC1D"
 
+
+    //Dialog save
+    const val location_si = "location_si"
+    const val location_do = "location_do"
+
 }
