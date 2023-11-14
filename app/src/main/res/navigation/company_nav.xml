@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/company_nav"
+    app:startDestination="@id/estimateCompanyFragment">
+
+    <fragment
+        android:id="@+id/estimateCompanyFragment"
+        android:name="com.example.airconmoa.ui.estimate_company.EstimateCompanyFragment"
+        android:label="fragment_estimate_company"
+        tools:layout="@layout/fragment_estimate_company">
+        <action
+            android:id="@+id/action_estimateCompanyFragment_to_estimateDetailCompanyFragment"
+            app:destination="@id/estimateDetailCompanyFragment"/>
+        <action
+            android:id="@+id/action_estimateCompanyFragment_to_estimateEditCompanyFragment"
+            app:destination="@id/estimateEditCompanyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateDetailCompanyFragment"
+        android:name="com.example.airconmoa.ui.estimate_company.EstimateDetailCompanyFragment"
+        android:label="fragment_estimate_detail_company"
+        tools:layout="@layout/fragment_estimate_detail_company">
+        <action
+            android:id="@+id/action_estimateDetailCompanyFragment_to_estimateCompanyFragment"
+            app:destination="@id/estimateCompanyFragment"/>
+        <action
+            android:id="@+id/action_estimateDetailCompanyFragment_to_estimateWriteCompanyFragment"
+            app:destination="@id/estimateWriteCompanyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateWriteCompanyFragment"
+        android:name="com.example.airconmoa.ui.estimate_company.EstimateWriteCompanyFragment"
+        android:label="fragment_estimate_write_company"
+        tools:layout="@layout/fragment_estimate_write_company">
+        <action
+            android:id="@+id/action_estimateWriteCompanyFragment_to_estimateDetailCompanyFragment"
+            app:destination="@id/estimateDetailCompanyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateEditCompanyFragment"
+        android:name="com.example.airconmoa.ui.estimate_company.EstimateEditCompanyFragment"
+        android:label="fragment_estimate_edit_company"
+        tools:layout="@layout/fragment_estimate_edit_company">
+        <action
+            android:id="@+id/action_estimateEditCompanyFragment_to_estimateCompanyFragment"
+            app:destination="@id/estimateCompanyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/constructionCompanyFragment"
+        android:name="com.example.airconmoa.ui.construction_company.ConstructionCompanyFragment"
+        android:label="fragment_construction_company"
+        tools:layout="@layout/fragment_construction_company">
+        <action
+            android:id="@+id/action_constructionCompanyFragment_to_constructionDetailCompanyFragment"
+            app:destination="@id/constructionDetailCompanyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/constructionDetailCompanyFragment"
+        android:name="com.example.airconmoa.ui.construction_company.ConstructionDetailCompanyFragment"
+        android:label="fragment_construction_detail_company"
+        tools:layout="@layout/fragment_construction_detail_company">
+        <action
+            android:id="@+id/action_constructionDetailCompanyFragment_to_constructionCompanyFragment"
+            app:destination="@id/constructionCompanyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mypageCompanyFragment"
+        android:name="com.example.airconmoa.ui.mypage_company.MyPageCompanyFragment"
+        android:label="fragment_mypage_company"
+        tools:layout="@layout/fragment_my_page_company">
+        <action
+            android:id="@+id/action_mypageCompanyFragment_to_mypageEditCompanyFragment"
+            app:destination="@id/mypageEditCompanyFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mypageEditCompanyFragment"
+        android:name="com.example.airconmoa.ui.mypage_company.MyPageEditCompanyFragment"
+        android:label="fragment_mypage_edit_company"
+        tools:layout="@layout/fragment_my_page_edit_company">
+        <action
+            android:id="@+id/action_mypageEditCompanyFragment_to_mypageCompanyFragment"
+            app:destination="@id/mypageCompanyFragment"
+            app:popUpTo="@id/estimateCompanyFragment"/>
+    </fragment>
+</navigation>

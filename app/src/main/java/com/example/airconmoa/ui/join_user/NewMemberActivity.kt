@@ -3,10 +3,10 @@ package com.example.airconmoa.ui.join_user
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa.ui.login_user.LoginActivity
 import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityNewMemberBinding
+import com.example.airconmoa.ui.login_user.LoginActivity
 
 class NewMemberActivity : BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMemberBinding::inflate){
 

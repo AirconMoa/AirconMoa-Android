@@ -8,6 +8,9 @@ import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseResponse
 import com.example.airconmoa.config.RetrofitInstance
+import com.example.airconmoa.BuildConfig
+import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityCreateUserBinding
 import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
 import com.example.airconmoa.ui.join_user.model.PostSignUpReq
@@ -39,8 +42,8 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
         auth = Firebase.auth
 
         /** Naver Login Module Initialize */
-        val naverClientId = getString(R.string.social_login_info_naver_client_id)
-        val naverClientSecret = getString(R.string.social_login_info_naver_client_secret)
+        val naverClientId = BuildConfig.NAVER_CLIENT_ID
+        val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
         NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
 
         binding.createUserBackIv.setOnClickListener {

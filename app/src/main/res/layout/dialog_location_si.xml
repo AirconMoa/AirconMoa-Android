@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/location_dialog"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="지역선택"
+                android:onClick="onClick"
+                android:textColor="@color/airconmoa_gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:gravity="right">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/close_btn" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/Seoul"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="서울"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_sejong"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="세종"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gangwon"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="강원"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_incheon"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="인천"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gyeonggi"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="경기"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_chungbuk"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="충북"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_chungnam"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="충남"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gyeongbuk"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="경북"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_daejeon"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="대전"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_daegu"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="대구"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/btn_jeonbuk"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="전북"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gyeongnam"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="경남"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_ulsan"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="울산"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_gwangju"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="광주"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_busan"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="부산"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="100dp">
+
+            <Button
+                android:id="@+id/btn_jeonnam"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/location_btn"
+                android:text="전남"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_jeju"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/location_btn"
+                android:text="제주"
+                android:textColor="@color/airconmoa_gray2"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,17 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+}
+
+val properties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.inputStream().use { input ->
+        properties.load(input)
+    }
 }
 
 android {
@@ -19,6 +29,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        //def localProperties = new Properties()
+        //localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+        buildConfigField("String", "NAVER_CLIENT_ID", "${properties["social_login_info_naver_client_id"]}")
+        buildConfigField("String", "NAVER_CLIENT_SECRETE", "${properties["social_login_info_naver_client_secret"]}")
     }
 
     buildTypes {
@@ -41,6 +56,7 @@ android {
         compose = true
         viewBinding=true
         dataBinding = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -68,6 +84,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
     implementation ("androidx.navigation:navigation-ui-ktx:2.4.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -106,6 +123,10 @@ dependencies {
     //카드뷰
     implementation("androidx.cardview:cardview:1.0.0")
 
+    //그래프
+    implementation("com.github.blackfizz:eazegraph:1.2.5l@aar")
+    implementation("com.nineoldandroids:library:2.4.0")
+
     // 안드로이드 머티리얼 디자인 라이브러리
     implementation ("com.google.android.material:material:1.5.0")
 
@@ -115,4 +136,5 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-messaging-ktx")
+
 }

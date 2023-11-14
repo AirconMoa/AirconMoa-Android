@@ -13,7 +13,11 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.airconmoa.BuildConfig
+import com.example.airconmoa.R.anim
+import com.example.airconmoa.R.color
 import com.example.airconmoa.config.BaseActivityVB
+import com.example.airconmoa.databinding.ActivityLoginBinding
 import com.example.airconmoa.ui.login_user.model.LoginResponseData
 import com.example.airconmoa.ui.main_user.MainActivity
 import com.example.airconmoa.util.Constants
@@ -40,6 +44,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 
 
 class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding::inflate){
@@ -94,8 +99,10 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
         }
 
         /** Naver Login Module Initialize */
-        val naverClientId = getString(string.social_login_info_naver_client_id)
-        val naverClientSecret = getString(string.social_login_info_naver_client_secret)
+        //val naverClientId = getString(string.social_login_info_naver_client_id)
+        //val naverClientSecret = getString(string.social_login_info_naver_client_secret)
+        val naverClientId = BuildConfig.NAVER_CLIENT_ID
+        val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
         NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
 //       binding.btnKakaoLogin.setOnClickListener {
 //            social = "KAKAO"

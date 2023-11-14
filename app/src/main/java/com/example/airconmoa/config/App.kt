@@ -43,7 +43,7 @@ class App : Application() {
         // "CHAMMA_APP"이라는 이름의 SharedPreferences 인스턴스를 생성하고, 해당 인스턴스를 sharedPreferences 변수에 저장한다.
         // 이후 앱에서 SharedPreferences를 사용하여 데이터를 읽거나 쓸 수 있게 된다.
         sharedPreferences =
-            applicationContext.getSharedPreferences("CHAMMA_APP", MODE_PRIVATE)
+            applicationContext.getSharedPreferences("MOA_APP", MODE_PRIVATE)
         initRetrofitInstance() // Retrofit을 초기화한다.
         //getkakaoKeyhash()
         //startSocialLogin()

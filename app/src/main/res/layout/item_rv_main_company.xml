@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_btn_stroke_main_color"
+    android:layout_marginTop="10dp"    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ractangleIvFrame"
+        android:layout_marginStart="8dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="12dp"
+        app:cardCornerRadius="16dp"
+        >
+        <ImageView
+            android:id="@+id/ractangleIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType = "centerCrop"
+            android:background="@drawable/detail_review_user_profile"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/clientNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모아"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/ractangleIvFrame"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="19dp"
+        />
+
+    <TextView
+        android:id="@+id/dateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2023.09.26"
+        android:textSize="14dp"
+        android:fontFamily="@font/semi_bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/view_line"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="22dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginEnd="12dp"
+        app:cardBackgroundColor="@color/airconmoa_main"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@id/radioBtn"
+        app:layout_constraintTop_toBottomOf="@+id/clientNameTv"
+        app:layout_constraintStart_toStartOf="@+id/clientNameTv"
+        android:layout_marginTop="6dp"
+        />
+
+
+    <TextView
+        android:id="@+id/contentTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="신규설치 · 신규건물"
+        android:textSize="14dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/clientNameTv"
+        app:layout_constraintTop_toBottomOf="@id/view_line"
+        android:layout_marginTop="5dp"
+        />
+    <!--app:layout_constraintEnd_toEndOf="@id/tv_and_star"-->
+    <TextView
+        android:id="@+id/contentTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500m"
+        android:textSize="14dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/view_line"
+        app:layout_constraintTop_toBottomOf="@id/view_line"
+        android:layout_marginTop="5dp"
+        />
+
+    <RadioButton
+        android:id="@+id/radioBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/view_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/selector_radio_btn"
+        android:button="@null"/>
+
+    <TextView
+        android:id="@+id/hideEditTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:text="수정"
+        android:textSize="14dp"
+        android:fontFamily="@font/semi_bold"
+        android:textColor="@color/airconmoa_gray2"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/view_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

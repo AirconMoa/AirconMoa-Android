@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.example.airconmoa.config.BaseActivityVB
+import com.example.airconmoa.databinding.ActivitySplashBinding
 import com.example.airconmoa.ui.join_user.JoinActivity
 import com.example.airconmoa.util.FirebaseAuthUtils
-import com.example.airconmoa.databinding.ActivitySplashBinding
 import com.kakao.sdk.common.util.Utility
 
 class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBinding::inflate){
