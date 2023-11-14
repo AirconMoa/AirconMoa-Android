@@ -9,6 +9,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:icon="@drawable/logo_icon"
         android:label="에어컨모아"
         android:roundIcon="@mipmap/ic_launcher_round"

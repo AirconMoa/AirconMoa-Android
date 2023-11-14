@@ -1,0 +1,16 @@
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <!-- Customize by adding your own trusted CAs -->
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- Disallow cleartext traffic for all domains by default -->
+        <domain includeSubdomains="true">*</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Allow cleartext traffic for the specific IP address -->
+        <domain includeSubdomains="true">13.124.108.240</domain>
+    </domain-config>
+</network-security-config>
