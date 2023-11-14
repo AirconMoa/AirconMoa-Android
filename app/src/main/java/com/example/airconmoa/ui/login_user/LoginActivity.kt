@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.airconmoa.BuildConfig
@@ -20,6 +21,14 @@ import com.example.airconmoa.databinding.ActivityLoginBinding
 import com.example.airconmoa.ui.login_user.model.LoginResponseData
 import com.example.airconmoa.ui.main_user.MainActivity
 import com.example.airconmoa.util.Constants
+import com.example.airconmoa.R.*
+import com.example.airconmoa.config.BaseResponse
+import com.example.airconmoa.config.RetrofitInstance
+import com.example.airconmoa.databinding.ActivityLoginBinding
+import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
+import com.example.airconmoa.ui.join_user.model.PostSignUpReq
+import com.example.airconmoa.ui.join_user.model.PostUidDeviceTokenReq
+import com.example.airconmoa.ui.join_user.NewMemberActivity
 import com.example.airconmoa.util.FirebaseAuthUtils
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -31,6 +40,11 @@ import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.OAuthLoginCallback
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 
 class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding::inflate){
@@ -72,7 +86,21 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 
         auth = Firebase.auth
 
+        binding.loginBackIv.setOnClickListener {
+            finish()
+            overridePendingTransition(com.example.airconmoa.R.anim.slide_left_enter, com.example.airconmoa.R.anim.slide_left_exit)
+        }
+
+        binding.loginFinishIv.setOnClickListener {
+            val intent = Intent(this, NewMemberActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            finish()
+        }
+
         /** Naver Login Module Initialize */
+        //val naverClientId = getString(string.social_login_info_naver_client_id)
+        //val naverClientSecret = getString(string.social_login_info_naver_client_secret)
         val naverClientId = BuildConfig.NAVER_CLIENT_ID
         val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
         NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
@@ -233,33 +261,67 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
                 }
             } else if (token != null) {
                 Log.d("accessToken", token.accessToken)
+                CoroutineScope(Dispatchers.IO).launch {
+                    val postSignUpReq = PostSignUpReq(token.accessToken, "kakao")
+                    val response = signUp(postSignUpReq)
+                    Log.d("CreateUserActivity", response.toString())
+                    if (response.isSuccess) {
+                        val signUpResponse : PostOauthLoginRes = response.result!!
+                        Log.d("userId", signUpResponse!!.userId.toString())
+                        Log.d("accessToken", signUpResponse!!.accessToken)
+                        Log.d("userEmail", signUpResponse!!.email)
+                        val sharedPreferences = getSharedPreferences("airconmoa", MODE_PRIVATE)
+                        sharedPreferences.edit()
+                            .putString(Constants.X_ACCESS_TOKEN, "Bearer " + signUpResponse!!.accessToken)
+                            .apply()
 
-                if (FirebaseAuthUtils.getUid() == null) {
-                    // auth.createUserWithEmailAndPassword(userEmail!!, "abc123")
-                }
-                FirebaseMessaging.getInstance().token.addOnCompleteListener(
-                    OnCompleteListener { task ->
-                        if (!task.isSuccessful) {
-                            Log.w(
-                                "MyToken",
-                                "Fetching FCM registration token failed",
-                                task.exception
-                            )
-                            return@OnCompleteListener
+                        if(FirebaseAuthUtils.getUid() == null) {
+                            auth.createUserWithEmailAndPassword(signUpResponse!!.email, "abc123")
                         }
-                        val uid = FirebaseAuthUtils.getUid()
-                        val deviceToken = task.result
-                        // val userInfo = UserInfo(uid, response.result?.userId,
-                        // deviceToken, response.result?.accessToken, response.result?.refreshToken)
-                        // Log.d("userInfo", userInfo.toString())
-                        // FirebaseRef.userInfo.child(uid).setValue(userInfo)
-                        Log.d("deviceToken", deviceToken)
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                        overridePendingTransition(anim.slide_right_enter, anim.slide_right_exit)
-                        finish()
-                    })
-                Log.d("Loginctivity", "로그인 완료")
+
+                        FirebaseMessaging.getInstance().token.addOnCompleteListener(
+                            OnCompleteListener { task ->
+                                if (!task.isSuccessful) {
+                                    Log.w(
+                                        "MyToken",
+                                        "Fetching FCM registration token failed",
+                                        task.exception
+                                    )
+                                    return@OnCompleteListener
+                                }
+                                val uid = FirebaseAuthUtils.getUid()
+                                val deviceToken = task.result
+
+                                CoroutineScope(Dispatchers.IO).launch {
+                                    val postUidDeviceTokenReq = PostUidDeviceTokenReq(uid, deviceToken)
+                                    val saveRes = saveUidAndToken(
+                                        "Bearer " + signUpResponse!!.accessToken,
+                                        postUidDeviceTokenReq
+                                    )
+                                    Log.d("UidToken", saveRes.toString())
+                                    if (saveRes.isSuccess) {
+                                        Log.d("UidToken", "UID와 디바이스 토큰 저장 완료")
+                                    } else {
+                                        Log.d("UidToken", "UID와 디바이스 토큰 저장 실패")
+                                    }
+                                }
+                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                overridePendingTransition(
+                                    anim.slide_right_enter,
+                                    anim.slide_right_exit
+                                )
+                                finish()
+                            })
+
+                    } else {
+                        // 로그인 실패 처리
+                        Log.d("CreateUserActivity", "로그인 실패")
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(this@LoginActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
             }
         }
 
@@ -364,7 +426,16 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
         }
     }
 
+    private suspend fun signUp(postSignUpReq: PostSignUpReq): BaseResponse<PostOauthLoginRes> {
+        return RetrofitInstance.joinRetrofitInterface.signUp(postSignUpReq)
+    }
+
+    private suspend fun saveUidAndToken(accessToken: String, postUidDeviceTokenReq: PostUidDeviceTokenReq): BaseResponse<String> {
+        return RetrofitInstance.joinRetrofitInterface.saveUidAndToken(accessToken, postUidDeviceTokenReq)
+    }
+
     private fun storeTokens(result : LoginResponseData){
+//        val sharedPreferences = getSharedPreferences("airconmoa", MODE_PRIVATE)
 //        sharedPreferences.edit()
 //            .putString(Constants.X_ACCESS_TOKEN, "Bearer " + result.accessToken)
 //            .putString(Constants.X_REFRESH_TOKEN, result.refreshToken)
