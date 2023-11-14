@@ -56,7 +56,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
@@ -83,7 +83,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
@@ -110,7 +110,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
@@ -136,7 +136,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
@@ -162,7 +162,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>

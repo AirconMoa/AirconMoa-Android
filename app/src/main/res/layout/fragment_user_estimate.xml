@@ -42,7 +42,8 @@
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="3dp">
-                <Button
+                <TextView
+                    android:id="@+id/btn_new"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:textColor="@color/airconmoa_gray"
@@ -53,10 +54,11 @@
                     android:textSize="20sp"
                     android:background="@android:color/transparent"/>
 
-                <ImageButton
+                <ImageView
+                    android:id="@+id/img_new"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
@@ -69,7 +71,8 @@
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="3dp">
-                <Button
+                <TextView
+                    android:id="@+id/btn_exist"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:textColor="@color/airconmoa_gray"
@@ -80,10 +83,11 @@
                     android:textSize="20sp"
                     android:background="@android:color/transparent"/>
 
-                <ImageButton
+                <ImageView
+                    android:id="@+id/img_exist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
@@ -96,7 +100,8 @@
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="3dp">
-                <Button
+                <TextView
+                    android:id="@+id/btn_change"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:textColor="@color/airconmoa_gray"
@@ -107,10 +112,11 @@
                     android:textSize="20sp"
                     android:background="@android:color/transparent"/>
 
-                <ImageButton
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/img_change"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check"
+                    android:src="@drawable/estimate_btn_check_true"
                     android:background="@android:color/transparent"
                     android:layout_gravity="right|center"
                     android:layout_marginRight="30dp"/>
