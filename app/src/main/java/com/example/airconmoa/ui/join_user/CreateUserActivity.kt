@@ -1,16 +1,16 @@
 package com.example.airconmoa.ui.join_user
 
+import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.R
+import com.example.airconmoa.config.BaseActivityVB
+
 import com.example.airconmoa.config.BaseResponse
 import com.example.airconmoa.config.RetrofitInstance
-import com.example.airconmoa.BuildConfig
-import com.example.airconmoa.R
-import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityCreateUserBinding
 import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
 import com.example.airconmoa.ui.join_user.model.PostSignUpReq
@@ -20,6 +20,7 @@ import com.example.airconmoa.util.FirebaseAuthUtils
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.BuildConfig
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.kakao.sdk.auth.model.OAuthToken
@@ -36,15 +37,23 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
 
     private lateinit var auth: FirebaseAuth
 
+    private val loadingDialog: Dialog by lazy {
+        ProgressDialog(this).apply {
+            setMessage("Now Loading...")
+            setCancelable(false)
+            setCanceledOnTouchOutside(false)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         auth = Firebase.auth
 
         /** Naver Login Module Initialize */
-        val naverClientId = BuildConfig.NAVER_CLIENT_ID
-        val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
-        NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
+        //val naverClientId = BuildConfig.NAVER_CLIENT_ID
+        //val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
+        //NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
 
         binding.createUserBackIv.setOnClickListener {
             finish()
@@ -145,6 +154,7 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                                         Log.d("UidToken", "UID와 디바이스 토큰 저장 실패")
                                     }
                                 }
+                                hideLoading()
                                 val intent = Intent(this@CreateUserActivity, MainActivity::class.java)
                                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 overridePendingTransition(
@@ -158,6 +168,7 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                         // 로그인 실패 처리
                         Log.d("CreateUserActivity", "로그인 실패")
                         withContext(Dispatchers.Main) {
+                            hideLoading()
                             Toast.makeText(this@CreateUserActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -166,6 +177,7 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
         }
 
         binding.createUserWithKakaoIv.setOnClickListener {
+            showLoading()
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
                 UserApiClient.instance.loginWithKakaoTalk(this, callback = callback)
             } else {
@@ -246,6 +258,18 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
             binding.createUserWithNaverOAuth.performClick()
         }
         setFullScreen()
+    }
+
+    private fun showLoading() {
+        if (!loadingDialog.isShowing) {
+            loadingDialog.show()
+        }
+    }
+
+    private fun hideLoading() {
+        if (loadingDialog.isShowing) {
+            loadingDialog.dismiss()
+        }
     }
 
     private suspend fun signUp(postSignUpReq: PostSignUpReq): BaseResponse<PostOauthLoginRes> {

@@ -9,10 +9,9 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.airconmoa.R
+import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.data.SiData
-import com.example.airconmoa_android.R
-import com.example.airconmoa_android.databinding.DialogLocationRecycleBinding
-import com.example.airconmoa_android.databinding.ItemRvLocationBinding
 
 
 class DialogLocationRecyclerAdapter(val context: Context,
