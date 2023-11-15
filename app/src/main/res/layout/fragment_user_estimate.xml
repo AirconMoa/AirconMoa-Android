@@ -27,6 +27,8 @@
         android:id="@+id/linear_check_install"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/estimate_name_text">
 
         <LinearLayout
@@ -127,7 +129,18 @@
 
 
     </LinearLayout>
-
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_btn_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="다음"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
