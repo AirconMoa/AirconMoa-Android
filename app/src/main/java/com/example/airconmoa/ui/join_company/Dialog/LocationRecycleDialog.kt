@@ -29,7 +29,8 @@ import com.example.airconmoa.ui.login_user.model.LoginPostData
 import com.example.airconmoa.until.saveSi
 
 
-class LocationRecycleDialog(context: Context, dlgbinding:FragmentCompanyJoinWhereBinding): Dialog(context){
+
+class LocationRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinWhereBinding): Dialog(context){
 
     private lateinit var binding: DialogLocationRecycleBinding
 

@@ -16,7 +16,8 @@ import com.example.airconmoa.databinding.FragmentCompanyJoinWhereBinding
 import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
 
-class LocationDoRecycleDialog(context: Context,dlgbinding:FragmentCompanyJoinWhereBinding,locationDo:String):Dialog(context) {
+
+class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinWhereBinding, locationDo:String):Dialog(context) {
 
     private lateinit var binding: DialogLocationRecycleBinding
 

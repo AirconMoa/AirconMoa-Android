@@ -13,7 +13,6 @@ import com.example.airconmoa.R
 import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.data.SiData
 
-
 class DialogLocationRecyclerAdapter(val context: Context,
                                     private val list:List<String>,
                                     onClick: OnClickInterface,
@@ -72,12 +71,12 @@ class DialogLocationRecyclerAdapter(val context: Context,
 
     interface OnClickInterface{
         fun onClick(view: View,position: Int)
-        fun onClick(view:ItemRvLocationBinding,position: Int)
+        fun onClick(view: ItemRvLocationBinding, position: Int)
     }
 
     interface OnLongClickInterface{
         fun onLongClick(view:View,position: Int)
-        fun onLongClick(view:ItemRvLocationBinding,position: Int)
+        fun onLongClick(view: ItemRvLocationBinding, position: Int)
     }
 
 
