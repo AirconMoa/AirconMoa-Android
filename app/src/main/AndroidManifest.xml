@@ -117,8 +117,8 @@
             android:exported="false" />
 
         <!--user_estimate-->
-        <activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
-            android:exported="false"/>
+        <!--<activity android:name="com.example.airconmoa.ui.estimate_user.UserEstimateActivity"
+            android:exported="false"/>-->
     </application>
 
 </manifest>

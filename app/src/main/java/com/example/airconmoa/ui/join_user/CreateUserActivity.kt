@@ -9,8 +9,6 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseResponse
 import com.example.airconmoa.config.RetrofitInstance
 import com.example.airconmoa.BuildConfig
-import com.example.airconmoa.R
-import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityCreateUserBinding
 import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
 import com.example.airconmoa.ui.join_user.model.PostSignUpReq

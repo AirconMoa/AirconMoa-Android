@@ -3,8 +3,8 @@ package com.example.airconmoa.ui.join_company
 import android.content.Intent
 import android.os.Bundle
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa_android.databinding.ActivityCompanyJoinBinding
-import com.example.airconmoa_android.databinding.ActivityCompanyJoinFirstBinding
+import com.example.airconmoa.databinding.ActivityCompanyJoinFirstBinding
+
 
 class CompanyJoinFirstActivity: BaseActivityVB<ActivityCompanyJoinFirstBinding>(
     ActivityCompanyJoinFirstBinding::inflate)  {
