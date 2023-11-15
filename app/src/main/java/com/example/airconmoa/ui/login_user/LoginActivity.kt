@@ -2,6 +2,8 @@ package com.example.airconmoa.ui.login_user
 
 import android.Manifest
 import android.R
+import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -13,11 +15,9 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.airconmoa.BuildConfig
 import com.example.airconmoa.R.anim
 import com.example.airconmoa.R.color
 import com.example.airconmoa.config.BaseActivityVB
-import com.example.airconmoa.databinding.ActivityLoginBinding
 import com.example.airconmoa.ui.login_user.model.LoginResponseData
 import com.example.airconmoa.ui.main_user.MainActivity
 import com.example.airconmoa.util.Constants
@@ -51,6 +51,14 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
     private var userEmail : String? = null
     private var itemNum = 0
     private lateinit var auth: FirebaseAuth
+
+    private val loadingDialog: Dialog by lazy {
+        ProgressDialog(this).apply {
+            setMessage("Now Loading...")
+            setCancelable(false)
+            setCanceledOnTouchOutside(false)
+        }
+    }
 
     private var social = ""
     private lateinit var neededPermissionList : ArrayList<String>
@@ -100,9 +108,9 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
         /** Naver Login Module Initialize */
         //val naverClientId = getString(string.social_login_info_naver_client_id)
         //val naverClientSecret = getString(string.social_login_info_naver_client_secret)
-        val naverClientId = BuildConfig.NAVER_CLIENT_ID
-        val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
-        NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
+        //val naverClientId = BuildConfig.NAVER_CLIENT_ID
+        //val naverClientSecret = BuildConfig.NAVER_CLIENT_SECRETE
+        //NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, "Aircon Moa")
 //       binding.btnKakaoLogin.setOnClickListener {
 //            social = "KAKAO"
 //            showLoading()
@@ -304,6 +312,7 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
                                         Log.d("UidToken", "UID와 디바이스 토큰 저장 실패")
                                     }
                                 }
+                                hideLoading()
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 overridePendingTransition(
@@ -317,6 +326,7 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
                         // 로그인 실패 처리
                         Log.d("CreateUserActivity", "로그인 실패")
                         withContext(Dispatchers.Main) {
+                            hideLoading()
                             Toast.makeText(this@LoginActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -325,6 +335,7 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
         }
 
         binding.loginWithKakaoIv.setOnClickListener {
+            showLoading()
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) { // 카카오톡 설치 확인
                 UserApiClient.instance.loginWithKakaoTalk(this, callback = callback) // 카카오톡 로그인
             } else {
@@ -431,6 +442,18 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
 
     private suspend fun saveUidAndToken(accessToken: String, postUidDeviceTokenReq: PostUidDeviceTokenReq): BaseResponse<String> {
         return RetrofitInstance.joinRetrofitInterface.saveUidAndToken(accessToken, postUidDeviceTokenReq)
+    }
+
+    private fun showLoading() {
+        if (!loadingDialog.isShowing) {
+            loadingDialog.show()
+        }
+    }
+
+    private fun hideLoading() {
+        if (loadingDialog.isShowing) {
+            loadingDialog.dismiss()
+        }
     }
 
     private fun storeTokens(result : LoginResponseData){

@@ -1,6 +1,7 @@
 package com.example.airconmoa.ui.main_user
 
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -18,7 +19,7 @@ class MainActivity : BaseActivityVB<ActivityMainBinding>(ActivityMainBinding::in
         binding.bottomNV.itemIconTintList = null
 
         setBottomNavigation()
-
+        setFullScreen()
     }
 
 

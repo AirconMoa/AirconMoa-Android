@@ -13,8 +13,6 @@ import com.example.airconmoa.R
 import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.data.SiData
 
-
-
 class DialogLocationRecyclerAdapter(val context: Context,
                                     private val list:List<String>,
                                     onClick: OnClickInterface,
