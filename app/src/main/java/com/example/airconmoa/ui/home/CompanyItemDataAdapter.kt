@@ -19,12 +19,12 @@ class CompanyItemDataAdapter(private val dataList: List<CompanyItemData>?) :
 
         fun bind(data:CompanyItemData) {
 
-            viewBinding.companyNameTv.text=data.companyName
-            viewBinding.contentTv1.text=data.content
-            viewBinding.contentTv2.text=data.length
+            viewBinding.companyNameTv.text = data.nickname
+            viewBinding.contentTv1.text = data.companyAddress
+            viewBinding.contentTv2.text = data.email
 
             Glide.with(context)
-                .load(data.image)
+                .load(data.companyImgUrl)
                 .error(R.drawable.png_logo)
                 .into(viewBinding.ractangleIv)
         }
