@@ -44,6 +44,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+    <LinearLayout
+        android:id="@+id/estimate_linear_progress"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_line"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/estimate_progress"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="7"
+            android:progressDrawable="@drawable/estimate_progressbar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:max="7"
+            android:progress="3"/>
+
+        <TextView
+            android:id="@+id/estimate_progress_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="3/7"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:textColor="#D9D9D9"/>
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -55,7 +88,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linear_check_install"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_line">
+        app:layout_constraintTop_toBottomOf="@id/estimate_linear_progress">
 
         <TextView
             android:id="@+id/discriptionTv"
