@@ -1,19 +1,26 @@
 package com.example.airconmoa.ui.estimate_user
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityUserEstimateBinding
-import com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateAddressFragment
-import com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateBrandFragment
-import com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateDateFragment
-import com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment
-import com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateQuantityFragment
-import com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateTypeFragment
 
 class UserEstimateActivity: BaseActivityVB<ActivityUserEstimateBinding>(ActivityUserEstimateBinding::inflate) {
+    private lateinit var navController: NavController
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    private var counter = 1
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.frame_estimate) as NavHostFragment
+        navController = navHostFragment.navController
+
+        //navController.navigate(R.id.estimateUserFragment)
+    }
+
+
+
+   /* private var counter = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -66,5 +73,9 @@ class UserEstimateActivity: BaseActivityVB<ActivityUserEstimateBinding>(Activity
 
 
 
+
+
     }
+
+    */
 }

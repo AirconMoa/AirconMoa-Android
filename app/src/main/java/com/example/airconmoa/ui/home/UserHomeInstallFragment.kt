@@ -47,8 +47,10 @@ class UserHomeInstallFragment : BaseFragmentVB<FragmentUserHomeInstallBinding>(F
         }
 
         binding.estimateWriteBtn.setOnClickListener {
-            val intent= Intent(context,UserEstimateActivity::class.java)
+            val intent= Intent(context, UserEstimateActivity::class.java)
             startActivity(intent)
+            //findNavController().navigate(R.id.action_homeFragment_to_estimateUserFragment)
+
         }
     }
 
