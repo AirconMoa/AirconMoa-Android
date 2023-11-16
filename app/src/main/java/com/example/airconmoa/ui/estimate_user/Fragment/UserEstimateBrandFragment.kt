@@ -3,6 +3,7 @@ package com.example.airconmoa.ui.estimate_user.Fragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.airconmoa.R
@@ -24,6 +25,14 @@ class UserEstimateBrandFragment : BaseFragmentVB<FragmentUserEstimateBrandBindin
             closeBtn.setOnClickListener { nextActivity(MainActivity::class.java) }
             backBtn.setOnClickListener {
                 navController.navigate(R.id.action_estimateBrandFragment_to_estimateDateFragment)
+            }
+            if(lg.isSelected){
+                lg.background =
+                    context?.let { ContextCompat.getDrawable(it, R.drawable.estimate_btn_check_true) }
+            }
+            else{
+                lg.background =
+                    context?.let { ContextCompat.getDrawable(it, R.drawable.estimate_btn_check_false2) }
             }
         }
     }
