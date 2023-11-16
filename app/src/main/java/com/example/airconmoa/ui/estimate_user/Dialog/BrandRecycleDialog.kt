@@ -20,16 +20,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.airconmoa.databinding.DialogBrandRecycleBinding
+import com.example.airconmoa.databinding.FragmentUserEstimateBrandBinding
+import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
 import com.example.airconmoa.ui.join_company.data.SiData
 import com.example.airconmoa.ui.login_user.model.LoginPostData
 import com.example.airconmoa.until.saveSi
-import com.example.airconmoa_android.databinding.DialogBrandRecycleBinding
-import com.example.airconmoa_android.databinding.DialogLocationRecycleBinding
-import com.example.airconmoa_android.databinding.DialogTypeRecycleBinding
-import com.example.airconmoa_android.databinding.FragmentUserEstimateBrandBinding
-import com.example.airconmoa_android.databinding.FragmentUserEstimateTypeBinding
-import com.example.airconmoa_android.databinding.ItemRvLocationBinding
+
 
 
 class BrandRecycleDialog(context: Context, dlgbinding: FragmentUserEstimateBrandBinding): Dialog(context){

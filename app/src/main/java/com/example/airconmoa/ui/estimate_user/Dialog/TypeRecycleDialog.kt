@@ -10,10 +10,11 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.airconmoa.databinding.DialogTypeRecycleBinding
+import com.example.airconmoa.databinding.FragmentUserEstimateTypeBinding
+import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
-import com.example.airconmoa_android.databinding.DialogTypeRecycleBinding
-import com.example.airconmoa_android.databinding.FragmentUserEstimateTypeBinding
-import com.example.airconmoa_android.databinding.ItemRvLocationBinding
+
 
 
 class TypeRecycleDialog(context: Context, dlgbinding: FragmentUserEstimateTypeBinding): Dialog(context){
