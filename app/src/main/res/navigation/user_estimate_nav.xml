@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/estimateUserFragment"
+    android:id="@+id/user_estimate_nav">
+    <fragment
+        android:id="@+id/estimateUserFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
+        android:label="fragment_estimate_user"
+        tools:layout="@layout/fragment_user_estimate">
+        <action
+            android:id="@+id/action_estimateUserFragment_to_estimateAddressFragment"
+            app:destination="@id/estimateAddressFragment"
+            app:popUpTo="@id/estimateUserFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateAddressFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateAddressFragment"
+        android:label="fragment_estimate_address"
+        tools:layout="@layout/fragment_user_estimate_address">
+        <action
+            android:id="@+id/action_estimateAddressFragment_to_estimateTypeFragment"
+            app:destination="@id/estimateTypeFragment"
+            app:popUpTo="@id/estimateAddressFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_estimateAddressFragment_to_estimateUserFragment"
+            app:destination="@id/estimateUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateTypeFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateTypeFragment"
+        android:label="fragment_estimate_type"
+        tools:layout="@layout/fragment_user_estimate_type">
+
+        <action
+            android:id="@+id/action_estimateTypeFragment_to_estimateQuantityFragment"
+            app:destination="@id/estimateQuantityFragment"
+            app:popUpTo="@id/estimateTypeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_estimateTypeFragment_to_estimateAddressFragment"
+            app:destination="@id/estimateAddressFragment"
+            app:popUpTo="@id/estimateUserFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateQuantityFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateQuantityFragment"
+        android:label="fragment_estimate_quantity"
+        tools:layout="@layout/fragment_user_estimate_quantity">
+        <action
+            android:id="@+id/action_estimateQuantityFragment_to_estimateTypeFragment"
+            app:destination="@id/estimateTypeFragment"
+            app:popUpTo="@id/estimateAddressFragment"/>
+        <action
+            android:id="@+id/action_estimateQuantityFragment_to_estimateDateFragment"
+            app:destination="@id/estimateDateFragment"
+            app:popUpTo="@id/estimateQuantityFragment"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateDateFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateDateFragment"
+        android:label="fragment_estimate_date"
+        tools:layout="@layout/fragment_user_estimate_date">
+        <action
+            android:id="@+id/action_estimateDateFragment_to_estimateQuantityFragment"
+            app:destination="@id/estimateQuantityFragment"
+            app:popUpTo="@id/estimateTypeFragment"/>
+        <action
+            android:id="@+id/action_estimateDateFragment_to_estimateBrandFragment"
+            app:destination="@id/estimateBrandFragment"
+            app:popUpTo="@id/estimateDateFragment"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateBrandFragment"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateBrandFragment"
+        android:label="fragment_estimate_brand"
+        tools:layout="@layout/fragment_user_estimate_brand">
+        <action
+            android:id="@+id/action_estimateBrandFragment_to_estimateDateFragment"
+            app:destination="@id/estimateDateFragment"
+            app:popUpTo="@id/estimateQuantityFragment"/>
+    </fragment>
+
+</navigation>

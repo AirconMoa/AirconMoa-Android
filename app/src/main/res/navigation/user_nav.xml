@@ -13,12 +13,6 @@
         tools:layout="@layout/fragment_user_home">
     </fragment>
 
-    <fragment
-        android:id="@+id/estimateFragment"
-        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
-        android:label="fragment_estimate"
-        tools:layout="@layout/fragment_user_estimate">
-    </fragment>
 
     <fragment
         android:id="@+id/mypageFragment"
