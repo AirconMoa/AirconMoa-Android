@@ -27,9 +27,12 @@ class UserEstimateFragment : BaseFragmentVB<FragmentUserEstimateBinding>(Fragmen
                 startActivity(intent)
             }
             backBtn.setOnClickListener {
+                while(findNavController().popBackStack());
+
                 val intent= Intent(context,MainActivity::class.java)
+                intent.setFlags(FLAG_ACTIVITY_CLEAR_TASK)
+
                 startActivity(intent)
-                findNavController().popBackStack()
             }
         }
 

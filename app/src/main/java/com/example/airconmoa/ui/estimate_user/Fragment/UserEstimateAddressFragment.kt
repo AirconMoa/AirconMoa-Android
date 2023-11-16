@@ -20,9 +20,10 @@ class UserEstimateAddressFragment : BaseFragmentVB<FragmentUserEstimateAddressBi
 
             }
             closeBtn.setOnClickListener {
-                val intent= Intent(context, MainActivity::class.java)
+                while(findNavController().popBackStack());
+                val intent= Intent(context,MainActivity::class.java)
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(intent)
-                findNavController().popBackStack()
             }
             backBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_estimateAddressFragment_to_estimateUserFragment)
