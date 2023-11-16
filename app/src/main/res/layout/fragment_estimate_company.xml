@@ -1,8 +1,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.airconmoa.ui.estimate_user.UserEstimateFragment">
 
     <ImageView
@@ -33,10 +33,10 @@
         android:id="@+id/layout_bottom_home"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/background_layout_main"
         android:elevation="20dp"
         android:paddingTop="20dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,55 +72,56 @@
             android:id="@+id/fstBtn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="날짜순"
-            android:textSize="15dp"
             android:layout_marginTop="3dp"
-            android:textColor="@color/white"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/shape_btn_main"
             android:drawableStart="@drawable/option_down"
-            android:paddingHorizontal="8dp"
             android:drawablePadding="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="8dp"
+            android:text="날짜순"
+            android:textColor="@color/white"
+            android:textSize="15dp"
             app:layout_constraintBottom_toTopOf="@id/view"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="20dp"
 
             />
+
         <Button
             android:id="@+id/secBtn"
             android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:text="작성 완성 견적순"
-            android:textSize="15dp"
-            android:textColor="@color/airconmoa_gray3"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/shape_btn_stroke_gray3"
             android:drawableStart="@drawable/option_up"
-            android:paddingHorizontal="8dp"
             android:drawablePadding="4dp"
+            android:paddingHorizontal="8dp"
+            android:text="작성 완성 견적순"
+            android:textColor="@color/airconmoa_gray3"
+            android:textSize="15dp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fstBtn"
-            android:layout_marginTop="2.5dp"
-            android:visibility="gone"
-            android:layout_marginEnd="20dp"
 
             />
+
         <Button
             android:id="@+id/trdBtn"
             android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:text="작성 미완료 견적순"
-            android:textSize="15dp"
-            android:textColor="@color/airconmoa_gray3"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/shape_btn_stroke_gray3"
             android:drawableStart="@drawable/option_up"
             android:drawablePadding="4dp"
             android:paddingHorizontal="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secBtn"
-            android:layout_marginTop="2.5dp"
+            android:text="작성 미완료 견적순"
+            android:textColor="@color/airconmoa_gray3"
+            android:textSize="15dp"
             android:visibility="gone"
-            android:layout_marginEnd="20dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secBtn" />
 
         <View
             android:id="@+id/view"
@@ -136,8 +137,7 @@
             android:layout_height="392dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-           >
+            app:layout_constraintTop_toBottomOf="@+id/view">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main_company"
@@ -152,12 +152,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:text="더 많은 견적 보기"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/scroll_rv" />

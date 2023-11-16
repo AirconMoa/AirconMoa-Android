@@ -11,9 +11,9 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="44dp"
         android:paddingBottom="12dp"
-        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -48,10 +48,10 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#CDD3D9"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
-        android:orientation="horizontal" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,12 +77,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="2/7"
-            android:textColor="@color/airconmoa_progress"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="right"
-            android:layout_gravity="center"
-            android:textSize="18sp"/>
+            android:text="2/7"
+            android:textColor="@color/airconmoa_progress"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -90,8 +90,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="130dp"
         android:text="이메일을 입력해주세요."
         android:textColor="@color/airconmoa_gray"
         android:textSize="25sp"
@@ -102,12 +102,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이메일을 입력 후 인증해주세요."
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:text="이메일을 입력 후 인증해주세요."
         android:textColor="@color/airconmoa_gray3"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -140,12 +140,12 @@
                     android:id="@+id/login_email_et"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:theme="@style/EditTheme"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textColor="@color/airconmoa_gray"
                     android:backgroundTint="@color/airconmoa_gray3"
-                    android:inputType="text"/>
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:textColor="@color/airconmoa_gray"
+                    android:textSize="18sp"
+                    android:theme="@style/EditTheme" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,8 +160,8 @@
             android:gravity="center"
             android:text="\@"
             android:textColor="@color/airconmoa_gray3"
-            android:textStyle="bold"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/enter_email_address_spinner"
@@ -169,11 +169,11 @@
             android:layout_height="43dp"
             android:layout_marginTop="13dp"
             android:layout_marginRight="20dp"
-            android:paddingTop="5dp"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textAlignment="center"/>
+            android:paddingTop="5dp"
+            android:textAlignment="center" />
 
     </LinearLayout>
 
@@ -182,8 +182,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:paddingLeft="5dp"
         android:layout_marginTop="-5dp"
+        android:paddingLeft="5dp"
         android:text="이메일을 입력해주세요"
         android:textColor="@color/airconmoa_red"
         android:textSize="14sp"
@@ -195,8 +195,8 @@
         android:id="@+id/enter_email_authenticate_btn"
         android:layout_width="92dp"
         android:layout_height="40dp"
-        android:background="@drawable/shape_btn_white_gray_border"
         android:layout_marginTop="70dp"
+        android:background="@drawable/shape_btn_white_gray_border"
         android:text="인증하기"
         android:textColor="@color/airconmoa_gray2"
         android:visibility="visible"
@@ -208,11 +208,11 @@
         android:id="@+id/enter_email_authenticate_select_btn"
         android:layout_width="92dp"
         android:layout_height="40dp"
-        android:background="@drawable/shape_selected_btn_radius16"
         android:layout_marginTop="70dp"
+        android:background="@drawable/shape_selected_btn_radius16"
         android:text="인증하기"
-        android:visibility="invisible"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -221,9 +221,9 @@
         android:id="@+id/enter_email_next_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/shape_btn_gray4"
-        android:layout_marginHorizontal="20dp"
         android:text="다음"
         android:textColor="@color/airconmoa_gray"
         android:textSize="18sp"

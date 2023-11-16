@@ -11,7 +11,8 @@ import com.example.airconmoa.ui.main_user.MainActivity
 
 
 class UserEstimateQuantityFragment : BaseFragmentVB<FragmentUserEstimateQuantityBinding>(
-    FragmentUserEstimateQuantityBinding::bind, R.layout.fragment_user_estimate_quantity)  {
+    FragmentUserEstimateQuantityBinding::bind, R.layout.fragment_user_estimate_quantity
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
@@ -21,7 +22,7 @@ class UserEstimateQuantityFragment : BaseFragmentVB<FragmentUserEstimateQuantity
             }
             closeBtn.setOnClickListener {
                 val intent = Intent(context, MainActivity::class.java)
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 while (findNavController().popBackStack());
 

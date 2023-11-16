@@ -1,14 +1,5 @@
 package com.example.airconmoa.ui.join_user
 
-import android.util.Log
-import com.example.airconmoa.config.BaseResponse
-import com.example.airconmoa.config.RetrofitInstance
-import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
-import com.example.airconmoa.ui.join_user.model.PostSignUpReq
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 
 //class JoinService (val view : JoinActivityInterface){
 //

@@ -9,13 +9,16 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentEstimateWriteCompanyBinding
 
 
-class EstimateWriteCompanyFragment : BaseFragmentVB<FragmentEstimateWriteCompanyBinding>(FragmentEstimateWriteCompanyBinding::bind, R.layout.fragment_estimate_write_company) {
+class EstimateWriteCompanyFragment : BaseFragmentVB<FragmentEstimateWriteCompanyBinding>(
+    FragmentEstimateWriteCompanyBinding::bind,
+    R.layout.fragment_estimate_write_company
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.finishBtn.setOnClickListener {
-            val intent= Intent(context,WriteCompleteActivity::class.java)
+            val intent = Intent(context, WriteCompleteActivity::class.java)
             startActivity(intent)
-            while(findNavController().popBackStack());
+            while (findNavController().popBackStack());
         }
     }
 }

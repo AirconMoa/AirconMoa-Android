@@ -6,9 +6,9 @@ import com.google.firebase.ktx.Firebase
 
 class FirebaseAuthUtils {
     companion object {
-        private lateinit var auth : FirebaseAuth
+        private lateinit var auth: FirebaseAuth
 
-        fun getUid() : String {
+        fun getUid(): String {
             auth = Firebase.auth
             return auth.currentUser?.uid.toString()
         }

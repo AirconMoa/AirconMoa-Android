@@ -14,11 +14,14 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEditMypageBinding
 
 
-class UserMypageEditFragment : BaseFragmentVB<FragmentUserEditMypageBinding>(FragmentUserEditMypageBinding::bind, R.layout.fragment_user_edit_mypage) {
+class UserMypageEditFragment : BaseFragmentVB<FragmentUserEditMypageBinding>(
+    FragmentUserEditMypageBinding::bind,
+    R.layout.fragment_user_edit_mypage
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.unsubscribeBtn.text=spannableText()
+        binding.unsubscribeBtn.text = spannableText()
 
 
 
@@ -78,21 +81,23 @@ class UserMypageEditFragment : BaseFragmentVB<FragmentUserEditMypageBinding>(Fra
 
                 }
             })
-           editCloseBtn1.setOnClickListener { nameeditTv.text=null }
-           editCloseBtn2.setOnClickListener {  phoneeditTv.text=null }
-            editCloseBtn3.setOnClickListener {  nicknameeditTv.text=null }
+            editCloseBtn1.setOnClickListener { nameeditTv.text = null }
+            editCloseBtn2.setOnClickListener { phoneeditTv.text = null }
+            editCloseBtn3.setOnClickListener { nicknameeditTv.text = null }
             backBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_mypageeditFragment_to_mypageFragment)
             }
         }
 
     }
-    fun spannableText(): SpannableStringBuilder {
-        val colorSpan = ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.airconmoa_main))
 
-        val textData:String="모아를 탈퇴하려면 여기를 눌러주세요"
-        val spannable= SpannableStringBuilder(textData)
-        spannable.setSpan(colorSpan,10,12, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+    fun spannableText(): SpannableStringBuilder {
+        val colorSpan =
+            ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.airconmoa_main))
+
+        val textData: String = "모아를 탈퇴하려면 여기를 눌러주세요"
+        val spannable = SpannableStringBuilder(textData)
+        spannable.setSpan(colorSpan, 10, 12, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         return spannable
     }

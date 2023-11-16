@@ -8,7 +8,8 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityEnterPhoneBinding
 
-class EnterPhoneActivity : BaseActivityVB<ActivityEnterPhoneBinding>(ActivityEnterPhoneBinding::inflate) {
+class EnterPhoneActivity :
+    BaseActivityVB<ActivityEnterPhoneBinding>(ActivityEnterPhoneBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -58,17 +59,17 @@ class EnterPhoneActivity : BaseActivityVB<ActivityEnterPhoneBinding>(ActivityEnt
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        if(baseSeq.isNotEmpty()) {
+        if (baseSeq.isNotEmpty()) {
             editor.putString("baseSeq", baseSeq)
             Log.d("baseSeq", baseSeq)
         }
 
-        if(firstSeq.isNotEmpty()) {
+        if (firstSeq.isNotEmpty()) {
             editor.putString("firstSeq", firstSeq)
             Log.d("firstSeq", firstSeq)
         }
 
-        if(lastSeq.isNotEmpty()) {
+        if (lastSeq.isNotEmpty()) {
             editor.putString("lastSeq", lastSeq)
             Log.d("lastSeq", lastSeq)
         }
@@ -84,15 +85,15 @@ class EnterPhoneActivity : BaseActivityVB<ActivityEnterPhoneBinding>(ActivityEnt
         val tempFirst = sharedPreferences.getString("firstSeq", null)
         val tempLast = sharedPreferences.getString("lastSeq", null)
 
-        if(tempBase != null) {
+        if (tempBase != null) {
             binding.enterPhoneBaseEt.setText(tempBase)
         }
 
-        if(tempFirst != null) {
+        if (tempFirst != null) {
             binding.enterPhoneFisrtEt.setText(tempFirst)
         }
 
-        if(tempLast != null) {
+        if (tempLast != null) {
             binding.enterPhoneLastEt.setText(tempLast)
         }
     }

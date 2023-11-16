@@ -12,9 +12,10 @@ import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityEnterEmailBinding
 
 
-class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnterEmailBinding::inflate) {
+class EnterEmailActivity :
+    BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnterEmailBinding::inflate) {
 
-    private var userEmail : String? = null
+    private var userEmail: String? = null
     private var itemNum = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +51,14 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
 
         // 스피너 선택 이벤트 리스너 설정
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long,
+            ) {
                 itemNum = position
-                userEmail = if(position == 0) {
+                userEmail = if (position == 0) {
                     binding.loginEmailEt.text.toString() + ""
                 } else if (position == 1) {
                     binding.loginEmailEt.text.toString() + "@naver.com"
@@ -66,15 +72,24 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
                     binding.loginEmailEt.text.toString() + "@yahoo.com"
                 }
 
-                if(position != 0) {
+                if (position != 0) {
                     binding.enterEmailAuthenticateBtn.visibility = View.INVISIBLE
                     binding.enterEmailAuthenticateSelectBtn.visibility = View.VISIBLE
-                    binding.enterEmailAtTv.setTextColor(ContextCompat.getColor(this@EnterEmailActivity, R.color.airconmoa_gray))
-                }
-                else {
+                    binding.enterEmailAtTv.setTextColor(
+                        ContextCompat.getColor(
+                            this@EnterEmailActivity,
+                            R.color.airconmoa_gray
+                        )
+                    )
+                } else {
                     binding.enterEmailAuthenticateBtn.visibility = View.VISIBLE
                     binding.enterEmailAuthenticateSelectBtn.visibility = View.INVISIBLE
-                    binding.enterEmailAtTv.setTextColor(ContextCompat.getColor(this@EnterEmailActivity, R.color.airconmoa_gray3))
+                    binding.enterEmailAtTv.setTextColor(
+                        ContextCompat.getColor(
+                            this@EnterEmailActivity,
+                            R.color.airconmoa_gray3
+                        )
+                    )
                 }
             }
 
@@ -89,7 +104,7 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
         }
 
         binding.enterEmailAuthenticateSelectBtn.setOnClickListener {
-            if(binding.loginEmailEt.text!!.isNotEmpty()) {
+            if (binding.loginEmailEt.text!!.isNotEmpty()) {
                 val intent = Intent(this, EmailAuthenticationActivity::class.java)
                 Log.d("userEmail", userEmail!!)
                 val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
@@ -99,8 +114,7 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
                 binding.enterEmailErrrorTv.visibility = View.INVISIBLE
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
-            }
-            else {
+            } else {
                 showCustomToast("이메일을 올바르게 입력해주세요")
                 binding.enterEmailErrrorTv.visibility = View.VISIBLE
             }
@@ -114,12 +128,12 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        if(userEmailTextInput.isNotEmpty()) {
+        if (userEmailTextInput.isNotEmpty()) {
             editor.putString("userEmailTextInput", userEmailTextInput)
             Log.d("userEmailTextInput", userEmailTextInput)
         }
 
-        if(itemNum != 0) {
+        if (itemNum != 0) {
             editor.putString("spinnerNumber", itemNum.toString())
             Log.d("spinnerNumber", itemNum.toString())
         }
@@ -134,11 +148,11 @@ class EnterEmailActivity : BaseActivityVB<ActivityEnterEmailBinding>(ActivityEnt
         val tempEmail = sharedPreferences.getString("userEmailTextInput", null)
         val tempSpinnerNumber = sharedPreferences.getString("spinnerNumber", null)
 
-        if(tempEmail != null) {
+        if (tempEmail != null) {
             binding.loginEmailEt.setText(tempEmail)
         }
 
-        if(tempSpinnerNumber != null) {
+        if (tempSpinnerNumber != null) {
             val spinnerNum = tempSpinnerNumber.toInt()
             binding.enterEmailAddressSpinner.setSelection(spinnerNum)
         }

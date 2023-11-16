@@ -10,45 +10,46 @@
         android:id="@+id/linear_login_progress"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/estimate_btn_back"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/estimate_btn_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
             android:text="로그인"
             android:textColor="@color/airconmoa_gray"
-            android:textSize="20sp"
-            android:layout_weight="3"
-            android:gravity="center"/>
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/btn_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/estimate_btn_close"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/estimate_btn_close" />
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/estimate_underline"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#CDD3D9"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear_login_progress"
-        android:orientation="horizontal" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_login_progress" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

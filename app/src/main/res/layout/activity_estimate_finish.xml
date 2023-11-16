@@ -10,11 +10,11 @@
         android:id="@+id/centerLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@id/layout_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/sendIv"
@@ -52,7 +52,6 @@
             app:layout_constraintTop_toBottomOf="@id/comanyNameTv" />
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,108 +62,107 @@
         android:background="@drawable/background_layout_main"
         android:elevation="20dp"
         android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/centerLayout"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/centerLayout">
 
         <TextView
             android:id="@+id/installTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="설치 정보"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/airconmoa_gray2"
             android:fontFamily="@font/semi_bold"
+            android:text="설치 정보"
+            android:textColor="@color/airconmoa_gray2"
             android:textSize="15dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/installContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="에어컨 신규 설치 / 기존건물"
             android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installTv"
+            android:text="에어컨 신규 설치 / 기존건물"
             android:textColor="@color/black"
             android:textSize="15dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installTv" />
 
         <TextView
             android:id="@+id/installAddressTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="설치 주소"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installContentTv"
-            android:textColor="@color/airconmoa_gray2"
             android:fontFamily="@font/semi_bold"
+            android:text="설치 주소"
+            android:textColor="@color/airconmoa_gray2"
             android:textSize="15dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installContentTv" />
+
         <TextView
             android:id="@+id/installAddressContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="인천 광역시 미추홀구 모아동 1로 123-45\n모아빌라 402호"
             android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installAddressTv"
+            android:text="인천 광역시 미추홀구 모아동 1로 123-45\n모아빌라 402호"
             android:textColor="@color/black"
             android:textSize="15dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installAddressTv" />
+
         <TextView
             android:id="@+id/installSiteTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="설치 장소 유형"
-            app:layout_constraintHorizontal_bias="0.5"
             android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/installNumTv"
-            app:layout_constraintTop_toBottomOf="@id/installAddressContentTv"
-            android:textColor="@color/airconmoa_gray2"
             android:fontFamily="@font/semi_bold"
+            android:text="설치 장소 유형"
+            android:textColor="@color/airconmoa_gray2"
             android:textSize="15dp"
-            />
+            app:layout_constraintEnd_toStartOf="@id/installNumTv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installAddressContentTv" />
+
         <TextView
             android:id="@+id/installSiteContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="빌라"
             android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installSiteTv"
+            android:text="빌라"
             android:textColor="@color/black"
             android:textSize="15dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installSiteTv" />
+
         <TextView
             android:id="@+id/installNumTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="설치 수량"
-            app:layout_constraintHorizontal_bias="0.5"
             android:layout_marginTop="30dp"
-            app:layout_constraintStart_toEndOf="@id/installSiteTv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installAddressContentTv"
-            android:textColor="@color/airconmoa_gray2"
             android:fontFamily="@font/semi_bold"
+            android:text="설치 수량"
+            android:textColor="@color/airconmoa_gray2"
             android:textSize="15dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/installSiteTv"
+            app:layout_constraintTop_toBottomOf="@id/installAddressContentTv" />
+
         <TextView
             android:id="@+id/installNumContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1대"
             android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/installNumTv"
-            app:layout_constraintStart_toEndOf="@id/installSiteContentTv"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="1대"
             android:textColor="@color/black"
             android:textSize="15dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/installSiteContentTv"
+            app:layout_constraintTop_toBottomOf="@id/installNumTv" />
+
         <Button
             android:id="@+id/backBtn"
             android:layout_width="match_parent"
@@ -178,57 +176,57 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
         <TextView
             android:id="@+id/installDateTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="설치 날짜"
-            app:layout_constraintHorizontal_bias="0.5"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/installNumTv"
-            app:layout_constraintTop_toBottomOf="@id/installSiteContentTv"
-            android:textColor="@color/airconmoa_gray2"
             android:fontFamily="@font/semi_bold"
+            android:text="설치 날짜"
+            android:textColor="@color/airconmoa_gray2"
             android:textSize="15dp"
-            />
+            app:layout_constraintEnd_toStartOf="@id/installNumTv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installSiteContentTv" />
+
         <TextView
             android:id="@+id/installDateContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10월 5일"
             android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installDateTv"
+            android:text="10월 5일"
             android:textColor="@color/black"
             android:textSize="15dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installDateTv" />
+
         <TextView
             android:id="@+id/brandTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="브랜드"
-            app:layout_constraintHorizontal_bias="0.5"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@id/installSiteTv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/installNumContentTv"
-            android:textColor="@color/airconmoa_gray2"
             android:fontFamily="@font/semi_bold"
+            android:text="브랜드"
+            android:textColor="@color/airconmoa_gray2"
             android:textSize="15dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/installSiteTv"
+            app:layout_constraintTop_toBottomOf="@id/installNumContentTv" />
+
         <TextView
             android:id="@+id/brandContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="삼성"
             android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/brandTv"
-            app:layout_constraintStart_toEndOf="@id/installSiteContentTv"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="삼성"
             android:textColor="@color/black"
             android:textSize="15dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/installSiteContentTv"
+            app:layout_constraintTop_toBottomOf="@id/brandTv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

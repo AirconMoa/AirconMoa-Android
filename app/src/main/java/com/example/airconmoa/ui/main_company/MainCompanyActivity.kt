@@ -10,7 +10,8 @@ import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityMainCompanyBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainCompanyActivity : BaseActivityVB<ActivityMainCompanyBinding>(ActivityMainCompanyBinding::inflate) {
+class MainCompanyActivity :
+    BaseActivityVB<ActivityMainCompanyBinding>(ActivityMainCompanyBinding::inflate) {
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {

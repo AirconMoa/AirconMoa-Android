@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class PostSignUpRes(
     @SerializedName("userNickName")
-    val userNickName : String,
+    val userNickName: String,
 
     @SerializedName("userEmail")
-    val userEmail : String,
+    val userEmail: String,
 
     @SerializedName("userId")
-    val userId : Long
+    val userId: Long,
 )

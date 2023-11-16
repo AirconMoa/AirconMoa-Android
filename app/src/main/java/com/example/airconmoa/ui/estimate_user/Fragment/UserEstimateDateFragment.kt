@@ -11,7 +11,8 @@ import com.example.airconmoa.ui.main_user.MainActivity
 
 
 class UserEstimateDateFragment : BaseFragmentVB<FragmentUserEstimateDateBinding>(
-    FragmentUserEstimateDateBinding::bind, R.layout.fragment_user_estimate_date)   {
+    FragmentUserEstimateDateBinding::bind, R.layout.fragment_user_estimate_date
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,7 +23,7 @@ class UserEstimateDateFragment : BaseFragmentVB<FragmentUserEstimateDateBinding>
             }
             closeBtn.setOnClickListener {
                 val intent = Intent(context, MainActivity::class.java)
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 while (findNavController().popBackStack());
             }

@@ -2,8 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/estimateUserFragment"
-    android:id="@+id/user_estimate_nav">
+    android:id="@+id/user_estimate_nav"
+    app:startDestination="@id/estimateUserFragment">
     <fragment
         android:id="@+id/estimateUserFragment"
         android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
@@ -13,8 +13,7 @@
             android:id="@+id/action_estimateUserFragment_to_estimateAddressFragment"
             app:destination="@id/estimateAddressFragment"
             app:popUpTo="@id/estimateUserFragment"
-            app:popUpToInclusive="true"
-            />
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -26,8 +25,7 @@
             android:id="@+id/action_estimateAddressFragment_to_estimateTypeFragment"
             app:destination="@id/estimateTypeFragment"
             app:popUpTo="@id/estimateAddressFragment"
-            app:popUpToInclusive="true"
-            />
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_estimateAddressFragment_to_estimateUserFragment"
             app:destination="@id/estimateUserFragment" />
@@ -43,11 +41,11 @@
             android:id="@+id/action_estimateTypeFragment_to_estimateQuantityFragment"
             app:destination="@id/estimateQuantityFragment"
             app:popUpTo="@id/estimateTypeFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_estimateTypeFragment_to_estimateAddressFragment"
             app:destination="@id/estimateAddressFragment"
-            app:popUpTo="@id/estimateUserFragment"/>
+            app:popUpTo="@id/estimateUserFragment" />
     </fragment>
 
     <fragment
@@ -58,13 +56,12 @@
         <action
             android:id="@+id/action_estimateQuantityFragment_to_estimateTypeFragment"
             app:destination="@id/estimateTypeFragment"
-            app:popUpTo="@id/estimateAddressFragment"/>
+            app:popUpTo="@id/estimateAddressFragment" />
         <action
             android:id="@+id/action_estimateQuantityFragment_to_estimateDateFragment"
             app:destination="@id/estimateDateFragment"
             app:popUpTo="@id/estimateQuantityFragment"
-            app:popUpToInclusive="true"
-            />
+            app:popUpToInclusive="true" />
 
     </fragment>
 
@@ -76,13 +73,12 @@
         <action
             android:id="@+id/action_estimateDateFragment_to_estimateQuantityFragment"
             app:destination="@id/estimateQuantityFragment"
-            app:popUpTo="@id/estimateTypeFragment"/>
+            app:popUpTo="@id/estimateTypeFragment" />
         <action
             android:id="@+id/action_estimateDateFragment_to_estimateBrandFragment"
             app:destination="@id/estimateBrandFragment"
             app:popUpTo="@id/estimateDateFragment"
-            app:popUpToInclusive="true"
-            />
+            app:popUpToInclusive="true" />
 
     </fragment>
 
@@ -94,7 +90,7 @@
         <action
             android:id="@+id/action_estimateBrandFragment_to_estimateDateFragment"
             app:destination="@id/estimateDateFragment"
-            app:popUpTo="@id/estimateQuantityFragment"/>
+            app:popUpTo="@id/estimateQuantityFragment" />
     </fragment>
 
 </navigation>

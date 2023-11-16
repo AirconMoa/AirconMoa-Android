@@ -26,7 +26,6 @@
             android:background="@drawable/svg_logo" />
 
 
-
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout

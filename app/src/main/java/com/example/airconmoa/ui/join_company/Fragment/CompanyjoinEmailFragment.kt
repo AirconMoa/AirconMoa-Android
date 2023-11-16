@@ -5,6 +5,8 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentCompanyJoinEmailBinding
 
 
-class CompanyjoinEmailFragment:
-    BaseFragmentVB<FragmentCompanyJoinEmailBinding>(FragmentCompanyJoinEmailBinding::bind, R.layout.fragment_company_join_email)  {
-}
+class CompanyjoinEmailFragment :
+    BaseFragmentVB<FragmentCompanyJoinEmailBinding>(
+        FragmentCompanyJoinEmailBinding::bind,
+        R.layout.fragment_company_join_email
+    )

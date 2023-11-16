@@ -8,7 +8,8 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityEnterPasswordBinding
 
-class EnterPasswordActivity : BaseActivityVB<ActivityEnterPasswordBinding>(ActivityEnterPasswordBinding::inflate) {
+class EnterPasswordActivity :
+    BaseActivityVB<ActivityEnterPasswordBinding>(ActivityEnterPasswordBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,11 +27,10 @@ class EnterPasswordActivity : BaseActivityVB<ActivityEnterPasswordBinding>(Activ
 
         binding.enterPasswordNextBtn.setOnClickListener {
             val password = binding.enterPasswordSelectedEt.text
-            if(password!!.length < 6 || password!!.length > 12) {
+            if (password!!.length < 6 || password.length > 12) {
                 binding.enterPasswordErrorTv.visibility = View.VISIBLE
                 showCustomToast("비밀번호는 6~12자 이내로 입력해주세요")
-            }
-            else {
+            } else {
                 val intent = Intent(this, EnterPasswordAgainActivity::class.java)
                 Log.d("userPassword", password.toString())
                 val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
@@ -50,7 +50,7 @@ class EnterPasswordActivity : BaseActivityVB<ActivityEnterPasswordBinding>(Activ
         val userPassword = binding.enterPasswordSelectedEt.text.toString()
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
 
-        if(userPassword.isNotEmpty()) {
+        if (userPassword.isNotEmpty()) {
             val editor = sharedPreferences.edit()
             editor.putString("userPassword", userPassword)
             Log.d("userPassword", userPassword)
@@ -64,7 +64,7 @@ class EnterPasswordActivity : BaseActivityVB<ActivityEnterPasswordBinding>(Activ
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
         val tempPassword = sharedPreferences.getString("userPassword", null)
 
-        if(tempPassword != null) {
+        if (tempPassword != null) {
             binding.enterPasswordSelectedEt.setText(tempPassword)
         }
     }

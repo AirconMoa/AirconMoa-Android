@@ -39,23 +39,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:text="123-4567-8910"
                 android:layout_marginTop="10dp"
-                android:textSize="16dp"
+                android:text="123-4567-8910"
                 android:textColor="@color/black"
+                android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/representationNumTv" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/representationNumEditTv"
                 android:layout_marginHorizontal="20dp"
-            />
+                android:layout_marginTop="3dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/representationNumEditTv" />
+
             <TextView
                 android:id="@+id/companyEmailTv"
                 android:layout_width="wrap_content"
@@ -73,23 +74,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:text="moa@gmail.com"
                 android:layout_marginTop="10dp"
-                android:textSize="16dp"
+                android:text="moa@gmail.com"
                 android:textColor="@color/black"
+                android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/companyEmailTv" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/companyEmailEditTv"
                 android:layout_marginHorizontal="20dp"
-                />
+                android:layout_marginTop="3dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/companyEmailEditTv" />
 
             <TextView
                 android:id="@+id/activityAreaTv"
@@ -108,23 +109,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:text="인천"
                 android:layout_marginTop="10dp"
-                android:textSize="16dp"
+                android:text="인천"
                 android:textColor="@color/black"
+                android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/activityAreaTv" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/activityAreaEditTv"
                 android:layout_marginHorizontal="20dp"
-                />
+                android:layout_marginTop="3dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activityAreaEditTv" />
+
             <TextView
                 android:id="@+id/officeAddressTv"
                 android:layout_width="wrap_content"
@@ -142,23 +144,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:text="인천 광역시 미추홀구 용현동 123-45"
                 android:layout_marginTop="10dp"
-                android:textSize="16dp"
+                android:text="인천 광역시 미추홀구 용현동 123-45"
                 android:textColor="@color/black"
+                android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/officeAddressTv" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/officeAddressEditTv"
                 android:layout_marginHorizontal="20dp"
-                />
+                android:layout_marginTop="3dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/officeAddressEditTv" />
+
             <Button
                 android:id="@+id/installHistoryBtn"
                 android:layout_width="wrap_content"

@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.airconmoa.databinding.DialogLocationRecycleBinding
 import com.example.airconmoa.databinding.FragmentCompanyJoinWhereBinding
@@ -17,13 +16,17 @@ import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
 
 
-class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinWhereBinding, locationDo:String):Dialog(context) {
+class LocationDoRecycleDialog(
+    context: Context,
+    dlgbinding: FragmentCompanyJoinWhereBinding,
+    locationDo: String,
+) : Dialog(context) {
 
     private lateinit var binding: DialogLocationRecycleBinding
 
     val Do = locationDo
 
-    private lateinit var savelocation : List<String>
+    private lateinit var savelocation: List<String>
 
 
     private var count = 0
@@ -62,8 +65,8 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
 
 
 
-        for(i:Int in 0..locationlist.size){
-            if(Do == locationlist[i]){
+        for (i: Int in 0..locationlist.size) {
+            if (Do == locationlist[i]) {
 
                 val listadapter = DialogLocationRecyclerAdapter(
                     context,
@@ -75,7 +78,6 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
                 break
             }
         }
-
 
 
         var listManager = GridLayoutManager(context, 4)
@@ -91,13 +93,14 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
 
 
     }
-    val locationlist : List<String> = listOf(
+
+    val locationlist: List<String> = listOf(
         "서울", "세종", "강원", "인천",
         "경기", "충북", "충남", "경북",
         "대전", "대구", "전북", "경남",
         "울산", "광주", "부산", "전남", "제주"
     )
-    val Seoul:List<String> = listOf(
+    val Seoul: List<String> = listOf(
         "관악구", "강남구", "강동구", "강북구",
         "강서구", "광진구", "구로구", "금천구",
         "노원구", "도봉구", "동대문구", "동작구",
@@ -105,7 +108,7 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "성북구", "송파구", "양천구", "용산구",
         "영등포구", "은평구", "종로구", "중구", "중량구"
     )
-    val SeJong : List<String> = listOf(
+    val SeJong: List<String> = listOf(
         "가람동", "고운동", "금남면", "나성동",
         "다정동", "대평동", "도담동", "반곡동",
         "보람동", "부강면", "새롬동", "소담동",
@@ -115,7 +118,7 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "집현동", "해밀동"
     )
 
-    val GangWon : List<String> = listOf(
+    val GangWon: List<String> = listOf(
         "강릉시", "고성군", "동해시", "삼척시",
         "속초시", "양구군", "양양군", "영월군",
         "원주시", "인제군", "정성군", "철원군",
@@ -128,7 +131,7 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "동구", "부평구", "서구", "연수구",
         "옹진군", "중구"
     )
-    val GyeongGi : List<String> = listOf(
+    val GyeongGi: List<String> = listOf(
         "가평군", "고양시 덕양구", "구리시", "고양시 일산동구",
         "고양시 일산서구", "과천시", "광명시", "광주시",
         "군포시", "김포시", "남양주시", "부천시",
@@ -140,14 +143,14 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "용인시 수지구", "용인시 처인구", "의정부시", "이천시",
         "파주시", "하남시", "화성시"
     )
-    val ChungBuk : List<String> = listOf(
+    val ChungBuk: List<String> = listOf(
         "괴산군", "단양군", "보은구", "영동군",
         "옥천군", "음성군", "제천시", "증평군",
         "진천군", "청주시 상당구", "청주시 서원구", "청주시 청원구",
         "청주시 흥덕구", "충주시"
     )
 
-    val ChungNam : List<String> = listOf(
+    val ChungNam: List<String> = listOf(
         "계룡시", "공산시", "금산군", "논산시",
         "당진시", "보령시", "부여시", "부여군",
         "서산시", "서천군", "아산시", "예산군",
@@ -155,7 +158,7 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "태안군", "홍성군"
     )
 
-    val GyeongBuk : List<String> = listOf(
+    val GyeongBuk: List<String> = listOf(
         "경산시", "경주시", "고령군", "구미시",
         "김천시", "문경시", "봉화군", "상주시",
         "성주군", "안동시", "영덕군", "영양군",
@@ -164,25 +167,25 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "칠곡군", "포항시 남구", "포항시 북구"
     )
 
-    val DaeJeon : List<String> = listOf(
+    val DaeJeon: List<String> = listOf(
         "대덕구", "동구", "서구", "유성구",
         "중구"
     )
 
-    val DaeGu : List<String> = listOf(
+    val DaeGu: List<String> = listOf(
         "군위군", "남구", "달서구", "달성군",
         "동구", "북구", "서구", "수성구",
         "중구"
     )
 
-    val JeonBuk : List<String> = listOf(
+    val JeonBuk: List<String> = listOf(
         "고창군", "군산시", "김제시", "남원시",
         "무주군", "부안군", "순창군", "완주군",
         "익산시", "임실군", "장수군", "전주시 덕진구",
         "전주시 완산구", "정읍시", "진안군"
     )
 
-    val GyeongNam : List<String> = listOf(
+    val GyeongNam: List<String> = listOf(
         "거제시", "거창군", "고성군", "김해시",
         "남해군", "밀양시", "사천시", "산청군",
         "양산시", "의령군", "진주시", "창녕군",
@@ -191,24 +194,24 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "함양군", "합천군"
     )
 
-    val UlSan : List<String> = listOf(
+    val UlSan: List<String> = listOf(
         "남구", "동구", "북구", "울주군",
         "중구"
     )
 
-    val GwangJu : List<String> = listOf(
+    val GwangJu: List<String> = listOf(
         "광산구", "남구", "동구", "북구",
         "서구"
     )
 
-    val BuSan : List<String> = listOf(
+    val BuSan: List<String> = listOf(
         "강서구", "금정구", "기장군", "남구",
         "동구", "동래구", "부산진구", "북구",
         "사상구", "사하구", "서구", "수영구",
         "연제구", "영도구", "중구", "해운대구"
     )
 
-    val JeonNam : List<String> = listOf(
+    val JeonNam: List<String> = listOf(
         "강진구", "고흥구", "곡성군", "광양시",
         "구례군", "나주시", "담양군", "목포시",
         "무안군", "보령군", "순천시", "신안군",
@@ -217,10 +220,10 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
         "해남군", "화순군"
     )
 
-    val JeJu : List<String> = listOf(
+    val JeJu: List<String> = listOf(
         "서구포시", "제주시"
     )
-    val location : MutableList<List<String>> = mutableListOf(
+    val location: MutableList<List<String>> = mutableListOf(
         Seoul, SeJong, GangWon, InCheon,
         GyeongGi, ChungBuk, ChungNam, GyeongBuk,
         DaeJeon, DaeGu, JeonBuk, GyeongNam,
