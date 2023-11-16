@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="15dp">
+
     <ImageView
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
@@ -42,35 +43,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+
     <LinearLayout
         android:id="@+id/estimate_linear_progress"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintTop_toBottomOf="@id/view_line"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/view_line">
 
         <ProgressBar
             android:id="@+id/estimate_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_weight="7"
-            android:progressDrawable="@drawable/estimate_progressbar"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:max="7"
-            android:progress="6"/>
+            android:progress="6"
+            android:progressDrawable="@drawable/estimate_progressbar" />
 
         <TextView
             android:id="@+id/estimate_progress_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="6/7"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:textSize="18sp"
-            android:textColor="#D9D9D9"/>
+            android:text="6/7"
+            android:textColor="#D9D9D9"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -78,19 +80,19 @@
         android:id="@+id/estimate_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/estimate_linear_progress"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
-        android:orientation="vertical">
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estimate_linear_progress">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="설치할 에어컨의\n브랜드를 선택해 주세요."
-            android:textSize="25sp"
             android:textColor="@color/airconmoa_gray"
-            android:textStyle="bold"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -104,33 +106,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="LG"
-                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
                     android:gravity="left|center"
                     android:padding="20dp"
+                    android:text="LG"
+                    android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/lg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/selector_estimate_check"
                     android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/selector_estimate_check" />
 
             </androidx.cardview.widget.CardView>
 
@@ -138,26 +141,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="삼성"
-                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
                     android:gravity="left|center"
                     android:padding="20dp"
+                    android:text="삼성"
+                    android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/samsung"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/selector_estimate_check"
                     android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/selector_estimate_check" />
 
             </androidx.cardview.widget.CardView>
 
@@ -165,26 +169,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="Carrier"
-                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
                     android:gravity="left|center"
                     android:padding="20dp"
+                    android:text="Carrier"
+                    android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/carrier"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/selector_estimate_check"
                     android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/selector_estimate_check" />
 
             </androidx.cardview.widget.CardView>
 
@@ -192,48 +197,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="기타"
-                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
                     android:gravity="left|center"
                     android:padding="20dp"
+                    android:text="기타"
+                    android:textColor="@color/airconmoa_gray"
                     android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/etc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/selector_estimate_check"
                     android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/selector_estimate_check" />
 
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
 
-
     </LinearLayout>
 
 
     <Button
-        android:layout_marginHorizontal="20dp"
         android:id="@+id/btn_next"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/shape_btn_main"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="다음"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_btn_main"
+        android:text="다음"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

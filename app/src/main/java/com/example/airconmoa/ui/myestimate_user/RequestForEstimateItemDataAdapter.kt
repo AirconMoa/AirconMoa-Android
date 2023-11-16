@@ -11,7 +11,7 @@ import com.example.airconmoa.databinding.ItemRvEstimateBinding
 
 class RequestForEstimateItemDataAdapter(
     private val dataList: List<RequestForEstimateItemData>?,
-    private val fragment2: UserEstimateFragment2
+    private val fragment2: UserEstimateFragment2,
 ) :
     RecyclerView.Adapter<RequestForEstimateItemDataAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemRvEstimateBinding) :
@@ -24,9 +24,9 @@ class RequestForEstimateItemDataAdapter(
                 estimateNumber.text = data.estmateNum.toString()
                 addressTv.text = data.address
                 housingTypeTv.text = data.housingType
-                brandTv.text=data.brandName
-                airconNumTv.text=data.airconNum.toString()
-                dateTv.text=data.dateNum
+                brandTv.text = data.brandName
+                airconNumTv.text = data.airconNum.toString()
+                dateTv.text = data.dateNum
                 nextBtn.setOnClickListener {
                     findNavController(fragment2).navigate(R.id.action_estimateFragment2_to_estimatelistFragment)
                 }
@@ -40,7 +40,8 @@ class RequestForEstimateItemDataAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
-        val binding = ItemRvEstimateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemRvEstimateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DataViewHolder(binding)
     }
 

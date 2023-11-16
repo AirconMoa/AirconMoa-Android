@@ -8,7 +8,8 @@ import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityNewMemberBinding
 import com.example.airconmoa.ui.login_user.LoginActivity
 
-class NewMemberActivity : BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMemberBinding::inflate){
+class NewMemberActivity :
+    BaseActivityVB<ActivityNewMemberBinding>(ActivityNewMemberBinding::inflate) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

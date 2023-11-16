@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_estimate_company">
         <action
             android:id="@+id/action_estimateCompanyFragment_to_estimateDetailCompanyFragment"
-            app:destination="@id/estimateDetailCompanyFragment"/>
+            app:destination="@id/estimateDetailCompanyFragment" />
         <action
             android:id="@+id/action_estimateCompanyFragment_to_estimateEditCompanyFragment"
-            app:destination="@id/estimateEditCompanyFragment"/>
+            app:destination="@id/estimateEditCompanyFragment" />
     </fragment>
 
     <fragment
@@ -25,10 +25,10 @@
         tools:layout="@layout/fragment_estimate_detail_company">
         <action
             android:id="@+id/action_estimateDetailCompanyFragment_to_estimateCompanyFragment"
-            app:destination="@id/estimateCompanyFragment"/>
+            app:destination="@id/estimateCompanyFragment" />
         <action
             android:id="@+id/action_estimateDetailCompanyFragment_to_estimateWriteCompanyFragment"
-            app:destination="@id/estimateWriteCompanyFragment"/>
+            app:destination="@id/estimateWriteCompanyFragment" />
     </fragment>
 
     <fragment
@@ -38,7 +38,7 @@
         tools:layout="@layout/fragment_estimate_write_company">
         <action
             android:id="@+id/action_estimateWriteCompanyFragment_to_estimateDetailCompanyFragment"
-            app:destination="@id/estimateDetailCompanyFragment"/>
+            app:destination="@id/estimateDetailCompanyFragment" />
     </fragment>
 
     <fragment
@@ -48,7 +48,7 @@
         tools:layout="@layout/fragment_estimate_edit_company">
         <action
             android:id="@+id/action_estimateEditCompanyFragment_to_estimateCompanyFragment"
-            app:destination="@id/estimateCompanyFragment"/>
+            app:destination="@id/estimateCompanyFragment" />
     </fragment>
 
     <fragment
@@ -58,7 +58,7 @@
         tools:layout="@layout/fragment_construction_company">
         <action
             android:id="@+id/action_constructionCompanyFragment_to_constructionDetailCompanyFragment"
-            app:destination="@id/constructionDetailCompanyFragment"/>
+            app:destination="@id/constructionDetailCompanyFragment" />
     </fragment>
 
     <fragment
@@ -68,7 +68,7 @@
         tools:layout="@layout/fragment_construction_detail_company">
         <action
             android:id="@+id/action_constructionDetailCompanyFragment_to_constructionCompanyFragment"
-            app:destination="@id/constructionCompanyFragment"/>
+            app:destination="@id/constructionCompanyFragment" />
     </fragment>
 
     <fragment
@@ -78,7 +78,7 @@
         tools:layout="@layout/fragment_my_page_company">
         <action
             android:id="@+id/action_mypageCompanyFragment_to_mypageEditCompanyFragment"
-            app:destination="@id/mypageEditCompanyFragment"/>
+            app:destination="@id/mypageEditCompanyFragment" />
     </fragment>
     <fragment
         android:id="@+id/mypageEditCompanyFragment"
@@ -88,6 +88,6 @@
         <action
             android:id="@+id/action_mypageEditCompanyFragment_to_mypageCompanyFragment"
             app:destination="@id/mypageCompanyFragment"
-            app:popUpTo="@id/estimateCompanyFragment"/>
+            app:popUpTo="@id/estimateCompanyFragment" />
     </fragment>
 </navigation>

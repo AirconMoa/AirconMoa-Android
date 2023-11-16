@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,8 +11,8 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -67,12 +66,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="6/7"
-            android:textColor="@color/airconmoa_progress"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="right"
-            android:layout_gravity="center"
-            android:textSize="18sp"/>
+            android:text="6/7"
+            android:textColor="@color/airconmoa_progress"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -80,8 +79,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="130dp"
         android:text="이제 거의 다 왔어요.\n뭐라고 불러드릴까요?"
         android:textColor="@color/airconmoa_gray"
         android:textSize="25sp"
@@ -93,11 +92,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
         android:text="실명이 아니어도 괜찮아요"
         android:textColor="@color/airconmoa_gray3"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -106,28 +105,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:layout_marginTop="280dp"
-        app:counterMaxLength="10"
-        app:counterEnabled="true"
+        android:layout_weight="1"
+        android:gravity="top"
         android:textColorHint="@color/airconmoa_gray3"
+        android:theme="@style/EditTheme"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/EditTheme"
-        android:gravity="top">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enter_nickname_et"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:padding="10dp"
-            android:textSize="20sp"
-            android:textColor="@color/airconmoa_gray"
             android:backgroundTint="@color/airconmoa_gray3"
-            android:textStyle="bold"
             android:inputType="text"
-            android:maxLength="15"/>
+            android:maxLength="15"
+            android:padding="10dp"
+            android:textColor="@color/airconmoa_gray"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,8 +135,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:paddingLeft="5dp"
         android:layout_marginTop="-20dp"
+        android:paddingLeft="5dp"
         android:text="닉네임은 1~10글자 이내로 입력해주세요"
         android:textColor="@color/airconmoa_red"
         android:textSize="14sp"
@@ -150,8 +149,8 @@
         android:id="@+id/enter_nickname_next_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/shape_selected_btn_radius8"
         android:text="다음"
         android:textColor="@color/white"

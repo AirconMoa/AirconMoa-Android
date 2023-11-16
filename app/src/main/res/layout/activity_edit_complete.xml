@@ -54,11 +54,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="견적 요청자에게 수정 알림이 갔습니다"
-            app:layout_constraintTop_toBottomOf="@id/bookFinshStateTv"
             android:layout_marginTop="15dp"
+            android:text="견적 요청자에게 수정 알림이 갔습니다"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/bookFinshStateTv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,6 +97,7 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@id/backBtn"
         app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/dateContentTv"
         android:layout_width="wrap_content"

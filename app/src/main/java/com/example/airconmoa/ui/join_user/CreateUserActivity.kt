@@ -8,7 +8,6 @@ import android.util.Log
 import android.widget.Toast
 import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
-
 import com.example.airconmoa.config.BaseResponse
 import com.example.airconmoa.config.RetrofitInstance
 import com.example.airconmoa.databinding.ActivityCreateUserBinding
@@ -20,7 +19,6 @@ import com.example.airconmoa.util.FirebaseAuthUtils
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.BuildConfig
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.kakao.sdk.auth.model.OAuthToken
@@ -33,7 +31,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateUserBinding>(ActivityCreateUserBinding::inflate) {
+class CreateUserActivity : JoinActivityInterface,
+    BaseActivityVB<ActivityCreateUserBinding>(ActivityCreateUserBinding::inflate) {
 
     private lateinit var auth: FirebaseAuth
 
@@ -119,13 +118,13 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                     Log.d("Response", response.toString())
                     if (response.isSuccess) {
                         Log.d("CreateUserActivity", response.toString())
-                        val signUpResponse : PostOauthLoginRes = response.result!!
-                        Log.d("userId", signUpResponse!!.userId.toString())
-                        Log.d("accessToken", signUpResponse!!.accessToken)
-                        Log.d("userEmail", signUpResponse!!.email)
+                        val signUpResponse: PostOauthLoginRes = response.result!!
+                        Log.d("userId", signUpResponse.userId.toString())
+                        Log.d("accessToken", signUpResponse.accessToken)
+                        Log.d("userEmail", signUpResponse.email)
 
-                        if(FirebaseAuthUtils.getUid() == null) {
-                            auth.createUserWithEmailAndPassword(signUpResponse!!.email, "abc123")
+                        if (FirebaseAuthUtils.getUid() == null) {
+                            auth.createUserWithEmailAndPassword(signUpResponse.email, "abc123")
                         }
 
                         FirebaseMessaging.getInstance().token.addOnCompleteListener(
@@ -142,9 +141,10 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                                 val deviceToken = task.result
 
                                 CoroutineScope(Dispatchers.IO).launch {
-                                    val postUidDeviceTokenReq = PostUidDeviceTokenReq(uid, deviceToken)
+                                    val postUidDeviceTokenReq =
+                                        PostUidDeviceTokenReq(uid, deviceToken)
                                     val saveRes = saveUidAndToken(
-                                        "Bearer " + signUpResponse!!.accessToken,
+                                        "Bearer " + signUpResponse.accessToken,
                                         postUidDeviceTokenReq
                                     )
                                     Log.d("UidToken", saveRes.toString())
@@ -155,7 +155,8 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                                     }
                                 }
                                 hideLoading()
-                                val intent = Intent(this@CreateUserActivity, MainActivity::class.java)
+                                val intent =
+                                    Intent(this@CreateUserActivity, MainActivity::class.java)
                                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 overridePendingTransition(
                                     R.anim.slide_right_enter,
@@ -169,7 +170,8 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                         Log.d("CreateUserActivity", "로그인 실패")
                         withContext(Dispatchers.Main) {
                             hideLoading()
-                            Toast.makeText(this@CreateUserActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@CreateUserActivity, "로그인 실패", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
                 }
@@ -243,12 +245,14 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
 //                   Toast.makeText(this@CreateUserActivity, "접근이 거부 됨", Toast.LENGTH_SHORT).show()
 //               }
             }
+
             override fun onFailure(httpStatus: Int, message: String) {
                 val errorCode = NaverIdLoginSDK.getLastErrorCode().code
                 Log.d("naverToken", errorCode)
                 val errorDescription = NaverIdLoginSDK.getLastErrorDescription()
                 Log.d("naverToken", errorDescription.toString())
             }
+
             override fun onError(errorCode: Int, message: String) {
                 onFailure(errorCode, message)
             }
@@ -276,8 +280,14 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
         return RetrofitInstance.joinRetrofitInterface.signUp(postSignUpReq)
     }
 
-    private suspend fun saveUidAndToken(accessToken: String, postUidDeviceTokenReq: PostUidDeviceTokenReq): BaseResponse<String> {
-        return RetrofitInstance.joinRetrofitInterface.saveUidAndToken(accessToken, postUidDeviceTokenReq)
+    private suspend fun saveUidAndToken(
+        accessToken: String,
+        postUidDeviceTokenReq: PostUidDeviceTokenReq,
+    ): BaseResponse<String> {
+        return RetrofitInstance.joinRetrofitInterface.saveUidAndToken(
+            accessToken,
+            postUidDeviceTokenReq
+        )
     }
 
     override fun onJoinSuccess() {

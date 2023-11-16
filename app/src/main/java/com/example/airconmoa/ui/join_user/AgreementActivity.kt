@@ -7,7 +7,8 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityAgreementBinding
 
-class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgreementBinding::inflate) {
+class AgreementActivity :
+    BaseActivityVB<ActivityAgreementBinding>(ActivityAgreementBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -132,7 +133,7 @@ class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgree
         isComplete()
     }
 
-    private fun isAllCheck() : Boolean {
+    private fun isAllCheck(): Boolean {
         return (binding.agreementCheckIv1.visibility == View.VISIBLE
                 && binding.agreementCheckIv2.visibility == View.VISIBLE
                 && binding.agreementCheckIv3.visibility == View.VISIBLE
@@ -142,7 +143,7 @@ class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgree
                 && binding.agreementCheckIv7.visibility == View.VISIBLE)
     }
 
-    private fun isPartialCheck() : Boolean {
+    private fun isPartialCheck(): Boolean {
         return (binding.agreementCheckIv1.visibility == View.VISIBLE
                 && binding.agreementCheckIv2.visibility == View.VISIBLE
                 && binding.agreementCheckIv3.visibility == View.VISIBLE
@@ -151,25 +152,21 @@ class AgreementActivity : BaseActivityVB<ActivityAgreementBinding>(ActivityAgree
     }
 
     private fun isComplete() {
-        if(isAllCheck()) {
+        if (isAllCheck()) {
             binding.agreementAgreeUncompleteBtn.visibility = View.INVISIBLE
             binding.agreementAgreeCompleteBtn.visibility = View.VISIBLE
             binding.agreementAllAgreeSelectBtn.visibility = View.VISIBLE
             binding.agreementAllAgreeBtn.visibility = View.INVISIBLE
             binding.agreementAllAgreeIv.visibility = View.INVISIBLE
             binding.agreementAllAgreeSelectIv.visibility = View.VISIBLE
-        }
-
-        else if(isPartialCheck()) {
+        } else if (isPartialCheck()) {
             binding.agreementAgreeUncompleteBtn.visibility = View.INVISIBLE
             binding.agreementAgreeCompleteBtn.visibility = View.VISIBLE
             binding.agreementAllAgreeIv.visibility = View.VISIBLE
             binding.agreementAllAgreeSelectIv.visibility = View.INVISIBLE
             binding.agreementAllAgreeBtn.visibility = View.VISIBLE
             binding.agreementAllAgreeSelectBtn.visibility = View.INVISIBLE
-        }
-
-        else {
+        } else {
             binding.agreementAgreeCompleteBtn.visibility = View.INVISIBLE
             binding.agreementAgreeUncompleteBtn.visibility = View.VISIBLE
             binding.agreementAllAgreeSelectBtn.visibility = View.INVISIBLE

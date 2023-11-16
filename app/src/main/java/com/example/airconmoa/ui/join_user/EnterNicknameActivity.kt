@@ -12,7 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(ActivityEnterNicknameBinding::inflate) {
+class EnterNicknameActivity :
+    BaseActivityVB<ActivityEnterNicknameBinding>(ActivityEnterNicknameBinding::inflate) {
 
     private lateinit var auth: FirebaseAuth
 
@@ -35,11 +36,10 @@ class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(Activ
 
         binding.enterNicknameNextBtn.setOnClickListener {
             val nickname = binding.enterNicknameEt.text.toString()
-            if(nickname.isEmpty() || nickname.length > 10) {
+            if (nickname.isEmpty() || nickname.length > 10) {
                 binding.enterNicknameErrorTv.visibility = View.VISIBLE
                 showCustomToast("닉네임은 1~10글자 이내로 입력해주세요")
-            }
-            else {
+            } else {
                 // 유저의 정보
                 val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
                 val userEmail = sharedPreferences.getString("userEmail", null)
@@ -47,9 +47,11 @@ class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(Activ
                 val userPhoneNumber = sharedPreferences.getString("userPhoneNumber", null)
                 val userNickname = binding.enterNicknameEt.text.toString()
 
-                if(userEmail != null && userPassword != null && userPhoneNumber != null) {
-                    Log.d("userInfo", userEmail!! + "/" + userPassword!! + "/"
-                            + userPhoneNumber!! + "/" + userNickname)
+                if (userEmail != null && userPassword != null && userPhoneNumber != null) {
+                    Log.d(
+                        "userInfo", userEmail + "/" + userPassword + "/"
+                                + userPhoneNumber + "/" + userNickname
+                    )
 
                     auth.createUserWithEmailAndPassword(userEmail, userPassword)
                         .addOnCompleteListener(this) { task ->
@@ -63,20 +65,21 @@ class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(Activ
                                 val intent = Intent(this, FinishJoinActivity::class.java)
                                 intent.putExtra("nickname", userNickname)
                                 startActivity(intent)
-                                overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
+                                overridePendingTransition(
+                                    R.anim.slide_right_enter,
+                                    R.anim.slide_right_exit
+                                )
                             } else {
                                 Log.d("EnterNicknameActivity", "회원가입 실패")
                             }
                         }
-                }
-                else {
-                    if(FirebaseAuthUtils.getUid() != null) {
+                } else {
+                    if (FirebaseAuthUtils.getUid() != null) {
                         val intent = Intent(this, FinishJoinActivity::class.java)
                         intent.putExtra("nickname", userNickname)
                         startActivity(intent)
                         overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
-                    }
-                    else {
+                    } else {
                         showCustomToast("회원가입 정보가 올바른지 다시 확인해주세요")
                     }
                 }
@@ -90,7 +93,7 @@ class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(Activ
         val userNickname = binding.enterNicknameEt.text.toString()
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
 
-        if(userNickname.isNotEmpty()) {
+        if (userNickname.isNotEmpty()) {
             val editor = sharedPreferences.edit()
             editor.putString("userNickname", userNickname)
             Log.d("userNickname", userNickname)
@@ -104,7 +107,7 @@ class EnterNicknameActivity : BaseActivityVB<ActivityEnterNicknameBinding>(Activ
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
         val tempNickname = sharedPreferences.getString("userNickname", null)
 
-        if(tempNickname != null) {
+        if (tempNickname != null) {
             binding.enterNicknameEt.setText(tempNickname)
         }
     }

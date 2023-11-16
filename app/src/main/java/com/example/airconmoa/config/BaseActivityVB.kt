@@ -28,7 +28,7 @@ abstract class BaseActivityVB<B : ViewBinding>(private val inflate: (LayoutInfla
         toast.show()
     }
 
-    fun setFullScreen(){
+    fun setFullScreen() {
         window.apply {
             statusBarColor = android.graphics.Color.TRANSPARENT
             decorView.systemUiVisibility =

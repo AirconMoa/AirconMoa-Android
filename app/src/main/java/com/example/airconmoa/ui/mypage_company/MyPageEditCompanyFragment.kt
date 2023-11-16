@@ -10,7 +10,10 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentMyPageEditCompanyBinding
 
 
-class MyPageEditCompanyFragment : BaseFragmentVB<FragmentMyPageEditCompanyBinding>(FragmentMyPageEditCompanyBinding::bind, R.layout.fragment_my_page_edit_company) {
+class MyPageEditCompanyFragment : BaseFragmentVB<FragmentMyPageEditCompanyBinding>(
+    FragmentMyPageEditCompanyBinding::bind,
+    R.layout.fragment_my_page_edit_company
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
@@ -69,9 +72,9 @@ class MyPageEditCompanyFragment : BaseFragmentVB<FragmentMyPageEditCompanyBindin
 
                 }
             })
-            editCloseBtn1.setOnClickListener { nameeditTv.text=null }
-            editCloseBtn2.setOnClickListener {  phoneeditTv.text=null }
-            editCloseBtn3.setOnClickListener {  nicknameeditTv.text=null }
+            editCloseBtn1.setOnClickListener { nameeditTv.text = null }
+            editCloseBtn2.setOnClickListener { phoneeditTv.text = null }
+            editCloseBtn3.setOnClickListener { nicknameeditTv.text = null }
 
             backBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_mypageEditCompanyFragment_to_mypageCompanyFragment)

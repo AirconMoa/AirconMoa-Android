@@ -20,18 +20,18 @@ class App : Application() {
         instance = this // App 클래스의 인스턴스를 다른 곳에서 사용할 수 있게 한다.
     }
 
-    companion object{ // 애플리케이션 레벨에서 공유할 여러 개의 정적 변수와 함수를 선언한다.
-        lateinit var instance : App // App 클래스의 인스턴스를 참조하는 변수이다.
+    companion object { // 애플리케이션 레벨에서 공유할 여러 개의 정적 변수와 함수를 선언한다.
+        lateinit var instance: App // App 클래스의 인스턴스를 참조하는 변수이다.
         lateinit var sharedPreferences: SharedPreferences // 앱의 설정 및 데이터를 저장하기 위해 사용된다.
-        lateinit var retrofit : Retrofit // Retrofit 라이브러리를 사용하여 네트워크 통신을 관리하기 위한 변수이다.
+        lateinit var retrofit: Retrofit // Retrofit 라이브러리를 사용하여 네트워크 통신을 관리하기 위한 변수이다.
 
         // 앱의 context 를 반환하는 함수
-        fun context() : Context {
+        fun context(): Context {
             return instance.applicationContext
         }
 
         // Retrofit 인스턴스를 반환하는 함수
-        fun getRetro() : Retrofit{
+        fun getRetro(): Retrofit {
             return retrofit.newBuilder()
                 .baseUrl(BASE_URL) // BaseUrl은 Constants에서 가져온 값이다.
                 .build()
@@ -50,17 +50,18 @@ class App : Application() {
     }
 
     private fun initRetrofitInstance() {
-        val client: OkHttpClient = OkHttpClient.Builder() // OkHttpClient는 HTTP 요청 및 응답을 관리하는 클라이언트이다.
-            .readTimeout(30000, TimeUnit.MILLISECONDS) // read 타임아웃을 30초로 설정한다.
-            .connectTimeout(30000, TimeUnit.MILLISECONDS) // connection 타임아웃을 30초로 설정한다.
+        val client: OkHttpClient =
+            OkHttpClient.Builder() // OkHttpClient는 HTTP 요청 및 응답을 관리하는 클라이언트이다.
+                .readTimeout(30000, TimeUnit.MILLISECONDS) // read 타임아웃을 30초로 설정한다.
+                .connectTimeout(30000, TimeUnit.MILLISECONDS) // connection 타임아웃을 30초로 설정한다.
 
-            // HttpLoggingInterceptor를 추가하여 HTTP 요청과 응답에 로깅을 수행한다. 로깅 수준은 Level.BODY는 모든 HTTP 데이터를 로그에 표시한다.
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                // HttpLoggingInterceptor를 추가하여 HTTP 요청과 응답에 로깅을 수행한다. 로깅 수준은 Level.BODY는 모든 HTTP 데이터를 로그에 표시한다.
+                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
 
-            // AccessTokenInterceptor를 추가하여 JWT 토큰을 자동으로 HTTP 요청 헤더에 추가한다.
-            // applicationContext는 Android 애플리케이션 컨텍스트를 나타낸다.
-            .addNetworkInterceptor(AccessTokenInterceptor(applicationContext))
-            .build()
+                // AccessTokenInterceptor를 추가하여 JWT 토큰을 자동으로 HTTP 요청 헤더에 추가한다.
+                // applicationContext는 Android 애플리케이션 컨텍스트를 나타낸다.
+                .addNetworkInterceptor(AccessTokenInterceptor(applicationContext))
+                .build()
 
         retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -68,15 +69,15 @@ class App : Application() {
             .addConverterFactory(GsonConverterFactory.create()) // Gson(JSON 파싱 라이브러리)을 이용해 JSON 데이터를 객체로 변환한다.
             .build()
     }
-/*
+    /*
 
-    private fun startSocialLogin() {
-        KakaoSdk.init(this, kakaoAppKey)
-        NaverIdLoginSDK.initialize(this,
-            naverClientId,
-            naverClientSecret,
-            naverClientName
-        )
-    }
-*/
+        private fun startSocialLogin() {
+            KakaoSdk.init(this, kakaoAppKey)
+            NaverIdLoginSDK.initialize(this,
+                naverClientId,
+                naverClientSecret,
+                naverClientName
+            )
+        }
+    */
 }

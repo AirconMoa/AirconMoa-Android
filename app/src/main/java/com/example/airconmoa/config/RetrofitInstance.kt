@@ -14,7 +14,9 @@ class RetrofitInstance {
                 .build()
         }
 
-        val joinRetrofitInterface: JoinRetrofitInterface = retrofit.create(JoinRetrofitInterface::class.java)
-        val homeRetrofitInterface: HomeRetrofitInterface = retrofit.create(HomeRetrofitInterface::class.java)
+        val joinRetrofitInterface: JoinRetrofitInterface =
+            retrofit.create(JoinRetrofitInterface::class.java)
+        val homeRetrofitInterface: HomeRetrofitInterface =
+            retrofit.create(HomeRetrofitInterface::class.java)
     }
 }

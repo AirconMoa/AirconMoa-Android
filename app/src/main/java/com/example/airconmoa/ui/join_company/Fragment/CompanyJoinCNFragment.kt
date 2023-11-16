@@ -5,6 +5,8 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentCompanyJoinCnBinding
 
 
-class CompanyJoinCNFragment:
-    BaseFragmentVB<FragmentCompanyJoinCnBinding>(FragmentCompanyJoinCnBinding::bind, R.layout.fragment_company_join_cn)  {
-}
+class CompanyJoinCNFragment :
+    BaseFragmentVB<FragmentCompanyJoinCnBinding>(
+        FragmentCompanyJoinCnBinding::bind,
+        R.layout.fragment_company_join_cn
+    )

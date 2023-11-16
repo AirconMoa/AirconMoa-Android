@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--여러형태의 드로어블을 하나의 파일로 구성할때는 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
->
+<?xml version="1.0" encoding="utf-8"?><!--여러형태의 드로어블을 하나의 파일로 구성할때는 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@color/white"/>
+    <item android:drawable="@color/white" />
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/png_logo"
-            />
+            android:src="@drawable/png_logo" />
     </item>
 </layer-list>

@@ -4,7 +4,7 @@ class SiData {
 
     val siData = ArrayList<String>()
 
-    fun getList() :ArrayList<String> {
+    fun getList(): ArrayList<String> {
         siData.add("Seoul")
         siData.add("Sejong")
         siData.add("Gangwon")
