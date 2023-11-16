@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/homeFragment"
+    tools:ignore="ExtraText">
 
 
     <fragment
@@ -18,6 +19,62 @@
         android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
         android:label="fragment_estimate"
         tools:layout="@layout/fragment_user_estimate">
+        <action
+            android:id="@+id/action_estimateFragment_to_estiamte_address"
+            app:destination="@id/estiamte_address"
+            app:defaultNavHost="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estiamte_address"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
+        android:label="fragment_estimate"
+        tools:layout="@layout/fragment_user_estimate_address">
+        <action
+            android:id="@+id/action_estiamte_address_to_estiamte_type"
+            app:destination="@id/estiamte_type"
+            app:defaultNavHost="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estiamte_type"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
+        android:label="fragment_estimate"
+        tools:layout="@layout/fragment_user_estimate_type">
+        <action
+            android:id="@+id/action_estiamte_type_to_estiamte_quantitiy"
+            app:destination="@id/estiamte_quantitiy"
+            app:defaultNavHost="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estiamte_quantitiy"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
+        android:label="fragment_estimate"
+        tools:layout="@layout/fragment_user_estimate_quantity">
+
+        <action
+            android:id="@+id/action_estiamte_quantitiy_to_estiamte_date"
+            app:destination="@id/estiamte_date"
+            app:defaultNavHost="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estiamte_date"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
+        android:label="fragment_estimate"
+        tools:layout="@layout/fragment_user_estimate_date">
+        <action
+            android:id="@+id/action_estiamte_date_to_estiamte_brand"
+            app:destination="@id/estiamte_brand"
+            app:defaultNavHost="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/estiamte_brand"
+        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
+        android:label="fragment_estimate"
+        tools:layout="@layout/fragment_user_estimate_brand">
     </fragment>
 
     <fragment

@@ -7,27 +7,13 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.view.WindowManager
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
-import androidx.recyclerview.widget.RecyclerView
-import com.example.airconmoa.databinding.DialogLocationRecycleBinding
-import com.example.airconmoa.databinding.FragmentCompanyJoinWhereBinding
-import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
-import com.example.airconmoa.ui.join_company.data.SiData
-import com.example.airconmoa.ui.login_user.model.LoginPostData
-import com.example.airconmoa.until.saveSi
-
+import com.example.airconmoa_android.databinding.DialogLocationRecycleBinding
+import com.example.airconmoa_android.databinding.FragmentCompanyJoinWhereBinding
+import com.example.airconmoa_android.databinding.ItemRvLocationBinding
 
 
 class LocationRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinWhereBinding): Dialog(context){

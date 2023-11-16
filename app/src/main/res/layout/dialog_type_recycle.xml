@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="지역선택"
+                android:text="유형선택"
                 android:onClick="onClick"
                 android:textColor="@color/airconmoa_gray"
                 android:textSize="20dp"

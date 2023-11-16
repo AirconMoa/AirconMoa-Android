@@ -15,15 +15,16 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.airconmoa.R
+
 import com.example.airconmoa.config.BaseFragmentVB
-import com.example.airconmoa.databinding.FragmentCompanyJoinWhereBinding
+
 import androidx.fragment.app.FragmentManager
 import com.example.airconmoa.ui.join_company.Dialog.LocationDoRecycleDialog
 import com.example.airconmoa.ui.join_company.Dialog.LocationRecycleDialog
 import com.example.airconmoa.ui.join_company.data.SiData
 import com.example.airconmoa.until.getSi
-
+import com.example.airconmoa_android.R
+import com.example.airconmoa_android.databinding.FragmentCompanyJoinWhereBinding
 
 
 class CompanyJoinWhereFragment:

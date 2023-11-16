@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="에어컨을 설치할\n장소의 유형을 선택해 주세요."
+            android:text="에어컨을 설치할\n장소의 유형을 선택해주세요"
             android:textSize="25sp"
             android:textColor="@color/airconmoa_gray"
             android:textStyle="bold"/>
@@ -25,132 +25,67 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear_check_install"
+        android:id="@+id/estimate_name_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/estimate_name_text">
+        app:layout_constraintTop_toBottomOf="@id/estimate_name_text"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp">
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/estimate_name_box">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
-                <Button
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/btn_brand"
                     android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="LG"
-                    android:textStyle="bold"
-                    android:gravity="left|center"
-                    android:padding="20dp"
-                    android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check_true"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
+                    <TextView
+                        android:id="@+id/txt_brand"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center|left"
+                        android:paddingLeft="10dp"
+                        android:text="선택"
+                        android:textColor="@color/airconmoa_gray2"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-            </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/company_join_location" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
-                <Button
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="삼성"
-                    android:textStyle="bold"
-                    android:gravity="left|center"
-                    android:padding="20dp"
-                    android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check_true"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="Carrier"
-                    android:textStyle="bold"
-                    android:gravity="left|center"
-                    android:padding="20dp"
-                    android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check_true"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="기타"
-                    android:textStyle="bold"
-                    android:gravity="left|center"
-                    android:padding="20dp"
-                    android:textSize="20sp"
-                    android:background="@android:color/transparent"/>
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/estimate_btn_check_true"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="right|center"
-                    android:layout_marginRight="30dp"/>
-
-            </androidx.cardview.widget.CardView>
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#CDD3D9" />
+            </LinearLayout>
 
         </LinearLayout>
-
-
-
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
