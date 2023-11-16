@@ -8,7 +8,10 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentMyPageCompanyBinding
 
 
-class MyPageCompanyFragment : BaseFragmentVB<FragmentMyPageCompanyBinding>(FragmentMyPageCompanyBinding::bind, R.layout.fragment_my_page_company) {
+class MyPageCompanyFragment : BaseFragmentVB<FragmentMyPageCompanyBinding>(
+    FragmentMyPageCompanyBinding::bind,
+    R.layout.fragment_my_page_company
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.mypageBtn.setOnClickListener {

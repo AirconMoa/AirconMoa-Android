@@ -1,16 +1,18 @@
 package com.example.airconmoa.ui.join_company.Fragment
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import com.example.airconmoa.R
-import android.graphics.Color
-import androidx.core.graphics.toColorFilter
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentCompanyJoinTermsBinding
 
 
-class CompanyJoinTermFragment :BaseFragmentVB<FragmentCompanyJoinTermsBinding>(FragmentCompanyJoinTermsBinding::bind, R.layout.fragment_company_join_terms) {
+class CompanyJoinTermFragment : BaseFragmentVB<FragmentCompanyJoinTermsBinding>(
+    FragmentCompanyJoinTermsBinding::bind,
+    R.layout.fragment_company_join_terms
+) {
 
     private var essen1 = false
     private var essen2 = false
@@ -27,9 +29,9 @@ class CompanyJoinTermFragment :BaseFragmentVB<FragmentCompanyJoinTermsBinding>(F
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding){
+        with(binding) {
             estimateTermsCheckBox.setOnClickListener {
-                if(check_all){
+                if (check_all) {
                     check_all = false
                     essen1 = false
                     essen2 = false
@@ -48,7 +50,7 @@ class CompanyJoinTermFragment :BaseFragmentVB<FragmentCompanyJoinTermsBinding>(F
                     check6.setImageResource(R.drawable.estimate_btn_check_small_false)
                     check7.setImageResource(R.drawable.estimate_btn_check_small_false)
 
-                }else{
+                } else {
                     check_all = true
                     essen1 = true
                     essen2 = true

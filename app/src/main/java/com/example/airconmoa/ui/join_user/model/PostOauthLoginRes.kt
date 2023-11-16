@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class PostOauthLoginRes(
     @SerializedName("userId")
-    val userId : Long,
+    val userId: Long,
 
     @SerializedName("email")
-    val email : String,
+    val email: String,
 
     @SerializedName("accessToken")
-    val accessToken : String
+    val accessToken: String,
 )

@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class PostUidDeviceTokenReq(
     @SerializedName("uid")
-    val uid : String,
+    val uid: String,
 
     @SerializedName("deviceToken")
-    val deviceToken : String
+    val deviceToken: String,
 )

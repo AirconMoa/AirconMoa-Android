@@ -7,9 +7,8 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentConstructionCompanyBinding
 
 
-class ConstructionCompanyFragment : BaseFragmentVB<FragmentConstructionCompanyBinding>(FragmentConstructionCompanyBinding::bind, R.layout.fragment_construction_company) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
+class ConstructionCompanyFragment : BaseFragmentVB<FragmentConstructionCompanyBinding>(
+    FragmentConstructionCompanyBinding::bind,
+    R.layout.fragment_construction_company
+) {
 }

@@ -39,11 +39,11 @@
         android:id="@+id/mapage_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="안녕하세요!\n모아님"
         android:textColor="@color/black"
         android:textSize="23dp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 

@@ -10,7 +10,7 @@ import com.example.airconmoa.util.Constants
 import com.example.airconmoa.util.FirebaseAuthUtils
 import com.kakao.sdk.common.util.Utility
 
-class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBinding::inflate){
+class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,11 +26,10 @@ class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBindi
         val sharedPreferences = getSharedPreferences("airconmoa", MODE_PRIVATE)
         val accessToken = sharedPreferences.getString(Constants.X_ACCESS_TOKEN, null)
 
-        if(accessToken == null) {
+        if (accessToken == null) {
             startActivity(Intent(this, JoinActivity::class.java))
             finish()
-        }
-        else {
+        } else {
             startActivity(Intent(this, JoinActivity::class.java))
             finish()
         }

@@ -23,9 +23,9 @@ class EstimateListItemDataAdapter(
             with(viewBinding) {
                 addressTv.text = data.address
                 lengthTv.text = data.length
-                companyNameTv.text=data.companyName
-                ratingNumTv.text=data.ratingNum.toString()
-                reviewNumTv.text=data.reviewNum
+                companyNameTv.text = data.companyName
+                ratingNumTv.text = data.ratingNum.toString()
+                reviewNumTv.text = data.reviewNum
                 nextBtn.setOnClickListener {
                     findNavController(fragment).navigate(R.id.action_estimatelistFragment_to_destimatedetailsFragment)
                 }
@@ -38,7 +38,11 @@ class EstimateListItemDataAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
-        val binding = ItemRvReceivedEstimateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemRvReceivedEstimateBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return DataViewHolder(binding)
     }
 

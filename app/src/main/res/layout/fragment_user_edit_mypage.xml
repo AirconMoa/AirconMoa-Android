@@ -83,12 +83,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:hint="모아"
         android:paddingHorizontal="-1dp"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTv"
-        android:hint="모아"
-        android:textColorHint="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@+id/nameTv" />
 
     <ImageView
         android:id="@+id/edit_closeBtn1"
@@ -117,12 +117,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:hint="010-1234-7890"
         android:paddingHorizontal="-1dp"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTv"
-        android:hint="010-1234-7890"
-        android:textColorHint="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@+id/phoneTv" />
 
     <ImageView
         android:id="@+id/edit_closeBtn2"
@@ -151,12 +151,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:hint="모모모아아아아"
         android:paddingHorizontal="-1dp"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nicknameTv"
-        android:hint="모모모아아아아"
-        android:textColorHint="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@+id/nicknameTv" />
 
     <ImageView
         android:id="@+id/edit_closeBtn3"

@@ -8,7 +8,7 @@ import com.example.airconmoa.databinding.ItemRvDetailReviewBinding
 
 
 class DetailReviewItemAdapter(
-    private val dataList: List<DetailReviewItemData>?
+    private val dataList: List<DetailReviewItemData>?,
 ) :
     RecyclerView.Adapter<DetailReviewItemAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemRvDetailReviewBinding) :
@@ -19,18 +19,19 @@ class DetailReviewItemAdapter(
 
             with(viewBinding) {
 
-                userNameTv.text=data.userName
-                brandAndNumTv.text=data.brandAndNum
-                ratingBar.rating=data.ratingNum.toFloat()
-                timeHistoryTv.text=data.historyDate
-                reviewContentTv.text=data.reviewContent
+                userNameTv.text = data.userName
+                brandAndNumTv.text = data.brandAndNum
+                ratingBar.rating = data.ratingNum.toFloat()
+                timeHistoryTv.text = data.historyDate
+                reviewContentTv.text = data.reviewContent
             }
         }
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
-        val binding = ItemRvDetailReviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemRvDetailReviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DataViewHolder(binding)
     }
 

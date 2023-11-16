@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class PostSignUpReq(
     @SerializedName("accessToken")
-    val accessToken : String,
+    val accessToken: String,
 
     @SerializedName("authType")
-    val authType : String
+    val authType: String,
 )

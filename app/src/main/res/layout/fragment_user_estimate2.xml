@@ -1,118 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/title_est"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="35dp"
+        android:fontFamily="@font/semi_bold"
         android:text="내 견적"
         android:textColor="@color/black"
-        android:fontFamily="@font/semi_bold"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/gray_line"
-        android:layout_marginVertical="35dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="문의하기"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/gray_line"
         android:layout_marginVertical="12dp"
         android:layout_marginEnd="20dp"
-        />
+        android:text="문의하기"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gray_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/gray_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/airconmoa_gray3"
-        app:layout_constraintTop_toBottomOf="@+id/title_est"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="9dp"
-        />
+        android:background="@color/airconmoa_gray3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_est" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/subLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gray_line"
+        android:background="#E9ECEF"
         android:paddingHorizontal="20dp"
         android:paddingTop="36dp"
-        android:background="#E9ECEF">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gray_line">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="견적 요청서"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/fstBtn"
             android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:text="날짜순"
-            android:textSize="15dp"
-            android:textColor="@color/white"
             android:background="@drawable/shape_btn_main"
             android:drawableStart="@drawable/option_down"
-            android:paddingHorizontal="8dp"
             android:drawablePadding="4dp"
+            android:paddingHorizontal="8dp"
+            android:text="날짜순"
+            android:textColor="@color/white"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/secBtn"
             android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:text="작성 완성 견적순"
-            android:textSize="15dp"
-            android:textColor="@color/airconmoa_gray3"
+            android:layout_marginTop="2.5dp"
             android:background="@drawable/shape_btn_stroke_gray3"
             android:drawableStart="@drawable/option_up"
-            android:paddingHorizontal="8dp"
             android:drawablePadding="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fstBtn"
-            android:layout_marginTop="2.5dp"
+            android:paddingHorizontal="8dp"
+            android:text="작성 완성 견적순"
+            android:textColor="@color/airconmoa_gray3"
+            android:textSize="15dp"
             android:visibility="gone"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fstBtn" />
+
         <Button
             android:id="@+id/trdBtn"
             android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:text="작성 미완료 견적순"
-            android:textSize="15dp"
-            android:textColor="@color/airconmoa_gray3"
+            android:layout_marginTop="2.5dp"
             android:background="@drawable/shape_btn_stroke_gray3"
             android:drawableStart="@drawable/option_up"
             android:drawablePadding="4dp"
             android:paddingHorizontal="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secBtn"
-            android:layout_marginTop="2.5dp"
+            android:text="작성 미완료 견적순"
+            android:textColor="@color/airconmoa_gray3"
+            android:textSize="15dp"
             android:visibility="gone"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secBtn" />
 
         <ScrollView
             android:id="@+id/scroll_rv"
@@ -120,12 +115,12 @@
             android:layout_height="0dp"
             android:layout_marginTop="28dp"
 
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fstBtn"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="40dp"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/fstBtn">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_request_for_estimate"
                 android:layout_width="match_parent"

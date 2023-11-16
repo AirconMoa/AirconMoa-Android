@@ -6,7 +6,6 @@
         android:width="1dp"
         android:color="@color/airconmoa_gray2" /> <!-- 선색 -->
 
-    <corners
-        android:radius="16dp"  /> <!-- 선 휘는각도 -->
+    <corners android:radius="16dp" /> <!-- 선 휘는각도 -->
 
 </shape>

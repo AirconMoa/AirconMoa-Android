@@ -11,27 +11,30 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEstimateBinding
 import com.example.airconmoa.ui.main_user.MainActivity
 
-class UserEstimateFragment : BaseFragmentVB<FragmentUserEstimateBinding>(FragmentUserEstimateBinding::bind, R.layout.fragment_user_estimate) {
+class UserEstimateFragment : BaseFragmentVB<FragmentUserEstimateBinding>(
+    FragmentUserEstimateBinding::bind,
+    R.layout.fragment_user_estimate
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding){
+        with(binding) {
             btnNext.setOnClickListener {
                 findNavController().navigate(R.id.action_estimateUserFragment_to_estimateAddressFragment)
 
             }
             closeBtn.setOnClickListener {
-                while(findNavController().popBackStack());
-                val intent= Intent(context,MainActivity::class.java)
-                intent.setFlags(FLAG_ACTIVITY_CLEAR_TASK)
+                while (findNavController().popBackStack());
+                val intent = Intent(context, MainActivity::class.java)
+                intent.flags = FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }
             backBtn.setOnClickListener {
-                while(findNavController().popBackStack());
+                while (findNavController().popBackStack());
 
-                val intent= Intent(context,MainActivity::class.java)
-                intent.setFlags(FLAG_ACTIVITY_CLEAR_TASK)
+                val intent = Intent(context, MainActivity::class.java)
+                intent.flags = FLAG_ACTIVITY_CLEAR_TASK
 
                 startActivity(intent)
             }

@@ -5,7 +5,7 @@ import okhttp3.Interceptor
 import okhttp3.Response
 
 
-class AccessTokenInterceptor(private val context: Context) : Interceptor{
+class AccessTokenInterceptor(private val context: Context) : Interceptor {
 
     /*
     @Throws(IOException::class)

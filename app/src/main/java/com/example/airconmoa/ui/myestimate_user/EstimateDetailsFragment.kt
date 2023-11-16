@@ -9,12 +9,15 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentEstimateDetailsBinding
 
 
-class EstimateDetailsFragment : BaseFragmentVB<FragmentEstimateDetailsBinding>(FragmentEstimateDetailsBinding::bind, R.layout.fragment_estimate_details) {
+class EstimateDetailsFragment : BaseFragmentVB<FragmentEstimateDetailsBinding>(
+    FragmentEstimateDetailsBinding::bind,
+    R.layout.fragment_estimate_details
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding){
+        with(binding) {
             backBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_estimatedetailsFragment_to_estimatelistFragment)
 
@@ -26,8 +29,8 @@ class EstimateDetailsFragment : BaseFragmentVB<FragmentEstimateDetailsBinding>(F
             bookBtn.setOnClickListener {
                 val intent = Intent(requireContext(), BookCompleteActivity::class.java)
                 startActivity(intent)
-                findNavController().popBackStack();
-                findNavController().popBackStack();
+                findNavController().popBackStack()
+                findNavController().popBackStack()
             }
             companyNameTv.setOnClickListener {
                 findNavController().navigate(R.id.action_estimatedetailsFragment_to_detailedcompanyreviewFragment)

@@ -1,13 +1,6 @@
 package com.example.airconmoa.ui.login_user
 
 
-
-import com.example.airconmoa.config.App
-import com.example.airconmoa.ui.login_user.model.LoginPostData
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 //class LoginService(val view : LoginActivityInterface) {
 //
 //    fun postLogin(body : LoginPostData, accessToken : String){

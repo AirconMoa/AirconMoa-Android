@@ -9,15 +9,13 @@ import com.example.airconmoa.R
 import com.example.airconmoa.databinding.ItemRvMainBinding
 
 
-
-
 class CompanyItemDataAdapter(private val dataList: List<CompanyItemData>?) :
     RecyclerView.Adapter<CompanyItemDataAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemRvMainBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
         private val context = viewBinding.root.context
 
-        fun bind(data:CompanyItemData) {
+        fun bind(data: CompanyItemData) {
 
             viewBinding.companyNameTv.text = data.nickname
             viewBinding.contentTv1.text = data.companyAddress

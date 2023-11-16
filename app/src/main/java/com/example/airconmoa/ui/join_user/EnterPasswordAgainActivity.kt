@@ -9,7 +9,8 @@ import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityEnterPasswordAgainBinding
 
 class EnterPasswordAgainActivity : BaseActivityVB<ActivityEnterPasswordAgainBinding>(
-    ActivityEnterPasswordAgainBinding::inflate) {
+    ActivityEnterPasswordAgainBinding::inflate
+) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,20 +40,20 @@ class EnterPasswordAgainActivity : BaseActivityVB<ActivityEnterPasswordAgainBind
                 binding.enterPasswordAgainErrorTv.visibility = View.INVISIBLE
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
-            }
-            else {
+            } else {
                 binding.enterPasswordAgainErrorTv.visibility = View.VISIBLE
                 showCustomToast("비밀번호가 일치하지 않습니다")
             }
         }
         setFullScreen()
     }
+
     override fun onPause() {
         super.onPause()
         val userPassword = binding.enterPasswordAgainEt.text.toString()
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
 
-        if(userPassword.isNotEmpty()) {
+        if (userPassword.isNotEmpty()) {
             val editor = sharedPreferences.edit()
             editor.putString("userPasswordAgain", userPassword)
             Log.d("userPasswordAgain", userPassword)
@@ -66,7 +67,7 @@ class EnterPasswordAgainActivity : BaseActivityVB<ActivityEnterPasswordAgainBind
         val sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE)
         val tempPassword = sharedPreferences.getString("userPasswordAgain", null)
 
-        if(tempPassword != null) {
+        if (tempPassword != null) {
             binding.enterPasswordAgainEt.setText(tempPassword)
         }
     }
