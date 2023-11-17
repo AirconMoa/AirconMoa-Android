@@ -5,7 +5,9 @@ import android.view.View
 import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEstimateBrandBinding
+import com.example.airconmoa.ui.join_company.Dialog.BrandRecycleDialog
 import com.example.airconmoa.ui.join_company.Dialog.LocationRecycleDialog
+import com.example.airconmoa.ui.join_company.Dialog.TypeRecycleDialog
 
 
 class UserEstimateBrandFragment: BaseFragmentVB<FragmentUserEstimateBrandBinding>(
@@ -19,7 +21,7 @@ class UserEstimateBrandFragment: BaseFragmentVB<FragmentUserEstimateBrandBinding
             btnBrand.setOnClickListener {
 
 
-                val mydial = LocationRecycleDialog(context!!, this)
+                val mydial = BrandRecycleDialog(context!!, this)
                 mydial.show()
 
 

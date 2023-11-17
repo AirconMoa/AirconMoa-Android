@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/company_join_nav"
+    app:startDestination="@id/companyjointermFragment">
+
+    <fragment
+        android:id="@+id/companyjointermFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyJoinTermFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_terms">
+        <action
+            android:id="@+id/action_companyjointermFragment_to_companyjoinemailFragment"
+            app:destination="@id/companyjoinemailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/companyjoinemailFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyjoinEmailFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_email">
+        <action
+            android:id="@+id/action_companyjoinemailFragment_to_companyjoinpasswordFragment"
+            app:destination="@id/companyjoinpasswordFragment" />
+        <action
+            android:id="@+id/action_companyjoinemailFragment_to_companyjointermFragment"
+            app:destination="@id/companyjointermFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/companyjoinpasswordFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyJoinPasswordFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_password">
+        <action
+            android:id="@+id/action_companyjoinpasswordFragment_to_companyjoincomnameFragment"
+            app:destination="@id/companyjoincomnameFragment" />
+        <action
+            android:id="@+id/action_companyjoinpasswordFragment_to_companyjoinemailFragment"
+            app:destination="@id/companyjoinemailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/companyjoincomnameFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyJoinCompanynameFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_companyname">
+        <action
+            android:id="@+id/action_companyjoincomnameFragment_to_companyjoinphonenumFragment"
+            app:destination="@id/companyjoinphonenumFragment" />
+        <action
+            android:id="@+id/action_companyjoincomnameFragment_to_companyjoinpasswordFragment"
+            app:destination="@id/companyjoinpasswordFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/companyjoinphonenumFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyJoinPhonenumFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_phonenum">
+        <action
+            android:id="@+id/action_companyjoinphonenumFragment_to_companyjoinwhereFragment"
+            app:destination="@id/companyjoinwhereFragment" />
+        <action
+            android:id="@+id/action_companyjoinphonenumFragment_to_companyjoincomnameFragment2"
+            app:destination="@id/companyjoincomnameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/companyjoinwhereFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyJoinWhereFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_where">
+        <action
+            android:id="@+id/action_companyjoinwhereFragment_to_companyjoinsuccessFragment"
+            app:destination="@id/companyjoinsuccessFragment" />
+        <action
+            android:id="@+id/action_companyjoinwhereFragment_to_companyjoinphonenumFragment2"
+            app:destination="@id/companyjoinphonenumFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/companyjoinsuccessFragment"
+        android:name="com.example.airconmoa.ui.join_company.Fragment.CompanyJoinSuccessFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_company_join_success">
+        <action
+            android:id="@+id/action_companyjoinsuccessFragment_to_companyjoinwhereFragment2"
+            app:destination="@id/companyjoinwhereFragment" />
+    </fragment>
+
+</navigation>

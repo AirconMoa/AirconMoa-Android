@@ -3,7 +3,7 @@ package com.example.airconmoa.util
 object Constants {
 
     const val TAG = "debugging"
-    const val BASE_URL = ""
+    const val BASE_URL = "http://13.124.108.240:8080"
     const val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
     const val X_REFRESH_TOKEN = "X_REFRESH_TOKEN"
     const val X_ACCESS_EXPIRE = "X_ACCESS_EXPIRE"
@@ -18,7 +18,12 @@ object Constants {
 
 
     //Dialog save
-    const val location_si = "location_si"
-    const val location_do = "location_do"
+    const val email = "email"
+    const val password = "password"
+    const val phonenum = "phonenum"
+    const val companyName = "companyName"
+    const val name = "name"
+    const val address = "address"
+
 
 }

@@ -32,8 +32,8 @@ class LocationDoRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinW
 
     val obj = object : DialogLocationRecyclerAdapter.OnClickInterface {
         override fun onClick(view: View, position: Int) {
-            Log.d("Tester", "onClick: ${locationlist[position]}")
-            dlgbinding.txtDo.text = locationlist[position]
+            Log.d("Tester", "onClick: ${savelocation[position]}")
+            dlgbinding.txtDo.text = savelocation[position]
             dismiss()
         }
 

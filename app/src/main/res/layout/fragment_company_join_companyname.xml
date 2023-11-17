@@ -5,22 +5,84 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linear_login_progress"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/estimate_btn_back"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textColor="@color/airconmoa_gray"
+            android:textSize="20sp"
+            android:layout_weight="3"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/estimate_btn_close"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/estimate_linear_progress"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/linear_login_progress">
+
+        <ProgressBar
+            android:id="@+id/estimate_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="336dp"
+            android:layout_height="2dp"
+            android:max="7"
+            android:progress="4"
+            android:progressDrawable="@drawable/estimate_progressbar" />
+
+        <TextView
+            android:id="@+id/estimate_progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="4/7"
+            android:textColor="#D9D9D9"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/estimate_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="25dp"
         android:layout_marginLeft="20dp"
-        android:orientation="vertical">
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estimate_linear_progress">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="업체명을 입력해 주세요"
-            android:textSize="25sp"
             android:textColor="@color/airconmoa_gray"
-            android:textStyle="bold"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -28,66 +90,93 @@
         android:id="@+id/estimate_name_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/estimate_name_text"
-        android:layout_marginTop="120dp"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_marginTop="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/edt_company_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:hint="모아"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="모아"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="20dp"
-                    android:background="@android:color/transparent"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/txt_max_checker"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="right"
-                android:layout_marginRight="20dp">
-
-                <TextView
-                    android:id="@+id/txt_max_checker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0/10"
-                    android:textColor="@color/airconmoa_gray2"/>
-
-
-
-            </LinearLayout>
-
+                android:layout_marginRight="20dp"
+                android:text="0/10"
+                android:textColor="@color/airconmoa_gray2" />
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#CDD3D9"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="8dp"/>
+    </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="사용 가능한 아이디입니다."
-            android:layout_gravity="right"
-            android:layout_marginRight="20dp"
-            android:textColor="#FF4F4F"
-            android:textSize="14sp"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:background="#CDD3D9"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estimate_name_box" />
+
+    <TextView
+        android:id="@+id/txt_company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:text="사용 가능한 아이디입니다."
+        android:textColor="#FF4F4F"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:background="@drawable/company_next_btn_selector"
+            android:enabled="false"
+            android:fontFamily="@font/semi_bold"
+            android:text="다음"
+            android:textColor="@color/airconmoa_gray"
+            android:textSize="20sp" />
 
 
     </LinearLayout>

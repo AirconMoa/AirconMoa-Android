@@ -2,35 +2,36 @@ package com.example.airconmoa.ui.join_company.Fragment
 
 
 
-import android.app.Dialog
-import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
-import android.view.Window
-import android.widget.Button
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 
 import com.example.airconmoa.config.BaseFragmentVB
 
-import androidx.fragment.app.FragmentManager
 import com.example.airconmoa.R
 import com.example.airconmoa.databinding.FragmentCompanyJoinWhereBinding
+import com.example.airconmoa.ui.join_company.CompanyJoinSuccessActivity
 import com.example.airconmoa.ui.join_company.Dialog.LocationDoRecycleDialog
 import com.example.airconmoa.ui.join_company.Dialog.LocationRecycleDialog
-import com.example.airconmoa.ui.join_company.data.SiData
-import com.example.airconmoa.until.getSi
-
+import com.example.airconmoa.ui.join_company.data.CompanyJoinDataSource
+import com.example.airconmoa.ui.join_company.data.CompanyJoinView
+import com.example.airconmoa.ui.join_company.data.Join
+import com.example.airconmoa.ui.join_company.data.ResultCompanyJoin
+import com.example.airconmoa.until.getAddress
+import com.example.airconmoa.until.getCompanyName
+import com.example.airconmoa.until.getEmail
+import com.example.airconmoa.until.getPassword
+import com.example.airconmoa.until.getPhonenum
+import com.example.airconmoa.until.saveAddress
 
 
 class CompanyJoinWhereFragment:
     BaseFragmentVB<FragmentCompanyJoinWhereBinding>(FragmentCompanyJoinWhereBinding::bind, R.layout.fragment_company_join_where) {
 
+    private var detail_check = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,11 +40,9 @@ class CompanyJoinWhereFragment:
 
             btnLocationSi.setOnClickListener{
 
-
                 val mydial = LocationRecycleDialog(context!!,this)
                 mydial.show()
-
-
+                check()
             }
 
             btnLocationDo.setOnClickListener {
@@ -54,27 +53,88 @@ class CompanyJoinWhereFragment:
                     val mydial = LocationDoRecycleDialog(context!!,this, txtSi.text.toString())
                     mydial.show()
                 }
+                check()
+            }
 
+            txtLocationDetail.addTextChangedListener(object :TextWatcher{
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
 
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                }
+
+                override fun afterTextChanged(s: Editable?) {
+                    if(txtLocationDetail.length()>5){
+                        detail_check = true
+                        check()
+                    }else{
+                        detail_check = false
+                        check()
+                    }
+                }
+
+            })
+            btnNext.setOnClickListener {
+                saveAddress(txtSi.text.toString() + txtDo.text.toString() + txtLocationDetail.text.toString())
+                join()
             }
 
 
 
+        }
+    }
 
-
-//                dlg.setOnClickedListener(object : LocationRecycleDialog.ButtonClickListener{
-//                    override fun onClicked(index: Int?) {
-//                        if(index != null){
-//                            showCustomToast(index.toString())
-//
-//                            txtSi.setText(locationlist[index])
-//
-//                        }
-//                    }
-//                })
+    private fun check(){
+        if(binding.txtSi.text.toString() != ""){
+            if(binding.txtDo.text.toString() != ""){
+                if(detail_check){
+                    binding.btnNext.isEnabled = true
+                    binding.btnNext.setTextColor(Color.parseColor("#FFFFFF"))
+                }else{
+                    binding.btnNext.isEnabled = false
+                    binding.btnNext.setTextColor(Color.parseColor("#343A40"))
+                }
+            }else{
+                binding.btnNext.isEnabled = false
+                binding.btnNext.setTextColor(Color.parseColor("#343A40"))
+            }
+        }else{
+            binding.btnNext.isEnabled = false
+            binding.btnNext.setTextColor(Color.parseColor("#343A40"))
         }
     }
 
 
+    private fun join(){
+        CompanyJoinDataSource().join(getCompanyInfo(),object : CompanyJoinView{
+            override fun onLoginSuccess(code: Int, result: ResultCompanyJoin) {
+                when(code){
+                    1000->{
+                        startSuccessActivity()
+                    }
+                }
+            }
 
+            override fun onLoginFailure(message: String?) {
+                showCustomToast(message.toString())
+            }
+
+        })
+    }
+
+    private fun getCompanyInfo() : Join {
+        return Join(getEmail()!!, getPassword()!!, getCompanyName()!!, getPhonenum()!!, getAddress()!!)
+    }
+
+    private fun startSuccessActivity(){
+        startActivity(Intent(activity,CompanyJoinSuccessActivity::class.java))
+        requireActivity().finish()
+    }
 }

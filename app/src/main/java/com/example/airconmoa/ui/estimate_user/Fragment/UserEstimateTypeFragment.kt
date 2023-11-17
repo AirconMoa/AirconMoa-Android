@@ -5,9 +5,8 @@ import android.view.View
 import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserEstimateTypeBinding
-import com.example.airconmoa.ui.join_company.Dialog.LocationDoRecycleDialog
 import com.example.airconmoa.ui.join_company.Dialog.LocationRecycleDialog
-
+import com.example.airconmoa.ui.join_company.Dialog.TypeRecycleDialog
 
 
 class UserEstimateTypeFragment : BaseFragmentVB<FragmentUserEstimateTypeBinding>(
@@ -20,7 +19,7 @@ class UserEstimateTypeFragment : BaseFragmentVB<FragmentUserEstimateTypeBinding>
             btnType.setOnClickListener {
 
 
-                val mydial = LocationRecycleDialog(context!!, this)
+                val mydial = TypeRecycleDialog(context!!, this)
                 mydial.show()
 
 

@@ -26,7 +26,6 @@ import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
 import com.example.airconmoa.ui.join_company.data.SiData
 import com.example.airconmoa.ui.login_user.model.LoginPostData
-import com.example.airconmoa.until.saveSi
 
 
 

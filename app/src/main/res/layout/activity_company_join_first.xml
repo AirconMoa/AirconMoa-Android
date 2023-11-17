@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="안녕하세요!"
                 android:layout_gravity="center"
+                android:textStyle="bold"
                 android:textColor="@color/airconmoa_gray"
                 android:textSize="25dp"/>
             <ImageView
@@ -38,52 +39,62 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="아직 MOA의 회원이 아니신가요?"
             android:textColor="@color/airconmoa_gray"
             android:textSize="25dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="250dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
-                <Button
-                    android:id="@+id/btn_yes"
-                    android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:text="회원가입 할래요."
-                    android:background="@android:color/transparent"/>
+    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/go_join"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/go_login">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="3dp">
-                <Button
-                    android:id="@+id/btn_no"
-                    android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:textColor="@color/airconmoa_gray"
-                    android:background="@android:color/transparent"
-                    android:text="이미 회원이에요."/>
+        <Button
+            android:id="@+id/btn_go_join"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:background="@drawable/company_next_btn_white"
+            android:enabled="true"
+            android:fontFamily="@font/semi_bold"
+            android:textStyle="bold"
+            android:text="회원가입 할래요"
+            android:textColor="@color/airconmoa_gray"
+            android:textSize="20sp" />
 
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
 
     </LinearLayout>
 
 
+
+    <LinearLayout
+        android:id="@+id/go_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_go_login"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:text="이미 회원이에요"
+            android:enabled="true"
+            android:textStyle="bold"
+            android:background="@drawable/company_next_btn_white"
+            android:textColor="@color/airconmoa_gray"
+            android:fontFamily="@font/semi_bold"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

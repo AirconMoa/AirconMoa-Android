@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.airconmoa.databinding.DialogLocationRecycleBinding
 import com.example.airconmoa.databinding.FragmentCompanyJoinWhereBinding
+import com.example.airconmoa.databinding.FragmentUserEstimateBrandBinding
+import com.example.airconmoa.databinding.FragmentUserEstimateTypeBinding
 import com.example.airconmoa.databinding.ItemRvLocationBinding
 import com.example.airconmoa.ui.join_company.Adapter.DialogLocationRecyclerAdapter
 
@@ -25,7 +27,7 @@ class LocationRecycleDialog(context: Context, dlgbinding: FragmentCompanyJoinWhe
     val obj = object : DialogLocationRecyclerAdapter.OnClickInterface{
         override fun onClick(view: View, position: Int) {
             Log.d("Tester", "onClick: ${locationlist[position]}")
-            dlgbinding.txtSi.text = locationlist[position]
+            dlgbinding.txtSi.text= locationlist[position]
             dismiss()
         }
 

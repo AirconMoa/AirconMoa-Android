@@ -24,6 +24,7 @@ import com.example.airconmoa.util.Constants
 import com.example.airconmoa.R.*
 import com.example.airconmoa.config.BaseResponse
 import com.example.airconmoa.config.RetrofitInstance
+import com.example.airconmoa.databinding.ActivityLoginBinding
 import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
 import com.example.airconmoa.ui.join_user.model.PostSignUpReq
 import com.example.airconmoa.ui.join_user.model.PostUidDeviceTokenReq

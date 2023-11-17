@@ -22,6 +22,7 @@
             android:layout_marginTop="154dp">
 
             <TextView
+                android:id="@+id/txt_com_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="모아님,"
@@ -63,34 +64,29 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linear_next_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/estiamte_success_txt"
-        app:layout_constraintStart_toStartOf="@id/estiamte_success_txt"
-        android:layout_marginTop="350dp"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp">
 
-        <androidx.cardview.widget.CardView
+        <Button
+            android:id="@+id/btn_next"
             android:layout_width="350dp"
             android:layout_height="60dp"
-            android:backgroundTint="#00D1FF"
-            app:cardCornerRadius="10dp">
-
-            <Button
-                android:id="@+id/btn_home"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:text="모아 홈으로"
-                android:textColor="@color/white"
-                android:textSize="20sp"/>
-
-
-        </androidx.cardview.widget.CardView>
-
+            android:text="모아 홈으로"
+            android:enabled="true"
+            android:background="@drawable/company_next_btn_selector"
+            android:textColor="@color/white"
+            android:fontFamily="@font/semi_bold"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
+
 
 
 

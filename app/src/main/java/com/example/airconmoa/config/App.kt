@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.airconmoa.util.Constants.BASE_URL
+import com.kakao.sdk.common.KakaoSdk
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -47,6 +48,8 @@ class App : Application() {
         initRetrofitInstance() // Retrofit을 초기화한다.
         //getkakaoKeyhash()
         //startSocialLogin()
+
+        KakaoSdk.init(this, "64eccc279aa42b2d6d95605fcb8b3387")
     }
 
     private fun initRetrofitInstance() {
@@ -59,7 +62,7 @@ class App : Application() {
 
             // AccessTokenInterceptor를 추가하여 JWT 토큰을 자동으로 HTTP 요청 헤더에 추가한다.
             // applicationContext는 Android 애플리케이션 컨텍스트를 나타낸다.
-            .addNetworkInterceptor(AccessTokenInterceptor(applicationContext))
+            //.addNetworkInterceptor(AccessTokenInterceptor(applicationContext))
             .build()
 
         retrofit = Retrofit.Builder()
