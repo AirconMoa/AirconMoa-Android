@@ -116,19 +116,27 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <Spinner
+                <!--<Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp" />
+-->
+                <EditText
+                    android:id="@+id/address1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/airconmoa_main"
+                    android:hint="인천광역시"
 
-                <LinearLayout
+                    android:textColor="@color/black"/>
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
-                    android:background="#CDD3D9" />
+                    android:background="#CDD3D9" />-->
             </LinearLayout>
 
             <LinearLayout
@@ -137,19 +145,28 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <Spinner
+               <!-- <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp" />
+-->
+                <EditText
+                    android:id="@+id/address2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/airconmoa_main"
+                    android:hint="남구"
 
-                <LinearLayout
+                    android:textColor="@color/black"/>
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
                     android:background="#CDD3D9" />
+                    -->
             </LinearLayout>
 
 
@@ -167,20 +184,21 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:id="@+id/address3"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/airconmoa_main"
                     android:hint="상세주소"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
-                    android:background="#CDD3D9" />
+                    android:background="#CDD3D9" />-->
             </LinearLayout>
 
 

@@ -2,6 +2,7 @@ package com.example.airconmoa.ui.estimate_user.Fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.airconmoa.R
@@ -15,21 +16,31 @@ class UserEstimateAddressFragment : BaseFragmentVB<FragmentUserEstimateAddressBi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var info1=arguments?.getString("info1").toString()
+        Log.d("info1 ","A "+info1)
+
         with(binding) {
             btnNext.setOnClickListener {
-                findNavController().navigate(R.id.action_estimateAddressFragment_to_estimateTypeFragment)
+                val bundle = Bundle()
+                bundle!!.putString("info1", info1)
+                bundle!!.putString("info2",address1.text.toString()+" "+address2.text.toString()+" "+address3.text.toString())
+                findNavController().navigate(R.id.action_estimateAddressFragment_to_estimateTypeFragment,bundle)
 
             }
             closeBtn.setOnClickListener {
-                while (findNavController().popBackStack());
                 val intent = Intent(context, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
+                requireActivity().finish()
+                while (findNavController().popBackStack());
+
             }
             backBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_estimateAddressFragment_to_estimateUserFragment)
 
             }
+
         }
     }
 }
