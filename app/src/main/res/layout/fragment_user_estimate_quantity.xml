@@ -125,6 +125,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/minusBtn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right|center"
@@ -149,6 +150,7 @@
             android:layout_weight="3">
 
             <TextView
+                android:id="@+id/numTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -167,6 +169,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/plusBtn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@android:color/transparent"

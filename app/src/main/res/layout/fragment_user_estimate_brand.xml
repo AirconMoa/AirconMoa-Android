@@ -116,7 +116,7 @@
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true">
 
-                <Button
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:background="@android:color/transparent"
@@ -127,8 +127,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <ImageButton
-                    android:id="@+id/lg"
+                <ImageView
+                    android:id="@+id/lgBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center"
@@ -144,7 +144,7 @@
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true">
 
-                <Button
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:background="@android:color/transparent"
@@ -155,8 +155,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <ImageButton
-                    android:id="@+id/samsung"
+                <ImageView
+                    android:id="@+id/samsungBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center"
@@ -172,7 +172,7 @@
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true">
 
-                <Button
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:background="@android:color/transparent"
@@ -183,8 +183,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <ImageButton
-                    android:id="@+id/carrier"
+                <ImageView
+                    android:id="@+id/carrierBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center"
@@ -200,7 +200,7 @@
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true">
 
-                <Button
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:background="@android:color/transparent"
@@ -211,8 +211,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <ImageButton
-                    android:id="@+id/etc"
+                <ImageView
+                    android:id="@+id/etcBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center"
