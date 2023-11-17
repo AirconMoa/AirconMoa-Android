@@ -10,7 +10,7 @@ data class RequestEstimateItemData(
     val installAddress: String,
 
     @SerializedName("buildingType")
-    val buildingType: String?,
+    val buildingType: String,
 
     @SerializedName("amount")
     val amount: Int,
@@ -19,5 +19,5 @@ data class RequestEstimateItemData(
     val installationDate: String,
 
     @SerializedName("brand")
-    val brand: String?
+    val brand: String
 )

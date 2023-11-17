@@ -9,7 +9,6 @@ import com.example.airconmoa.config.BaseResponse
 import com.example.airconmoa.config.RetrofitInstance
 import com.example.airconmoa.databinding.ActivitySplashBinding
 import com.example.airconmoa.ui.join_user.JoinActivity
-import com.example.airconmoa.ui.join_user.model.PostUidDeviceTokenReq
 import com.example.airconmoa.ui.login_user.LoginActivity
 import com.example.airconmoa.ui.main_company.MainCompanyActivity
 import com.example.airconmoa.ui.main_user.MainActivity
@@ -32,6 +31,7 @@ class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBindi
         Log.d("userUid", uid)
 
         val keyHash = Utility.getKeyHash(this)
+        //val keyHash="mye820+jetkYmbUWKHMB3uzRVak="
         Log.d("Hash", keyHash)
 
         val sharedPreferences = getSharedPreferences("airconmoa", MODE_PRIVATE)

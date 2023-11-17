@@ -8,7 +8,6 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityJoinBinding
 import com.example.airconmoa.ui.join_company.CompanyJoinActivity
-import com.example.airconmoa.ui.main_user.MainActivity
 import com.kakao.sdk.common.util.Utility
 
 class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::inflate) {
@@ -19,8 +18,8 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
             binding.joinUserBtn.visibility = View.INVISIBLE
             binding.joinUserSelectedBtn.visibility = View.VISIBLE
 
-            //val intent = Intent(this, NewMemberActivity::class.java)
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, NewMemberActivity::class.java)
+            //val intent = Intent(this, MainActivity::class.java)
 
             startActivity(intent)
             overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
