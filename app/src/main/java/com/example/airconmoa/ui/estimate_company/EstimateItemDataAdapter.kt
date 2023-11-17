@@ -11,27 +11,34 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.airconmoa.R
 import com.example.airconmoa.databinding.ItemRvMainCompanyBinding
+import com.example.airconmoa.ui.estimate_company.model.EstimateItemData
+import com.example.airconmoa.ui.estimate_company.model.GetRequestEstimateRes
 
 
-class EstimateItemDataAdapter(
-    private val dataList: List<EstimateItemData>?,
-    private val fragment: EstimateCompanyFragment,
+class EstimateItemDataAdapter(private val dataList: List<GetRequestEstimateRes>?,
+                              private val fragment: EstimateCompanyFragment,
+
 ) :
     RecyclerView.Adapter<EstimateItemDataAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemRvMainCompanyBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
         private val context = viewBinding.root.context
 
-        fun bind(data: EstimateItemData) {
+        fun bind(data: GetRequestEstimateRes) {
 
             with(viewBinding) {
-                clientNameTv.text = data.clientName
-                dateTv.text = data.dateTv
-                contentTv1.text = data.content
-                contentTv2.text = data.length
+                clientNameTv.text = data.userNickname
+                dateTv.text = data.installationDate
+                when (data.installInfo) {
+                    "NEW_BUILDING" -> contentTv1.text = "신규 설치 ∙ 신규 건물"
+                    "EXISTING_BUILDING" -> contentTv1.text = "신규 설치 ∙ 기존 건물"
+                    "AIRCON_REPLACEMENT" -> contentTv1.text = "에어컨 교체"
+                    else -> contentTv1.text = "기타 설치 정보"
+                }
+                // contentTv2.text = data.length
 
                 Glide.with(context)
-                    .load(data.img)
+                    .load(data.porfileUrl)
                     .error(R.drawable.detail_review_user_profile)
                     .into(viewBinding.ractangleIv)
 
@@ -82,7 +89,6 @@ class EstimateItemDataAdapter(
         }
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         val binding =
             ItemRvMainCompanyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -91,11 +97,22 @@ class EstimateItemDataAdapter(
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         holder.bind(dataList!!.get(position))
+        holder.itemView.setOnClickListener {
+            itemClickListener.onItemClick(dataList[position])
+        }
     }
 
     override fun getItemCount(): Int {
         return dataList!!.size
     }
 
+    interface OnItemClickListener {
+        fun onItemClick(getRequestEstimateRes : GetRequestEstimateRes)
+    }
 
+    private lateinit var itemClickListener : OnItemClickListener
+
+    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
+    }
 }

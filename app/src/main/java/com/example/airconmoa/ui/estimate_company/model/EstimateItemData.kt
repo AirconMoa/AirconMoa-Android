@@ -1,4 +1,4 @@
-package com.example.airconmoa.ui.estimate_company
+package com.example.airconmoa.ui.estimate_company.model
 
 data class EstimateItemData(
 

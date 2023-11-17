@@ -280,10 +280,9 @@ class LoginActivity : BaseActivityVB<ActivityLoginBinding>(ActivityLoginBinding:
                         Log.d("userEmail", signUpResponse.email)
                         val sharedPreferences = getSharedPreferences("airconmoa", MODE_PRIVATE)
                         sharedPreferences.edit()
-                            .putString(
-                                Constants.X_ACCESS_TOKEN,
-                                "Bearer " + signUpResponse.accessToken
-                            )
+                            .putString(Constants.X_ACCESS_TOKEN, "Bearer " + signUpResponse!!.accessToken)
+                            .putString(Constants.X_LOGIN_TYPE, "user")
+
                             .apply()
 
                         if (FirebaseAuthUtils.getUid() == null) {

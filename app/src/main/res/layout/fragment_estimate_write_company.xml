@@ -259,12 +259,11 @@
 
                 <TextView
                     android:id="@+id/brandTv"
+                    android:gravity="center"
                     android:layout_width="0dp"
-
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/semi_bold"
-                    android:gravity="center"
                     android:text="브랜드"
                     android:textColor="@color/airconmoa_gray3"
                     android:textSize="12dp"
