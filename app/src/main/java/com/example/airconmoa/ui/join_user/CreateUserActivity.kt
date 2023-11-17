@@ -16,6 +16,7 @@ import com.example.airconmoa.ui.join_user.model.PostOauthLoginRes
 import com.example.airconmoa.ui.join_user.model.PostSignUpReq
 import com.example.airconmoa.ui.join_user.model.PostUidDeviceTokenReq
 import com.example.airconmoa.ui.main_user.MainActivity
+import com.example.airconmoa.util.Constants
 import com.example.airconmoa.util.FirebaseAuthUtils
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -123,6 +124,12 @@ class CreateUserActivity : JoinActivityInterface, BaseActivityVB<ActivityCreateU
                         Log.d("userId", signUpResponse!!.userId.toString())
                         Log.d("accessToken", signUpResponse!!.accessToken)
                         Log.d("userEmail", signUpResponse!!.email)
+
+                        val sharedPreferences = getSharedPreferences("airconmoa", MODE_PRIVATE)
+                        sharedPreferences.edit()
+                            .putString(Constants.X_ACCESS_TOKEN, "Bearer " + signUpResponse!!.accessToken)
+                            .putString(Constants.X_LOGIN_TYPE, "user")
+                            .apply()
 
                         if(FirebaseAuthUtils.getUid() == null) {
                             auth.createUserWithEmailAndPassword(signUpResponse!!.email, "abc123")
