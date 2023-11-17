@@ -159,8 +159,7 @@
             android:text="1대"
             android:textColor="@color/black"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/installSiteContentTv"
+            app:layout_constraintStart_toStartOf="@id/installNumTv"
             app:layout_constraintTop_toBottomOf="@id/installNumTv" />
 
         <Button

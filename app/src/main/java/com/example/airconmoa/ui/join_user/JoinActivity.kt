@@ -19,8 +19,8 @@ class JoinActivity : BaseActivityVB<ActivityJoinBinding>(ActivityJoinBinding::in
             binding.joinUserBtn.visibility = View.INVISIBLE
             binding.joinUserSelectedBtn.visibility = View.VISIBLE
 
-            val intent = Intent(this, NewMemberActivity::class.java)
-            //val intent = Intent(this, MainActivity::class.java)
+            //val intent = Intent(this, NewMemberActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
 
             startActivity(intent)
             overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)

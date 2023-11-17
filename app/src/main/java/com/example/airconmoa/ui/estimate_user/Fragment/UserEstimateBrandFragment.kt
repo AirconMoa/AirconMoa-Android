@@ -26,7 +26,7 @@ class UserEstimateBrandFragment : BaseFragmentVB<FragmentUserEstimateBrandBindin
         var info1 = arguments?.getString("info1").toString()
         var info2 = arguments?.getString("info2").toString()
         var info3 = arguments?.getString("info3").toString()
-        var info4 = arguments?.getString("info4").toString()
+        var info4 = arguments?.getInt("info4")
         var info5 = arguments?.getString("info5").toString()
         navController = findNavController()
         with(binding) {
