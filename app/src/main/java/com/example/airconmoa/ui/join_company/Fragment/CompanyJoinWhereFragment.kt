@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.navigation.Navigation
 
 import com.example.airconmoa.config.BaseFragmentVB
 
@@ -20,6 +21,7 @@ import com.example.airconmoa.ui.join_company.data.CompanyJoinDataSource
 import com.example.airconmoa.ui.join_company.data.CompanyJoinView
 import com.example.airconmoa.ui.join_company.data.Join
 import com.example.airconmoa.ui.join_company.data.ResultCompanyJoin
+import com.example.airconmoa.ui.join_user.JoinActivity
 import com.example.airconmoa.until.getAddress
 import com.example.airconmoa.until.getCompanyName
 import com.example.airconmoa.until.getEmail
@@ -84,6 +86,15 @@ class CompanyJoinWhereFragment:
             btnNext.setOnClickListener {
                 saveAddress(txtSi.text.toString() + txtDo.text.toString() + txtLocationDetail.text.toString())
                 join()
+            }
+
+            btnBack.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.action_companyjoinwhereFragment_to_companyjoinphonenumFragment2)
+            }
+
+            btnClose.setOnClickListener {
+                startActivity(Intent(activity, JoinActivity::class.java))
+                requireActivity().finish()
             }
 
 

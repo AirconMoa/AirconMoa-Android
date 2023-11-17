@@ -55,7 +55,7 @@ class CompanyJoinCompanynameFragment  :
                     .navigate(R.id.action_companyjoincomnameFragment_to_companyjoinphonenumFragment)
             }
 
-            btnNext.setOnClickListener {
+            btnBack.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.action_companyjoincomnameFragment_to_companyjoinpasswordFragment)
             }
 
