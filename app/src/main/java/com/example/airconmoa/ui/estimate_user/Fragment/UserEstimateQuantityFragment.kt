@@ -32,7 +32,7 @@ class UserEstimateQuantityFragment : BaseFragmentVB<FragmentUserEstimateQuantity
                 bundle.putString("info1", info1)
                 bundle.putString("info2",info2)
                 bundle.putString("info3",info3)
-                bundle.putString("info4",quantity.toString()+"대")
+                bundle.putInt("info4",quantity)
                 findNavController().navigate(R.id.action_estimateQuantityFragment_to_estimateDateFragment,bundle)
 
             }

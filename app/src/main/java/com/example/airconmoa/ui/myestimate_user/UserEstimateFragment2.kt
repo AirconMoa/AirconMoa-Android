@@ -20,7 +20,7 @@ class UserEstimateFragment2 : BaseFragmentVB<FragmentUserEstimate2Binding>(
         val dataList: ArrayList<RequestForEstimateItemData> = arrayListOf()
         dataList.apply {
             add(
-                RequestForEstimateItemData(211378, "경기도 안양시", "아파트", "LG", 1, "2023.10.08")
+                RequestForEstimateItemData(211378, "인천광역시 미추홀구", "아파트", "LG", 2, "2023.11.19")
             )
             add(
                 RequestForEstimateItemData(211234, "경기도 안양시", "아파트", "LG", 1, "2023.09.11")

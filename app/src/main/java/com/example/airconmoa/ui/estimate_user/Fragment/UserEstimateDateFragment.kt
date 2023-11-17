@@ -24,12 +24,12 @@ class UserEstimateDateFragment : BaseFragmentVB<FragmentUserEstimateDateBinding>
         var info1=arguments?.getString("info1").toString()
         var info2=arguments?.getString("info2").toString()
         var info3=arguments?.getString("info3").toString()
-        var info4=arguments?.getString("info4").toString()
+        var info4=arguments?.getInt("info4")
 
         Log.d("info1", "D "+info1)
         Log.d("info1", "D "+info2)
         Log.d("info1", "D "+info3)
-        Log.d("info1", "D "+info4)
+        Log.d("info1", "D "+info4.toString())
 
         with(binding) {
             btnNext.setOnClickListener {
@@ -37,8 +37,8 @@ class UserEstimateDateFragment : BaseFragmentVB<FragmentUserEstimateDateBinding>
                 bundle.putString("info1", info1)
                 bundle.putString("info2",info2)
                 bundle.putString("info3",info3)
-                bundle.putString("info4",info4)
-                bundle.putString("info5",calMonth.toString()+"월 "+calDay.toString()+"일")
+                bundle.putInt("info4",info4!!)
+                bundle.putString("info5","2023-"+calMonth.toString()+"-"+calDay.toString())
                 findNavController().navigate(R.id.action_estimateDateFragment_to_estimateBrandFragment,bundle)
 
             }
