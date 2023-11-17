@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
                 android:fontFamily="@font/semi_bold"
-                android:text="인천광역시 미추홀구 모아동 1로 123-45/n모아빌라 402호"
+                android:text="인천광역시 미추홀구 모아동 1로 123-45 모아빌라 402호"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
