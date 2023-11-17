@@ -18,7 +18,7 @@ class UserEstimateAddressFragment : BaseFragmentVB<FragmentUserEstimateAddressBi
         super.onViewCreated(view, savedInstanceState)
 
         var info1=arguments?.getString("info1").toString()
-        Log.d("info1 ",info1)
+        Log.d("info1 ","A "+info1)
 
         with(binding) {
             btnNext.setOnClickListener {

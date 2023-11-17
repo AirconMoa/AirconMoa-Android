@@ -21,9 +21,9 @@ class UserEstimateQuantityFragment : BaseFragmentVB<FragmentUserEstimateQuantity
         var info1=arguments?.getString("info1").toString()
         var info2=arguments?.getString("info2").toString()
         var info3=arguments?.getString("info3").toString()
-        Log.d("info1", info1)
-        Log.d("info1", info2)
-        Log.d("info1", info3)
+        Log.d("info1", "Q "+info1)
+        Log.d("info1", "Q "+info2)
+        Log.d("info1", "Q "+info3)
 
 
         with(binding) {
@@ -33,7 +33,7 @@ class UserEstimateQuantityFragment : BaseFragmentVB<FragmentUserEstimateQuantity
                 bundle.putString("info2",info2)
                 bundle.putString("info3",info3)
                 bundle.putString("info4",quantity.toString()+"대")
-                findNavController().navigate(R.id.action_estimateQuantityFragment_to_estimateDateFragment)
+                findNavController().navigate(R.id.action_estimateQuantityFragment_to_estimateDateFragment,bundle)
 
             }
             closeBtn.setOnClickListener {

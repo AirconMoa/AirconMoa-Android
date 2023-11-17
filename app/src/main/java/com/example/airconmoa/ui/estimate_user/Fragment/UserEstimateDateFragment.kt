@@ -2,6 +2,7 @@ package com.example.airconmoa.ui.estimate_user.Fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.airconmoa.R
@@ -24,6 +25,12 @@ class UserEstimateDateFragment : BaseFragmentVB<FragmentUserEstimateDateBinding>
         var info2=arguments?.getString("info2").toString()
         var info3=arguments?.getString("info3").toString()
         var info4=arguments?.getString("info4").toString()
+
+        Log.d("info1", "D "+info1)
+        Log.d("info1", "D "+info2)
+        Log.d("info1", "D "+info3)
+        Log.d("info1", "D "+info4)
+
         with(binding) {
             btnNext.setOnClickListener {
                 val bundle = Bundle()

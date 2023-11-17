@@ -24,12 +24,11 @@ class UserEstimateTypeFragment : BaseFragmentVB<FragmentUserEstimateTypeBinding>
         var info1 = arguments?.getString("info1").toString()
         var info2 = arguments?.getString("info2").toString()
 
-        Log.d("info1", info1)
-        Log.d("info1", info2)
+        Log.d("info1", "T "+info1)
+        Log.d("info1", "T "+info2)
 
         with(binding) {
 
-            Log.d("info1", apt.isSelected.toString())
             nextTypeBtn.setOnClickListener {
                 val bundle = Bundle()
                 bundle.putString("info1", info1)
@@ -52,7 +51,6 @@ class UserEstimateTypeFragment : BaseFragmentVB<FragmentUserEstimateTypeBinding>
                 findNavController().navigate(R.id.action_estimateTypeFragment_to_estimateAddressFragment)
             }
 
-            Log.d("info1", apt.isSelected.toString())
 
             apt.setOnClickListener {
                 onClickItem(apt, "아파트")
