@@ -1,7 +1,6 @@
 package com.example.airconmoa.ui.main_user
 
 import android.os.Bundle
-import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI

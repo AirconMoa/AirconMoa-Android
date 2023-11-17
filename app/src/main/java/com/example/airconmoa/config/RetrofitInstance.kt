@@ -20,5 +20,6 @@ class RetrofitInstance {
         val homeRetrofitInterface: HomeRetrofitInterface = retrofit.create(HomeRetrofitInterface::class.java)
         val estimateCompanyRetrofitInterface : EstimateCompanyRetrofitInterface = retrofit.create(EstimateCompanyRetrofitInterface::class.java)
         val splashRetrofitInterface : SplashRetrofitInterface = retrofit.create(SplashRetrofitInterface::class.java)
+
     }
 }

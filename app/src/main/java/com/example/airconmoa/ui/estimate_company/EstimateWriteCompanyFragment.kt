@@ -30,13 +30,14 @@ import java.time.format.DateTimeFormatter
 
 class EstimateWriteCompanyFragment : BaseFragmentVB<FragmentEstimateWriteCompanyBinding>(FragmentEstimateWriteCompanyBinding::bind, R.layout.fragment_estimate_write_company) {
     @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.finishBtn.setOnClickListener {
-            val intent= Intent(context,WriteCompleteActivity::class.java)
+            val intent = Intent(context, WriteCompleteActivity::class.java)
             startActivity(intent)
-            while(findNavController().popBackStack());
+            while (findNavController().popBackStack());
         }
         val sharedPreferences = activity!!.getSharedPreferences("airconmoa", AppCompatActivity.MODE_PRIVATE)
         val requestEstimateId = arguments?.getLong("requestEstimateId")

@@ -7,10 +7,10 @@ import com.example.airconmoa.databinding.ActivitySelectBinding
 import com.example.airconmoa.ui.main_company.MainCompanyActivity
 import com.example.airconmoa.ui.main_user.MainActivity
 
-class SelectActivity : BaseActivityVB<ActivitySelectBinding>(ActivitySelectBinding::inflate){
+class SelectActivity : BaseActivityVB<ActivitySelectBinding>(ActivitySelectBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.companyBtn.setOnClickListener{
+        binding.companyBtn.setOnClickListener {
             startActivity(Intent(this, MainCompanyActivity::class.java))
 
         }

@@ -21,7 +21,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBinding::inflate){
+class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +78,7 @@ class SplashActivity : BaseActivityVB<ActivitySplashBinding>(ActivitySplashBindi
                     Log.e("Error", "Exception: ${e.message}")
                 }
             }
+
         }
     }
 

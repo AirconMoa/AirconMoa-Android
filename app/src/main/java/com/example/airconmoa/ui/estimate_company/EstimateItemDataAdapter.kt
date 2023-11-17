@@ -17,6 +17,7 @@ import com.example.airconmoa.ui.estimate_company.model.GetRequestEstimateRes
 
 class EstimateItemDataAdapter(private val dataList: List<GetRequestEstimateRes>?,
                               private val fragment: EstimateCompanyFragment,
+
 ) :
     RecyclerView.Adapter<EstimateItemDataAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemRvMainCompanyBinding) :
@@ -42,7 +43,7 @@ class EstimateItemDataAdapter(private val dataList: List<GetRequestEstimateRes>?
                     .into(viewBinding.ractangleIv)
 
                 clientNameTv.setOnClickListener {
-                    findNavController(fragment).navigate(R.id.action_estimateCompanyFragment_to_estimateDetailCompanyFragment )
+                    findNavController(fragment).navigate(R.id.action_estimateCompanyFragment_to_estimateDetailCompanyFragment)
                 }
                 radioBtn.setOnClickListener {
                     Glide.with(context)
@@ -51,14 +52,34 @@ class EstimateItemDataAdapter(private val dataList: List<GetRequestEstimateRes>?
                         .into(viewBinding.ractangleIv)
 
                     mainLayout.setBackgroundResource(R.drawable.shape_btn_stroke_gray3)
-                    viewLine.setCardBackgroundColor(ContextCompat.getColor(context, R.color.airconmoa_gray3))
-                    clientNameTv.setTextColor(ContextCompat.getColor(context,R.color.airconmoa_gray3))
-                    dateTv.setTextColor(ContextCompat.getColor(context,R.color.airconmoa_gray3))
-                    contentTv1.setTextColor(ContextCompat.getColor(context,R.color.airconmoa_gray3))
-                    contentTv2.setTextColor(ContextCompat.getColor(context,R.color.airconmoa_gray3))
-                    radioBtn.visibility=View.INVISIBLE
-                    hideEditTv.visibility= View.VISIBLE
-                    hideEditTv.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG)
+                    viewLine.setCardBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.airconmoa_gray3
+                        )
+                    )
+                    clientNameTv.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.airconmoa_gray3
+                        )
+                    )
+                    dateTv.setTextColor(ContextCompat.getColor(context, R.color.airconmoa_gray3))
+                    contentTv1.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.airconmoa_gray3
+                        )
+                    )
+                    contentTv2.setTextColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.airconmoa_gray3
+                        )
+                    )
+                    radioBtn.visibility = View.INVISIBLE
+                    hideEditTv.visibility = View.VISIBLE
+                    hideEditTv.paintFlags = Paint.UNDERLINE_TEXT_FLAG
                 }
                 hideEditTv.setOnClickListener {
                     findNavController(fragment).navigate(R.id.action_estimateCompanyFragment_to_estimateEditCompanyFragment)

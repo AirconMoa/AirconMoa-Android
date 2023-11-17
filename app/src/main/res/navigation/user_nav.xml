@@ -10,15 +10,8 @@
         android:id="@+id/homeFragment"
         android:name="com.example.airconmoa.ui.home.UserHomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_user_home">
-    </fragment>
+        tools:layout="@layout/fragment_user_home"></fragment>
 
-    <fragment
-        android:id="@+id/estimateFragment"
-        android:name="com.example.airconmoa.ui.estimate_user.Fragment.UserEstimateFragment"
-        android:label="fragment_estimate"
-        tools:layout="@layout/fragment_user_estimate">
-    </fragment>
 
     <fragment
         android:id="@+id/mypageFragment"
@@ -27,14 +20,14 @@
         tools:layout="@layout/fragment_user_mypage">
         <action
             android:id="@+id/action_mypageFragment_to_mypageeditFragment"
-            app:destination="@id/mypageeditFragment"/>
+            app:destination="@id/mypageeditFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/communityFragment"
         android:name="com.example.airconmoa.ui.community_user.UserCommunityFragment"
         android:label="fragment_community"
-        tools:layout="@layout/fragment_user_community"/>
+        tools:layout="@layout/fragment_user_community" />
 
 
     <fragment
@@ -45,7 +38,7 @@
         <action
             android:id="@+id/action_mypageeditFragment_to_mypageFragment"
             app:destination="@id/mypageFragment"
-            app:popUpTo="@id/homeFragment"/>
+            app:popUpTo="@id/homeFragment" />
     </fragment>
 
     <fragment
@@ -56,8 +49,7 @@
         <action
             android:id="@+id/action_estimateFragment2_to_estimatelistFragment"
             app:destination="@id/estimatelistFragment"
-            app:popUpTo="@id/homeFragment"
-            />
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/estimatelistFragment"
@@ -66,12 +58,11 @@
         tools:layout="@layout/fragment_estimate_list">
         <action
             android:id="@+id/action_estimatelistFragment_to_destimatedetailsFragment"
-            app:destination="@id/estimatedetailsFragment"
-            />
+            app:destination="@id/estimatedetailsFragment" />
         <action
             android:id="@+id/action_estimatelistFragment_to_estimateFragment2"
             app:destination="@id/estimateFragment2"
-            app:popUpTo="@id/homeFragment"/>
+            app:popUpTo="@id/homeFragment" />
     </fragment>
 
     <fragment
@@ -81,11 +72,11 @@
         tools:layout="@layout/fragment_estimate_details">
         <action
             android:id="@+id/action_estimatedetailsFragment_to_detailedcompanyreviewFragment"
-            app:destination="@id/detailedcompanyreviewFragment"/>
+            app:destination="@id/detailedcompanyreviewFragment" />
         <action
             android:id="@+id/action_estimatedetailsFragment_to_estimatelistFragment"
             app:destination="@id/estimatelistFragment"
-            app:popUpTo="@id/estimateFragment2"/>
+            app:popUpTo="@id/estimateFragment2" />
     </fragment>
     <fragment
         android:id="@+id/detailedcompanyreviewFragment"
@@ -95,6 +86,6 @@
         <action
             android:id="@+id/action_detailedcompanyreviewFragment_to_estimatedetailsFragment"
             app:destination="@id/estimatedetailsFragment"
-            app:popUpTo="@id/estimatelistFragment"/>
+            app:popUpTo="@id/estimatelistFragment" />
     </fragment>
 </navigation>

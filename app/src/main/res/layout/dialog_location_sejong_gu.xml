@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,14 +41,13 @@
             </LinearLayout>
 
 
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:weightSum="4">
 
             <Button
@@ -95,8 +94,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp">
 
             <Button
                 android:id="@+id/btn_dajeongdong"
@@ -142,8 +141,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp">
 
             <Button
                 android:id="@+id/btn_bolamdong"
@@ -189,8 +188,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp">
 
             <Button
                 android:id="@+id/btn_sojeongmyeon"
@@ -236,8 +235,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp">
 
             <Button
                 android:id="@+id/btn_yeondongmyeon"
@@ -283,8 +282,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp">
 
             <Button
                 android:id="@+id/btn_jeonuimyeon"
@@ -330,8 +329,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="140dp">
 
             <Button
@@ -347,9 +346,9 @@
                 android:id="@+id/btn_haemildong"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
                 android:background="@drawable/location_btn"
                 android:text="해밀동"
-                android:layout_marginLeft="8dp"
                 android:textColor="@color/airconmoa_gray2"
                 android:textSize="20sp" />
 

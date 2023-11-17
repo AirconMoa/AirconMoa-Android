@@ -7,12 +7,7 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentCompanyEstimateBinding
 
 class CompanyEstimateFragment : BaseFragmentVB<FragmentCompanyEstimateBinding>(
-    FragmentCompanyEstimateBinding::bind, R.layout.activity_company_join_first) {
+    FragmentCompanyEstimateBinding::bind, R.layout.activity_company_join_first
+) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-
-    }
 }

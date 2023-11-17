@@ -89,6 +89,7 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@id/backBtn"
         app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/dateContentTv"
         android:layout_width="wrap_content"

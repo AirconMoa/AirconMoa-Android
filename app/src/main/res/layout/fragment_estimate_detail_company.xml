@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
         android:layout_marginEnd="20dp"
+        android:src="@drawable/close_btn"
         android:text="문의하기"
         android:textSize="15dp"
-        android:src="@drawable/close_btn"
         app:layout_constraintBottom_toBottomOf="@id/gray_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +71,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gray_line">
-            
+
             <ImageView
                 android:id="@+id/userIv"
                 android:layout_width="50dp"
@@ -81,29 +81,29 @@
                 app:layout_constraintTop_toTopOf="parent"
 
                 />
+
             <TextView
                 android:id="@+id/userNameTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/userIv"
-                app:layout_constraintTop_toTopOf="@id/userIv"
                 android:layout_marginStart="20dp"
                 android:text="모아"
-                />
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/userIv"
+                app:layout_constraintTop_toTopOf="@id/userIv" />
+
             <TextView
                 android:id="@+id/dateTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2023.09.26"
-                android:textSize="15dp"
-                android:textColor="@color/black"
                 android:fontFamily="@font/semi_bold"
-                app:layout_constraintTop_toBottomOf="@id/userNameTv"
+                android:text="2023.09.26"
+                android:textColor="@color/black"
+                android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@id/userNameTv"
-                />
+                app:layout_constraintTop_toBottomOf="@id/userNameTv" />
 
             <TextView
                 android:id="@+id/setInformationTv"
@@ -119,23 +119,25 @@
                 android:id="@+id/setInformationContentTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="신규설치/신규건물"
-                android:textSize="18dp"
-                android:fontFamily="@font/semi_bold"
-                android:textColor="@color/black"
                 android:layout_marginTop="9dp"
+                android:fontFamily="@font/semi_bold"
+                android:text="신규설치/신규건물"
+                android:textColor="@color/black"
+                android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setInformationTv" />
+
             <View
                 android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="7dp"
                 android:background="@color/airconmoa_main"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/setInformationContentTv"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/setInformationContentTv" />
+
             <TextView
                 android:id="@+id/setAddressTv"
                 android:layout_width="wrap_content"
@@ -145,27 +147,29 @@
                 android:textColor="@color/airconmoa_gray2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view1" />
+
             <TextView
                 android:id="@+id/setAddressContentTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="인천광역시 미추홀구 모아동 1로 123-45/n모아빌라 402호"
-                android:textSize="18dp"
-                android:fontFamily="@font/semi_bold"
-                android:textColor="@color/black"
                 android:layout_marginTop="9dp"
+                android:fontFamily="@font/semi_bold"
+                android:text="인천광역시 미추홀구 모아동 1로 123-45/n모아빌라 402호"
+                android:textColor="@color/black"
+                android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setAddressTv" />
+
             <View
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="7dp"
                 android:background="@color/airconmoa_main"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/setAddressContentTv"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/setAddressContentTv" />
 
             <TextView
                 android:id="@+id/setSiteTypeTv"
@@ -175,22 +179,22 @@
                 android:text="설치 장소 유형"
                 android:textColor="@color/airconmoa_gray2"
 
+                app:layout_constraintEnd_toStartOf="@+id/setNumTv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/setNumTv"
                 app:layout_constraintTop_toBottomOf="@id/view2" />
 
             <TextView
                 android:id="@+id/setSiteTypeContentTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="빌라"
                 android:layout_marginTop="9dp"
-                android:textSize="18dp"
-                android:fontFamily="@font/semi_bold"
-                android:textColor="@color/black"
                 android:layout_marginEnd="1dp"
+                android:fontFamily="@font/semi_bold"
+                android:hint="빌라"
+                android:textColor="@color/black"
                 android:textColorHint="@color/black"
+                android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setSiteTypeTv" />
@@ -200,12 +204,12 @@
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="7dp"
-                android:background="@color/airconmoa_main"
-                app:layout_constraintHorizontal_bias="0.5"
                 android:layout_marginEnd="10dp"
+                android:background="@color/airconmoa_main"
                 app:layout_constraintEnd_toStartOf="@+id/setNumContentTv"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/setSiteTypeContentTv"/>
+                app:layout_constraintTop_toBottomOf="@id/setSiteTypeContentTv" />
 
             <TextView
                 android:id="@+id/setNumTv"
@@ -214,35 +218,36 @@
                 android:layout_marginTop="22dp"
                 android:text="설치 장소 유형"
                 android:textColor="@color/airconmoa_gray2"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/setSiteTypeTv"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view2" />
 
             <TextView
                 android:id="@+id/setNumContentTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1대"
                 android:layout_marginTop="9dp"
-                android:textSize="18dp"
                 android:fontFamily="@font/semi_bold"
+                android:text="1대"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@id/setNumTv"
+                android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/setNumTv"
 
                 app:layout_constraintTop_toBottomOf="@+id/setNumTv" />
+
             <View
                 android:id="@+id/view4"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:background="@color/airconmoa_main"
-                app:layout_constraintHorizontal_bias="0.5"
-                android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@+id/view3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/setSiteTypeContentTv"/>
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/view3"
+                app:layout_constraintTop_toBottomOf="@id/setSiteTypeContentTv" />
 
             <TextView
                 android:id="@+id/setDateTv"
@@ -252,22 +257,22 @@
                 android:text="설치 날짜"
                 android:textColor="@color/airconmoa_gray2"
 
+                app:layout_constraintEnd_toStartOf="@+id/setNumTv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/setNumTv"
                 app:layout_constraintTop_toBottomOf="@id/view3" />
 
             <TextView
                 android:id="@+id/setDateContentTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="10월 5일"
                 android:layout_marginTop="9dp"
-                android:textSize="18dp"
-                android:fontFamily="@font/semi_bold"
-                android:textColor="@color/black"
                 android:layout_marginEnd="1dp"
+                android:fontFamily="@font/semi_bold"
+                android:hint="10월 5일"
+                android:textColor="@color/black"
                 android:textColorHint="@color/black"
+                android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/setDateTv" />
@@ -277,12 +282,12 @@
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="7dp"
-                android:background="@color/airconmoa_main"
-                app:layout_constraintHorizontal_bias="0.5"
                 android:layout_marginEnd="10dp"
+                android:background="@color/airconmoa_main"
                 app:layout_constraintEnd_toStartOf="@+id/setNumContentTv"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/setDateContentTv"/>
+                app:layout_constraintTop_toBottomOf="@id/setDateContentTv" />
 
             <TextView
                 android:id="@+id/brandTv"
@@ -291,34 +296,35 @@
                 android:layout_marginTop="22dp"
                 android:text="브랜드"
                 android:textColor="@color/airconmoa_gray2"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/setSiteTypeTv"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view4" />
 
             <TextView
                 android:id="@+id/brandContentTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="삼성"
                 android:layout_marginTop="9dp"
-                android:textSize="18dp"
                 android:fontFamily="@font/semi_bold"
+                android:text="삼성"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@id/setNumTv"
+                android:textSize="18dp"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/setNumTv"
                 app:layout_constraintTop_toBottomOf="@+id/brandTv" />
+
             <View
                 android:id="@+id/view6"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:background="@color/airconmoa_main"
-                app:layout_constraintHorizontal_bias="0.5"
-                android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@+id/view3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/brandContentTv"/>
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/view3"
+                app:layout_constraintTop_toBottomOf="@id/brandContentTv" />
 
             <TextView
                 android:id="@+id/etcTv"
@@ -329,35 +335,36 @@
                 android:textColor="@color/airconmoa_gray2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view5" />
+
             <TextView
                 android:id="@+id/etcContentTv"
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
-                android:text="10월 5일이 안되면 10월 8일 이후 가능합니다."
-                android:textSize="18dp"
-                android:fontFamily="@font/semi_bold"
-                android:textColor="@color/black"
                 android:layout_marginTop="9dp"
+                android:background="@drawable/shape_btn_stroke_main_color"
+                android:fontFamily="@font/semi_bold"
+                android:padding="10dp"
+                android:text="10월 5일이 안되면 10월 8일 이후 가능합니다."
+                android:textColor="@color/black"
+                android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etcTv"
-                android:background="@drawable/shape_btn_stroke_main_color"
-                android:padding="10dp"/>
-            
+                app:layout_constraintTop_toBottomOf="@+id/etcTv" />
+
             <Button
                 android:id="@+id/writeBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/shape_btn_main"
+                android:fontFamily="@font/semi_bold"
                 android:text="견적서 작성하기"
                 android:textColor="@color/white"
-                android:background="@drawable/shape_btn_main"
                 android:textSize="20dp"
-                android:fontFamily="@font/semi_bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etcContentTv"
-                android:layout_marginTop="24dp"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etcContentTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

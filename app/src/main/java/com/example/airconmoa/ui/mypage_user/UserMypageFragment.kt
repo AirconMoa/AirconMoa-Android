@@ -7,7 +7,10 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserMypageBinding
 
-class UserMypageFragment : BaseFragmentVB<FragmentUserMypageBinding>(FragmentUserMypageBinding::bind, R.layout.fragment_user_mypage) {
+class UserMypageFragment : BaseFragmentVB<FragmentUserMypageBinding>(
+    FragmentUserMypageBinding::bind,
+    R.layout.fragment_user_mypage
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

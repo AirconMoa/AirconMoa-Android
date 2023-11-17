@@ -18,7 +18,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class UserHomeInstallFragment : BaseFragmentVB<FragmentUserHomeInstallBinding>(FragmentUserHomeInstallBinding::bind, R.layout.fragment_user_home_install) {
+class UserHomeInstallFragment : BaseFragmentVB<FragmentUserHomeInstallBinding>(
+    FragmentUserHomeInstallBinding::bind,
+    R.layout.fragment_user_home_install
+) {
 
     var companyInfoList = listOf<CompanyItemData>()
 
@@ -27,7 +30,7 @@ class UserHomeInstallFragment : BaseFragmentVB<FragmentUserHomeInstallBinding>(F
 
         CoroutineScope(Dispatchers.IO).launch {
             val response = getCompanyInfo()
-            if(response.isSuccess) {
+            if (response.isSuccess) {
                 companyInfoList = response.result!!
                 Log.d("CompanyInfoList", companyInfoList.toString())
 
@@ -37,8 +40,7 @@ class UserHomeInstallFragment : BaseFragmentVB<FragmentUserHomeInstallBinding>(F
                     val adapter = binding.rvMain.adapter
                     adapter!!.notifyDataSetChanged()
                 }
-            }
-            else {
+            } else {
                 val message = response.message
                 withContext(Dispatchers.Main) {
                     Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
@@ -47,8 +49,10 @@ class UserHomeInstallFragment : BaseFragmentVB<FragmentUserHomeInstallBinding>(F
         }
 
         binding.estimateWriteBtn.setOnClickListener {
-            val intent= Intent(context,UserEstimateActivity::class.java)
+            val intent = Intent(context, UserEstimateActivity::class.java)
             startActivity(intent)
+            //findNavController().navigate(R.id.action_homeFragment_to_estimateUserFragment)
+
         }
     }
 

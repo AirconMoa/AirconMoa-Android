@@ -6,11 +6,9 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserHomeRepairlBinding
 
-class UserHomeRepairlFragment : BaseFragmentVB<FragmentUserHomeRepairlBinding>(FragmentUserHomeRepairlBinding::bind, R.layout.fragment_user_home_repairl) {
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
+class UserHomeRepairlFragment : BaseFragmentVB<FragmentUserHomeRepairlBinding>(
+    FragmentUserHomeRepairlBinding::bind,
+    R.layout.fragment_user_home_repairl
+) {
 
 }

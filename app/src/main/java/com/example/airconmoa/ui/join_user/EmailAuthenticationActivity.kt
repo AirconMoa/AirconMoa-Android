@@ -12,7 +12,8 @@ import com.example.airconmoa.R
 import com.example.airconmoa.config.BaseActivityVB
 import com.example.airconmoa.databinding.ActivityEmailAuthenticationBinding
 
-class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBinding>(ActivityEmailAuthenticationBinding::inflate) {
+class EmailAuthenticationActivity :
+    BaseActivityVB<ActivityEmailAuthenticationBinding>(ActivityEmailAuthenticationBinding::inflate) {
 
 
     private lateinit var timerTextView: TextView
@@ -104,7 +105,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
             val nextEditText = if (i < editTextList.size - 1) editTextList[i + 1] else null
 
             currentEditText.addTextChangedListener(object : TextWatcher {
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int,
+                ) {
+                }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if (s?.length == 1) {
@@ -122,12 +129,13 @@ class EmailAuthenticationActivity : BaseActivityVB<ActivityEmailAuthenticationBi
     }
 
     private fun checkComplete() {
-        if(editText1.text!!.length == 1
+        if (editText1.text!!.length == 1
             && editText2.text!!.length == 1
             && editText3.text!!.length == 1
             && editText4.text!!.length == 1
             && editText5.text!!.length == 1
-            && editText6.text!!.length == 1) {
+            && editText6.text!!.length == 1
+        ) {
             binding.emailAuthenticationOkBtn.visibility = View.INVISIBLE
             binding.emailAuthenticationOkCompleteBtn.visibility = View.VISIBLE
         } else {

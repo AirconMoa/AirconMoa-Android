@@ -7,11 +7,14 @@ import com.example.airconmoa.config.BaseFragmentVB
 import com.example.airconmoa.databinding.FragmentUserHomeChkBinding
 
 
-class UserHomeChkFragment : BaseFragmentVB<FragmentUserHomeChkBinding>(FragmentUserHomeChkBinding::bind, R.layout.fragment_user_home_chk) {
+class UserHomeChkFragment : BaseFragmentVB<FragmentUserHomeChkBinding>(
+    FragmentUserHomeChkBinding::bind,
+    R.layout.fragment_user_home_chk
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val dataList:ArrayList<CompanyItemData> = arrayListOf()
+        val dataList: ArrayList<CompanyItemData> = arrayListOf()
 
     }
 

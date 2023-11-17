@@ -10,7 +10,8 @@ import org.eazegraph.lib.charts.BarChart
 import org.eazegraph.lib.models.BarModel
 
 class EstimateSubReviewFragment : BaseFragmentVB<FragmentSubEstimateReviewBinding>(
-    FragmentSubEstimateReviewBinding::bind, R.layout.fragment_sub_estimate_review) {
+    FragmentSubEstimateReviewBinding::bind, R.layout.fragment_sub_estimate_review
+) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -39,22 +40,21 @@ class EstimateSubReviewFragment : BaseFragmentVB<FragmentSubEstimateReviewBindin
 
             var barChart: BarChart = barChart // barChart 생성
 
-            var bm1=BarModel("5점",1f, 0xFF00D1FF.toInt())
-            bm1.setLegendLabel("5점")
+            var bm1 = BarModel("5점", 1f, 0xFF00D1FF.toInt())
+            bm1.legendLabel = "5점"
             barChart.addBar(bm1)
-            barChart.addBar(BarModel("4점",2f, 0xFF00D1FF.toInt()))
-            var bm2=BarModel("3점",3f, 0xFF00D1FF.toInt())
-            bm2.setLegendLabel("3점")
+            barChart.addBar(BarModel("4점", 2f, 0xFF00D1FF.toInt()))
+            var bm2 = BarModel("3점", 3f, 0xFF00D1FF.toInt())
+            bm2.legendLabel = "3점"
             barChart.addBar(bm2)
-            barChart.addBar(BarModel("2점",4f, 0xFF00D1FF.toInt()))
-            var bm3=BarModel("1점",5f, 0xFF00D1FF.toInt())
-            bm3.setLegendLabel("1점")
+            barChart.addBar(BarModel("2점", 4f, 0xFF00D1FF.toInt()))
+            var bm3 = BarModel("1점", 5f, 0xFF00D1FF.toInt())
+            bm3.legendLabel = "1점"
             barChart.addBar(bm3)
 
-            barChart.startAnimation();
+            barChart.startAnimation()
         }
     }
-
 
 
 }
